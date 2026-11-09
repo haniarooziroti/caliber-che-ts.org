@@ -1,0 +1,45 @@
+# Caliber — Cloudflare Static Assets: relative 301s and absolute 302s.
+
+/about /about/ 301
+/support /support/ 301
+/privacy /privacy/ 301
+/terms /terms/ 301
+/faq /faq/ 301
+/forum /forum/ 301
+/reviews /reviews/ 301
+/blogs /blogs/ 301
+/blog /blogs/ 301
+/blog/ /blogs/ 301
+/contact /support/ 301
+/contact/ /support/ 301
+
+/cheats /products/caliber/ 301
+/cheats/ /products/caliber/ 301
+/utilities /products/caliber/utilities/ 301
+/utilities/ /products/caliber/utilities/ 301
+/store /products/caliber/aimbot/ 301
+/store/ /products/caliber/aimbot/ 301
+
+/products/apex-legends /products/caliber/ 301
+/products/apex-legends/ /products/caliber/ 301
+/products/apex-legends/* /products/caliber/:splat 301
+
+/products/rust-cheats /products/caliber/ 301
+/products/rust-cheats/ /products/caliber/ 301
+/products/cs2-cheats /products/caliber/ 301
+/products/cs2-cheats/ /products/caliber/ 301
+
+/go/caliber https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/caliber/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/store https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/store/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/cloud-dma https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/cloud-dma/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/hwid-spoofer https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/hwid-spoofer/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/apex https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/apex/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/rust https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/rust/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/cs2 https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/cs2/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302

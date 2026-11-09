@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import FeaturesSection from '../components/FeaturesSection.astro';
+import WhySetupSection from '../components/WhySetupSection.astro';
+import ProductsSection from '../components/ProductsSection.astro';
+import ContentSections from '../components/ContentSections.astro';
+import BlogsSection from '../components/BlogsSection.astro';
+import { t } from '../i18n';
+import { resolvePageSeo, canonicalUrl } from '../config/seo';
+import ShareButtons from '../components/ShareButtons.astro';
+import { organizationSchema, websiteSchema } from '../utils/schema';
+import { HERO_CAROUSEL_SLIDES } from '../config/media';
+import { heroPreloadSrc } from '../utils/responsiveImage';
+const seo = resolvePageSeo('/');
+const heroLcpImage = heroPreloadSrc(HERO_CAROUSEL_SLIDES[0]!.src);
+const shareUrl = canonicalUrl('/');
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  jsonLd={[websiteSchema(), organizationSchema()]}
+>
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href={heroLcpImage}
+    type="image/webp"
+    media="(min-width: 1024px)"
+    fetchpriority="high"
+  />
+  <HeroSection />
+  <FeaturesSection />
+  <ProductsSection />
+  <WhySetupSection />
+  <ContentSections />
+  <BlogsSection />
+  <div class="mx-auto max-w-6xl px-5 pb-12">
+    <ShareButtons shareUrl={shareUrl} shareText={seo.title} />
+  </div>
+</BaseLayout>

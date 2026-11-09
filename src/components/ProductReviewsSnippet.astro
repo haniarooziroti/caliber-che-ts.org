@@ -1,0 +1,44 @@
+---
+import ReviewStars from './ReviewStars.astro';
+import { getProductReviewStats, reviewsPageUrlWithProduct } from '../data/customerReviews';
+import Icon from './icons/Icon.astro';
+
+interface Props {
+  productSlug: string;
+  productName: string;
+}
+
+const { productSlug, productName } = Astro.props;
+const stats = getProductReviewStats(productSlug);
+const hasReviews = (stats?.total ?? 0) > 0;
+const reviewsHref = reviewsPageUrlWithProduct(productSlug);
+---
+
+<section class="border-y border-border bg-muted/10 py-10" aria-labelledby={`product-reviews-${productSlug}`}>
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h2 id={`product-reviews-${productSlug}`} class="text-lg font-semibold text-foreground">
+          Customer reviews — {productName}
+        </h2>
+        {hasReviews && stats ? (
+          <p class="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <ReviewStars rating={stats.average ?? 0} />
+            <span>
+              {stats.average?.toFixed(1)} average · {stats.total} {stats.total === 1 ? 'review' : 'reviews'}
+            </span>
+          </p>
+        ) : (
+          <p class="mt-2 text-sm text-muted-foreground">No published reviews for this product yet.</p>
+        )}
+      </div>
+      <a
+        href={reviewsHref}
+        class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+      >
+        {hasReviews ? 'See all reviews for this product' : 'Browse the reviews page'}
+        <Icon name="arrowRight" size={16} />
+      </a>
+    </div>
+  </div>
+</section>

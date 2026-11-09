@@ -1,0 +1,77 @@
+---
+import SectionHeader from './SectionHeader.astro';
+import Icon from './icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import { ROUTES } from '../utils/path';
+import { FAQ_URL, FORUM_URL } from '../config/siteConfig';
+import ReviewStars from './ReviewStars.astro';
+import { computeReviewStats } from '../data/customerReviews';
+
+const stats = computeReviewStats();
+const hasReviews = stats.total > 0;
+
+const links = [
+  {
+    title: 'Customer reviews',
+    desc: hasReviews
+      ? `${stats.total} published ratings with filters, search, and product breakdowns.`
+      : 'Published feedback will appear when customers share moderated reviews.',
+    href: ROUTES.reviews,
+  },
+  {
+    title: 'Forum threads',
+    desc: 'Community posts about loader setup and settings—not the same as verified purchase reviews.',
+    href: ROUTES.forum,
+  },
+  {
+    title: 'FAQ & support',
+    desc: 'Checkout, license, and performance questions before you open the store.',
+    href: FAQ_URL,
+  },
+];
+---
+
+<section id="reviews" class="border-y border-border bg-background py-16 md:py-24" aria-labelledby="reviews-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <SectionHeader
+      eyebrow="Trust & research"
+      title="Reviews, forums, and FAQs"
+      desc="Use verified customer reviews when available, then cross-check forum threads and product pages before checkout."
+      titleId="reviews-title"
+    />
+
+    {hasReviews && (
+      <p class="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-muted-foreground md:justify-start">
+        <ReviewStars rating={stats.average ?? 0} />
+        <span>
+          {stats.average?.toFixed(1)} average from {stats.total} published {stats.total === 1 ? 'review' : 'reviews'}
+        </span>
+      </p>
+    )}
+
+    <ul class="mt-10 grid gap-6 md:grid-cols-3">
+      {
+        links.map((item) => (
+          <li class="rounded-2xl border border-border/60 bg-muted/20 p-5">
+            <p class="font-medium text-foreground">{item.title}</p>
+            <p class="mt-3 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+            <a class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline" href={item.href}>
+              Open
+              <Icon name="arrowRight" size={15} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <Button as="a" href={ROUTES.reviews} variant="outline">
+        Customer reviews
+        <Icon name="arrowRight" size={17} />
+      </Button>
+      <Button as="a" href={FORUM_URL} variant="ghost">
+        Forums
+      </Button>
+    </div>
+  </div>
+</section>

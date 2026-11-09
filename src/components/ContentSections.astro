@@ -1,0 +1,12 @@
+---
+import WorkflowSection from './WorkflowSection.astro';
+import ReviewsSection from './ReviewsSection.astro';
+import SiteFaqSection from './SiteFaqSection.astro';
+import { getLandingFaqs } from '../data/faq';
+
+const homeFaqs = getLandingFaqs();
+---
+
+<WorkflowSection />
+<ReviewsSection />
+<SiteFaqSection id="faq" titleId="faq-title" items={homeFaqs} />

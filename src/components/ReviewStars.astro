@@ -1,0 +1,31 @@
+---
+interface Props {
+  rating: number;
+  max?: number;
+  label?: string;
+  class?: string;
+  variant?: 'default' | 'gold';
+}
+
+const { rating, max = 5, label, class: className, variant = 'default' } = Astro.props;
+const rounded = Math.min(max, Math.max(0, rating));
+const full = Math.floor(rounded);
+const half = rounded - full >= 0.5;
+const empty = max - full - (half ? 1 : 0);
+const starClass = variant === 'gold' ? 'text-amber-400' : 'text-primary';
+const emptyClass = variant === 'gold' ? 'text-amber-400/25' : 'text-muted-foreground/35';
+---
+
+<span
+  class:list={['inline-flex items-center gap-0.5', starClass, className]}
+  role="img"
+  aria-label={label ?? `${rounded} out of ${max} stars`}
+>
+  {Array.from({ length: full }, () => <span aria-hidden="true">★</span>)}
+  {half && <span aria-hidden="true" class="opacity-80">★</span>}
+  {Array.from({ length: empty }, () => (
+    <span aria-hidden="true" class={emptyClass}>
+      ★
+    </span>
+  ))}
+</span>

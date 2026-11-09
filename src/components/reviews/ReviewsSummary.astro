@@ -1,0 +1,66 @@
+---
+import ReviewStars from '../ReviewStars.astro';
+import type { ReviewAggregateStats } from '../../data/customerReviews';
+
+interface Props {
+  stats: ReviewAggregateStats;
+  layout?: 'top' | 'sidebar';
+}
+
+const { stats, layout = 'top' } = Astro.props;
+const hasReviews = stats.total > 0;
+const distMax = hasReviews ? Math.max(...Object.values(stats.distribution), 1) : 1;
+---
+
+<aside
+  class:list={['reviews-summary', layout === 'top' ? 'reviews-summary--top' : 'reviews-summary--sidebar']}
+  aria-labelledby="reviews-summary-title"
+>
+  {hasReviews ? (
+  <>
+      <div class="reviews-summary__score-block">
+        <p class="reviews-hero__score reviews-summary__score text-primary">
+          {stats.average?.toFixed(1)}
+          <span>/5</span>
+        </p>
+        <ReviewStars rating={stats.average ?? 0} variant="gold" class="reviews-summary__stars text-xl" />
+        <p class="reviews-summary__meta">
+          {stats.total} customer {stats.total === 1 ? 'review' : 'reviews'}
+        </p>
+        {stats.verifiedCount > 0 && (
+          <p class="reviews-summary__meta reviews-summary__meta--verified">{stats.verifiedCount} verified purchases</p>
+        )}
+      </div>
+
+      <div class="reviews-summary__distribution">
+        <p id="reviews-summary-title" class="sr-only">
+          Customer review summary
+        </p>
+        <ul class="reviews-summary__bars space-y-4" aria-label="Rating distribution">
+          {([5, 4, 3, 2, 1] as const).map((star) => {
+            const count = stats.distribution[star];
+            const width = Math.round((count / distMax) * 100);
+            return (
+              <li class="reviews-summary__row">
+                <span class="reviews-summary__star-label text-primary">{star}</span>
+                <div class="reviews-summary__bar-track">
+                  <div class="reviews-summary__bar-fill" style={`width: ${width}%`} role="presentation" />
+                </div>
+                <span class="reviews-summary__count">{count}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
+  ) : (
+    <>
+      <p id="reviews-summary-title" class="text-sm font-medium text-foreground">
+        Customer reviews
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-muted-foreground">
+        No customer reviews have been published yet.
+      </p>
+    </>
+  )}
+</aside>

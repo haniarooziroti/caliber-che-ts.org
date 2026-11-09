@@ -1,0 +1,46 @@
+---
+import { ROUTES } from '../../utils/path';
+import { FAQ_URL, SUPPORT_URL } from '../../config/siteConfig';
+---
+
+<section class="border-t border-border bg-muted/10 py-12 md:py-16" aria-labelledby="reviews-trust-title">
+  <div class="mx-auto max-w-3xl px-5 text-center">
+    <h2 id="reviews-trust-title" class="font-[family-name:var(--font-heading)] text-xl font-bold md:text-2xl">
+      How we handle customer feedback
+    </h2>
+    <ul class="mt-6 space-y-3 text-left text-sm leading-relaxed text-muted-foreground">
+      <li>
+        <strong class="text-foreground">Source:</strong> Reviews come from customers who submit feedback after purchase or
+        support interactions. They are not copied from third-party sites.
+      </li>
+      <li>
+        <strong class="text-foreground">Verification:</strong> A “Verified purchase” badge is shown only when our checkout
+        records confirm the order. Without a backend connection, new submissions stay unpublished until moderated.
+      </li>
+      <li>
+        <strong class="text-foreground">Moderation:</strong> We remove spam, personal data, and content that violates our
+        terms. Critical reviews remain when they describe a real experience.
+      </li>
+      <li>
+        <strong class="text-foreground">Support:</strong> Questions about an order or license should go through{' '}
+        <a class="text-primary hover:underline" href={SUPPORT_URL}>
+          support
+        </a>{' '}
+        or the{' '}
+        <a class="text-primary hover:underline" href={FAQ_URL}>
+          FAQ
+        </a>
+        —not public reviews.
+      </li>
+    </ul>
+    <p class="mt-6 text-xs text-muted-foreground">
+      calibercheat.net is an independent retailer and is not affiliated with 1C Game Studios Entertainment or Electronic Arts.
+    </p>
+    <p class="mt-4 text-sm">
+      <a class="text-primary hover:underline" href={ROUTES.forum}>
+        Prefer community discussion?
+      </a>{' '}
+      Forum threads are separate from verified customer reviews.
+    </p>
+  </div>
+</section>

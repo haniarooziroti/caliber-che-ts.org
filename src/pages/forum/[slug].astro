@@ -1,0 +1,99 @@
+---
+import '../../styles/forum.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/icons/Icon.astro';
+import { forumPosts, getForumPost } from '../../data/forum';
+import { canonicalUrl, pageTitle } from '../../config/seo';
+import ShareButtons from '../../components/ShareButtons.astro';
+
+export function getStaticPaths() {
+  return forumPosts.map((post) => ({ params: { slug: post.slug } }));
+}
+
+const post = getForumPost(Astro.params.slug!);
+if (!post) return Astro.redirect('/forum/');
+
+function forumDescription(excerpt: string): string {
+  let text = excerpt.replace(/\s+/g, ' ').trim();
+  const tail = ' Caliber forum thread on loaders, ESP, aimbot, and BattlEye updates.';
+  if (text.length < 120) text = `${text}${tail}`;
+  if (text.length > 155) text = `${text.slice(0, 152).replace(/\s+\S*$/, '')}.`;
+  if (text.length < 120) text = `${text} Compare modules on the store page.`.slice(0, 155);
+  return text;
+}
+
+const path = `/forum/${post.slug}/`;
+const sharePageUrl = canonicalUrl(path);
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Forum', path: '/forum/' },
+  { name: post.category, path: '/forum/' },
+  { name: post.title, path },
+];
+const relatedPosts = [
+  ...forumPosts.filter((item) => item.slug !== post.slug && item.category === post.category),
+  ...forumPosts.filter((item) => item.slug !== post.slug && item.category !== post.category),
+].slice(0, 3);
+---
+
+<BaseLayout
+  title={pageTitle(post.title)}
+  description={forumDescription(post.excerpt)}
+  robots="noindex, follow"
+>
+  <section class="forum-page py-8 md:py-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="forum-layout forum-layout--detail">
+        <main class="forum-main">
+          <article class="forum-detail-card">
+            <div class="forum-detail-content">
+              <div class="forum-post-meta">
+                <span class={`forum-community-avatar tone-${post.categoryTone}`}><Icon name="users" size={15} /></span>
+                <a href="/forum/" class="forum-community-name">{post.category} — editorial Caliber cheat notes</a>
+                <span>·</span><span>Not a user post</span>
+              </div>
+              <h1>{post.title}</h1>
+              {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
+              <p class="forum-post-excerpt">These pages are editorial discussions, not live user posts. There are no votes or usernames.</p>
+              <div class="forum-detail-copy">{post.body.map((paragraph) => <p>{paragraph}</p>)}</div>
+              <div class="forum-post-actions forum-post-actions--detail">
+                {post.sourcePath && post.sourceTitle ? (
+                  <a href={post.sourcePath}><Icon name="navBlog" size={15} /> Open paired guide: {post.sourceTitle}</a>
+                ) : null}
+              </div>
+              <ShareButtons shareUrl={sharePageUrl} shareText={post.shareTitle ?? post.title} />
+            </div>
+          </article>
+        </main>
+        <aside class="forum-sidebar">
+          <section class="forum-side-card forum-about">
+            <div class="forum-side-card__banner"></div>
+            <div class="forum-about__content">
+              <div class="forum-about__title"><span class={`forum-community-avatar tone-${post.categoryTone}`}>c</span><h2>{post.category}</h2></div>
+              <p>Editorial notes on Caliber cheats, loaders, and purchase questions—not a live forum.</p>
+              <div class="forum-stats"><span><b>{forumPosts.length}</b> notes</span><span><b>{forumPosts.filter((item) => item.category === post.category).length}</b> in this topic</span></div>
+              <a class="forum-join" href="/forum/">Return to Caliber cheat forum index</a>
+            </div>
+          </section>
+          <section class="forum-side-card forum-related-card" aria-labelledby="forum-related-title">
+            <h2 class="forum-side-heading" id="forum-related-title">More discussions</h2>
+            <ul class="forum-related-list">
+              {relatedPosts.map((item) => (
+                <li>
+                  <a href={`/forum/${item.slug}/`}>
+                    <span class="forum-related-list__category">{item.category}</span>
+                    <b>{item.title}</b>
+                    <span class="forum-related-list__meta">Open editorial note <Icon name="arrowRight" size={14} /></span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a class="forum-related-card__all" href="/forum/">Browse every Caliber cheat note <Icon name="arrowRight" size={14} /></a>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+import type { BlogFaqItem } from '../data/blogs/types';
+
+interface Props {
+  items: BlogFaqItem[];
+  heading?: string;
+}
+
+const { items, heading = 'Frequently asked questions' } = Astro.props;
+---
+
+<section class="not-prose mt-12 border-t border-border pt-10" aria-labelledby="blog-faq-title">
+  <h2 id="blog-faq-title" class="text-xl font-bold">{heading}</h2>
+  <div class="mt-6 space-y-3" data-blog-faq>
+    {
+      items.map((item, index) => (
+        <details class="group rounded-xl border border-border bg-card/50 px-4 py-3 open:bg-muted/20">
+          <summary class="cursor-pointer list-none text-sm font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
+            <span class="flex items-center justify-between gap-3">
+              {item.q}
+              <span class="text-muted-foreground transition-transform group-open:rotate-180" aria-hidden="true">
+                ▾
+              </span>
+            </span>
+          </summary>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground" id={`blog-faq-a-${index}`}>
+            {item.a}
+          </p>
+        </details>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import '../styles/blog-pages.css';
+import BlogCard from './BlogCard.astro';
+import { Button } from '@/components/starwind/button';
+import Icon from './icons/Icon.astro';
+import { getFeaturedBlogPosts } from '../data/blog';
+import { ROUTES } from '../utils/path';
+import { t } from '../i18n';
+
+const posts = getFeaturedBlogPosts(3);
+---
+
+<section class="border-t border-border py-14 md:py-16" aria-labelledby="home-blogs-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wider text-primary">From the blog</p>
+        <h2 id="home-blogs-title" class="font-heading text-2xl font-bold md:text-3xl">
+          Caliber guides &amp; reviews
+        </h2>
+        <p class="mt-2 max-w-2xl text-sm text-muted-foreground">
+          Buyer guides, FPS tuning, and tool comparisons—read before you choose modules.
+        </p>
+      </div>
+      <Button as="a" href={ROUTES.blogs} variant="outline" class="shrink-0 rounded-xl">
+        {t.pages.crumbs.blogs}
+        <Icon name="arrowRight" size={17} />
+      </Button>
+    </div>
+
+    <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post, index) => (
+        <BlogCard post={post} index={index} showDate readLabel={t.pages.blog.readMore} />
+      ))}
+    </div>
+  </div>
+</section>

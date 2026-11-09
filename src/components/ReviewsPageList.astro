@@ -1,0 +1,459 @@
+---
+import ReviewCard from './ReviewCard.astro';
+import ReviewsSummary from './reviews/ReviewsSummary.astro';
+import Icon from './icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import {
+  computeReviewStats,
+  getReviewsForDisplay,
+  reviewProductOptions,
+  reviewSearchBlob,
+  reviewTimestamp,
+} from '../data/customerReviews';
+import { ROUTES } from '../utils/path';
+import { CHECKOUT_URL, FAQ_URL, PRODUCT_URL } from '../config/siteConfig';
+import { t } from '../i18n';
+
+const reviews = getReviewsForDisplay();
+const stats = computeReviewStats(reviews);
+const products = reviewProductOptions();
+const pageSize = 12;
+---
+
+<div id="reviews-catalog" class="reviews-page__catalog pb-14">
+  <div class="reviews-product-pills" role="tablist" aria-label={t.pages.reviews.productFilterAria}>
+    <button
+      type="button"
+      role="tab"
+      class="reviews-product-pill is-active"
+      data-review-product="all"
+      aria-selected="true"
+    >
+      {t.pages.reviews.allProducts}
+    </button>
+    {
+      products.map((p) => (
+        <button
+          type="button"
+          role="tab"
+          class="reviews-product-pill"
+          data-review-product={p.slug}
+          aria-selected="false"
+        >
+          {p.name}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="reviews-page__summary-band">
+    <ReviewsSummary stats={stats} layout="top" />
+  </div>
+
+  <div class="reviews-search-row mt-8">
+    <label class="reviews-controls__group w-full max-w-xl">
+      <span class="reviews-controls__label">{t.pages.reviews.searchLabel}</span>
+      <div class="relative">
+        <Icon
+          name="search"
+          size={16}
+          class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+        />
+        <input
+          type="search"
+          class="w-full rounded-xl border border-border bg-background py-2.5 pl-10 pr-10 text-sm outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          placeholder={t.pages.reviews.searchPlaceholder}
+          aria-label={t.pages.reviews.searchAria}
+          data-review-search
+        />
+        <button
+          type="button"
+          class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-lg px-2 py-1 text-xs text-muted-foreground hover:text-foreground"
+          data-review-search-clear
+        >
+          Clear
+        </button>
+      </div>
+    </label>
+  </div>
+
+  <div class="reviews-page__filters" aria-label={t.pages.reviews.filterAria}>
+    <div class="reviews-star-filter">
+      <p class="reviews-star-filter__label">{t.pages.reviews.starFilterLabel}</p>
+      <div class="reviews-star-filter__row">
+        <span class="reviews-star-filter__hint">{t.pages.reviews.starFilterAtLeast}</span>
+        <div class="reviews-star-filter__stars" role="group" aria-label={t.pages.reviews.filterAria} data-review-star-group>
+          {[1, 2, 3, 4, 5].map((n) => (
+            <button
+              type="button"
+              class="reviews-star-filter__star"
+              data-star-level={n}
+              aria-label={`${n} stars and up`}
+            >
+              ★
+            </button>
+          ))}
+        </div>
+        <button type="button" class="reviews-star-filter__clear" data-review-show-all-ratings>
+          {t.pages.reviews.showAllRatings}
+        </button>
+      </div>
+    </div>
+
+    <div class="reviews-main-toolbar">
+      <label class="reviews-controls__group reviews-main-toolbar__sort">
+        <span class="reviews-controls__label">{t.pages.reviews.sortBy}</span>
+        <select class="reviews-controls__select w-full" data-review-sort aria-label={t.pages.reviews.sortAria}>
+          <option value="recent" selected>{t.pages.reviews.sortRecent}</option>
+          <option value="oldest">{t.pages.reviews.sortOldest}</option>
+          <option value="highest">{t.pages.reviews.highest}</option>
+          <option value="lowest">{t.pages.reviews.lowest}</option>
+          <option value="helpful">{t.pages.reviews.sortHelpful}</option>
+        </select>
+      </label>
+      <p class="reviews-controls__count" data-review-count>
+        {reviews.length} {reviews.length === 1 ? t.pages.reviews.reviewSingular : t.pages.reviews.reviewPlural}
+      </p>
+    </div>
+  </div>
+
+  <div class="reviews-toolbar__chips mt-4" role="group" aria-label="Additional review filters">
+    <button type="button" class="reviews-chip" data-review-verified-only aria-pressed="false">
+      {t.pages.reviews.verifiedOnly}
+    </button>
+    <button type="button" class="reviews-chip" data-review-with-text aria-pressed="false">
+      {t.pages.reviews.withText}
+    </button>
+    <button type="button" class="reviews-chip reviews-chip--reset" data-review-reset>
+      {t.pages.reviews.resetFilters}
+    </button>
+  </div>
+
+  <div class="reviews-page__body">
+    <div class="reviews-page__main min-w-0">
+      <h2 id="reviews-list-title" class="sr-only">
+        Published customer reviews
+      </h2>
+
+      <div class="reviews-grid reviews-grid--list mt-8" data-review-grid>
+        {
+          reviews.map((review) => (
+            <div
+              data-review-item
+              data-id={review.id}
+              data-rating={review.rating}
+              data-ts={reviewTimestamp(review)}
+              data-product={review.productSlug ?? ''}
+              data-verified={review.verifiedPurchase ? '1' : '0'}
+              data-helpful={review.helpfulCount ?? 0}
+              data-has-text={review.content.trim().length > 20 ? '1' : '0'}
+              data-search={reviewSearchBlob(review)}
+            >
+              <ReviewCard review={review} />
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-10 hidden rounded-2xl border border-dashed border-border bg-muted/10 px-6 py-10 text-center text-sm text-muted-foreground" data-review-empty>
+        {t.pages.reviews.emptyFiltered}
+      </p>
+
+      <p
+        class:list={[
+          'mt-10 rounded-2xl border border-border/60 bg-muted/10 px-6 py-10 text-center text-sm text-muted-foreground',
+          reviews.length > 0 && 'hidden',
+        ]}
+        data-review-none-published
+      >
+        {t.pages.reviews.emptyPublished}
+      </p>
+
+      <nav class="reviews-pagination mt-10 hidden" data-review-pagination aria-label="Reviews pagination">
+        <button type="button" class="reviews-pagination__btn" data-review-prev disabled>
+          Previous
+        </button>
+        <span class="reviews-pagination__pages" data-review-page-list />
+        <button type="button" class="reviews-pagination__btn" data-review-next disabled>
+          Next
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<section class="border-t border-border py-12 md:py-16" aria-labelledby="reviews-cta-title">
+  <div class="mx-auto max-w-6xl px-5 text-center">
+    <h2 id="reviews-cta-title" class="font-[family-name:var(--font-heading)] text-2xl font-bold md:text-3xl">
+      {t.pages.reviews.ctaHeading}
+    </h2>
+    <p class="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground">{t.pages.reviews.ctaBody}</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <Button as="a" href={PRODUCT_URL} variant="primary">
+        {t.pages.reviews.ctaProducts}
+      </Button>
+      <Button as="a" href={ROUTES.blog} variant="outline">
+        {t.pages.reviews.ctaBlogs}
+      </Button>
+      <Button as="a" href={FAQ_URL} variant="outline">
+        {t.pages.reviews.ctaFaq}
+      </Button>
+      <Button as="a" href={CHECKOUT_URL} variant="ghost">
+        {t.pages.reviews.ctaCheckout}
+      </Button>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ pageSize }}>
+  const catalog = document.getElementById('reviews-catalog');
+  const items = [...document.querySelectorAll('[data-review-item]')];
+  const grid = document.querySelector('[data-review-grid]');
+  const searchInput = document.querySelector('[data-review-search]');
+  const clearSearchBtn = document.querySelector('[data-review-search-clear]');
+  const sortSelect = document.querySelector('[data-review-sort]');
+  const productPills = [...document.querySelectorAll('[data-review-product]')];
+  const starButtons = [...document.querySelectorAll('[data-star-level]')];
+  const showAllRatingsBtn = document.querySelector('[data-review-show-all-ratings]');
+  const verifiedBtn = document.querySelector('[data-review-verified-only]');
+  const withTextBtn = document.querySelector('[data-review-with-text]');
+  const resetBtn = document.querySelector('[data-review-reset]');
+  const countLine = document.querySelector('[data-review-count]');
+  const emptyFiltered = document.querySelector('[data-review-empty]');
+  const nonePublished = document.querySelector('[data-review-none-published]');
+  const paginationNav = document.querySelector('[data-review-pagination]');
+  const pageList = document.querySelector('[data-review-page-list]');
+  const prevBtn = document.querySelector('[data-review-prev]');
+  const nextBtn = document.querySelector('[data-review-next]');
+
+  let currentPage = 1;
+  let activeProduct = 'all';
+  let minStarRating = 0;
+  let verifiedOnly = false;
+  let withTextOnly = false;
+
+  const urlProduct = new URLSearchParams(window.location.search).get('product');
+  if (urlProduct) {
+    activeProduct = urlProduct;
+    productPills.forEach((pill) => {
+      const slug = pill.getAttribute('data-review-product') ?? 'all';
+      const active = slug === urlProduct;
+      pill.classList.toggle('is-active', active);
+      pill.setAttribute('aria-selected', String(active));
+    });
+  }
+
+  function toggleSearchClear() {
+    if (!searchInput || !clearSearchBtn) return;
+    clearSearchBtn.classList.toggle('hidden', !searchInput.value.trim());
+  }
+
+  function paintStarFilter() {
+    starButtons.forEach((btn) => {
+      const level = Number(btn.getAttribute('data-star-level') ?? 0);
+      const filled = minStarRating > 0 && level <= minStarRating;
+      btn.classList.toggle('is-active', filled);
+      btn.setAttribute('aria-pressed', String(filled));
+    });
+  }
+
+  function paintChip(btn, active) {
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', String(active));
+    btn.classList.toggle('is-active', active);
+  }
+
+  function matchingItems() {
+    const sort = sortSelect?.value ?? 'recent';
+    const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
+
+    const matched = items.filter((item) => {
+      const itemRating = Number(item.dataset.rating ?? 0);
+      const matchesRating = minStarRating === 0 || itemRating >= minStarRating;
+      const matchesProduct = activeProduct === 'all' || (item.dataset.product ?? '') === activeProduct;
+      const matchesVerified = !verifiedOnly || item.dataset.verified === '1';
+      const matchesText = !withTextOnly || item.dataset.hasText === '1';
+      const haystack = item.dataset.search ?? '';
+      const matchesSearch = !query || haystack.includes(query);
+      return matchesRating && matchesProduct && matchesVerified && matchesText && matchesSearch;
+    });
+
+    matched.sort((a, b) => {
+      const tsL = Number(a.dataset.ts ?? 0);
+      const tsR = Number(b.dataset.ts ?? 0);
+      const rL = Number(a.dataset.rating ?? 0);
+      const rR = Number(b.dataset.rating ?? 0);
+      const hL = Number(a.dataset.helpful ?? 0);
+      const hR = Number(b.dataset.helpful ?? 0);
+      if (sort === 'oldest') return tsL - tsR;
+      if (sort === 'highest') return rR - rL || tsR - tsL;
+      if (sort === 'lowest') return rL - rR || tsR - tsL;
+      if (sort === 'helpful') return hR - hL || tsR - tsL;
+      return tsR - tsL;
+    });
+
+    return matched;
+  }
+
+  function renderPageButtons(totalPages) {
+    if (!pageList) return;
+    pageList.replaceChildren();
+    for (let page = 1; page <= totalPages; page++) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'reviews-pagination__page';
+      btn.textContent = String(page);
+      btn.setAttribute('aria-label', `Page ${page}`);
+      if (page === currentPage) {
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-current', 'page');
+      }
+      btn.addEventListener('click', () => {
+        currentPage = page;
+        updateReviews(true);
+      });
+      pageList.append(btn);
+    }
+  }
+
+  function updateReviews(scrollToTop = false) {
+    const matched = matchingItems();
+    const totalPages = Math.max(1, Math.ceil(matched.length / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const start = (currentPage - 1) * pageSize;
+    const pageItems = matched.slice(start, start + pageSize);
+    const visibleSet = new Set(pageItems);
+
+    items.forEach((item) => {
+      const show = visibleSet.has(item);
+      item.hidden = !show;
+      if (show) grid?.append(item);
+    });
+
+    const hasCatalog = items.length > 0;
+    if (countLine) {
+      const noun = matched.length === 1 ? 'review' : 'reviews';
+      countLine.textContent = hasCatalog ? `${matched.length} matching ${noun}` : '0 reviews';
+    }
+
+    nonePublished?.classList.toggle('hidden', hasCatalog);
+    emptyFiltered?.classList.toggle('hidden', !hasCatalog || matched.length > 0);
+
+    if (paginationNav) {
+      const showPager = hasCatalog && matched.length > pageSize;
+      paginationNav.classList.toggle('hidden', !showPager);
+      if (showPager) {
+        renderPageButtons(totalPages);
+        if (prevBtn) prevBtn.disabled = currentPage <= 1;
+        if (nextBtn) nextBtn.disabled = currentPage >= totalPages;
+      }
+    }
+
+    toggleSearchClear();
+
+    if (scrollToTop && catalog) {
+      catalog.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function resetAllFilters() {
+    if (searchInput) searchInput.value = '';
+    if (sortSelect) sortSelect.value = 'recent';
+    activeProduct = 'all';
+    minStarRating = 0;
+    verifiedOnly = false;
+    withTextOnly = false;
+    currentPage = 1;
+    productPills.forEach((pill) => {
+      const isAll = (pill.getAttribute('data-review-product') ?? 'all') === 'all';
+      pill.classList.toggle('is-active', isAll);
+      pill.setAttribute('aria-selected', String(isAll));
+    });
+    paintStarFilter();
+    paintChip(verifiedBtn, false);
+    paintChip(withTextBtn, false);
+    updateReviews();
+  }
+
+  productPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      activeProduct = pill.getAttribute('data-review-product') ?? 'all';
+      productPills.forEach((p) => {
+        const active = p === pill;
+        p.classList.toggle('is-active', active);
+        p.setAttribute('aria-selected', String(active));
+      });
+      currentPage = 1;
+      updateReviews();
+    });
+  });
+
+  starButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const level = Number(btn.getAttribute('data-star-level') ?? 0);
+      minStarRating = minStarRating === level ? 0 : level;
+      paintStarFilter();
+      currentPage = 1;
+      updateReviews();
+    });
+  });
+
+  showAllRatingsBtn?.addEventListener('click', () => {
+    minStarRating = 0;
+    paintStarFilter();
+    currentPage = 1;
+    updateReviews();
+  });
+
+  searchInput?.addEventListener('input', () => {
+    currentPage = 1;
+    updateReviews();
+  });
+
+  clearSearchBtn?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    currentPage = 1;
+    updateReviews();
+    searchInput?.focus();
+  });
+
+  sortSelect?.addEventListener('change', () => {
+    currentPage = 1;
+    updateReviews();
+  });
+
+  verifiedBtn?.addEventListener('click', () => {
+    verifiedOnly = !verifiedOnly;
+    paintChip(verifiedBtn, verifiedOnly);
+    currentPage = 1;
+    updateReviews();
+  });
+
+  withTextBtn?.addEventListener('click', () => {
+    withTextOnly = !withTextOnly;
+    paintChip(withTextBtn, withTextOnly);
+    currentPage = 1;
+    updateReviews();
+  });
+
+  resetBtn?.addEventListener('click', resetAllFilters);
+
+  prevBtn?.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      updateReviews(true);
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const totalPages = Math.ceil(matchingItems().length / pageSize);
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      updateReviews(true);
+    }
+  });
+
+  paintStarFilter();
+  updateReviews();
+</script>

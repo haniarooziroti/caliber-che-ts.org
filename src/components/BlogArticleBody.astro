@@ -1,0 +1,134 @@
+---
+import Icon from './icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import type { BlogBlock } from '../data/blogs/types';
+
+interface Props {
+  body: BlogBlock[];
+}
+
+const { body } = Astro.props;
+
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+---
+
+<div class="prose prose-invert max-w-none blog-article-body">
+  {
+    body.map((block) => {
+      if (block.type === 'p') return <p set:html={block.html} />;
+      if (block.type === 'h2') {
+        const id = slugify(block.text);
+        return (
+          <h2 id={id} class="scroll-mt-28">
+            {block.text}
+          </h2>
+        );
+      }
+      if (block.type === 'h3') {
+        const id = slugify(block.text);
+        return (
+          <h3 id={id} class="scroll-mt-28">
+            {block.text}
+          </h3>
+        );
+      }
+      if (block.type === 'ul') {
+        return (
+          <ul>
+            {block.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        );
+      }
+      if (block.type === 'ol') {
+        return (
+          <ol>
+            {block.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ol>
+        );
+      }
+      if (block.type === 'callout') {
+        return (
+          <aside class="blog-risk-callout not-prose" role="note">
+            {block.title ? <p class="blog-risk-callout__title">{block.title}</p> : null}
+            <p set:html={block.html} />
+          </aside>
+        );
+      }
+      if (block.type === 'table') {
+        return (
+          <div class="not-prose my-8 overflow-x-auto rounded-xl border border-border">
+            <table class="w-full min-w-[32rem] text-left text-sm">
+              <thead class="border-b border-border bg-muted/30">
+                <tr>
+                  {block.headers.map((h) => (
+                    <th class="px-4 py-3 font-semibold">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {block.rows.map((row) => (
+                  <tr class="border-b border-border/60 last:border-0">
+                    {row.map((cell) => (
+                      <td class="px-4 py-3 align-top text-muted-foreground" set:html={cell} />
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+      if (block.type === 'cta') {
+        return (
+          <div class="not-prose my-8 flex flex-col gap-3 sm:flex-row">
+            {block.buttons.map((button) => (
+              <Button as="a" href={button.href} variant={button.variant ?? 'primary'}>
+                {button.label}
+                <Icon name="arrowRight" size={16} />
+              </Button>
+            ))}
+          </div>
+        );
+      }
+      return null;
+    })
+  }
+</div>
+
+<style>
+  .blog-article-body :global(a) {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  .blog-risk-callout {
+    margin: 1.75rem 0;
+    padding: 1rem 1.15rem;
+    border: 1px solid color-mix(in oklch, var(--warning) 45%, var(--border));
+    border-radius: var(--radius);
+    background: color-mix(in oklch, var(--warning) 12%, var(--card));
+  }
+  .blog-risk-callout__title {
+    margin: 0 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--foreground);
+  }
+  .blog-risk-callout p:last-child {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: color-mix(in oklch, var(--foreground) 88%, transparent);
+  }
+</style>

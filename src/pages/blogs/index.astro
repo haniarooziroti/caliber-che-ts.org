@@ -1,0 +1,258 @@
+---
+import '../../styles/blog-pages.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Icon from '../../components/icons/Icon.astro';
+import { Button } from '@/components/starwind/button';
+import {
+  blogArticles,
+  blogCategories,
+  blogSearchBlob,
+  getBlogPostTimestamp,
+  getBlogReadMinutes,
+  toBlogCardPost,
+  type BlogCategory,
+} from '../../data/blogs/index';
+import { resolvePageSeo, canonicalUrl, SITE_ORIGIN } from '../../config/seo';
+import { ROUTES } from '../../utils/path';
+import { breadcrumbSchema } from '../../utils/schema';
+import { t } from '../../i18n';
+
+const seo = resolvePageSeo('/blogs/');
+const breadcrumbs = [
+  { name: t.pages.crumbs.home, path: '/' },
+  { name: t.pages.crumbs.blogs, path: '/blogs/' },
+];
+const posts = [...blogArticles].sort(
+  (a, b) => getBlogPostTimestamp(b.date) - getBlogPostTimestamp(a.date),
+);
+
+function categoryLabel(category: (typeof blogCategories)[number]) {
+  if (category === 'All Blogs') return t.pages.blog.allBlogs;
+  return t.pages.blog.categories[category as BlogCategory] ?? category;
+}
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  ogType="website"
+  jsonLd={[
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: t.pages.blog.schemaName,
+      description: seo.description,
+      url: canonicalUrl('/blogs/'),
+      blogPost: posts.map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.title,
+        url: canonicalUrl(`/blogs/${post.slug}/`),
+        datePublished: post.date,
+        description: post.excerpt,
+        keywords: post.keywords,
+      })),
+      publisher: {
+        '@type': 'Organization',
+        name: 'calibercheat.net',
+        url: SITE_ORIGIN,
+      },
+    },
+    breadcrumbSchema(breadcrumbs),
+  ]}
+>
+  <section class="border-b border-border bg-muted/10 py-8 md:py-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+      <header class="mx-auto mt-6 max-w-3xl text-center">
+        <p class="text-xs font-semibold uppercase tracking-wider text-primary">Caliber Blogs &amp; Guides</p>
+        <h1 id="blogs-title" class="section-header__title mt-3 leading-tight">
+          Explore Caliber Guides, Reviews &amp; Gaming Insights
+        </h1>
+        <p class="section-header__subtitle mt-3">{t.pages.blog.subtitle}</p>
+      </header>
+
+      <div class="mx-auto mt-8 flex w-full max-w-3xl flex-col gap-3 sm:flex-row sm:items-end">
+        <label class="relative min-w-0 flex-1">
+          <span class="sr-only">{t.pages.blog.searchSr}</span>
+          <Icon name="search" size={16} class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            placeholder={t.pages.blog.searchPlaceholder}
+            aria-label={t.pages.blog.searchAria}
+            data-blog-search
+            class="w-full rounded-full border border-border bg-background/60 py-2.5 pl-10 pr-10 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+          />
+          <button
+            type="button"
+            class="absolute right-2 top-1/2 hidden -translate-y-1/2 rounded-full px-2 py-1 text-xs text-muted-foreground hover:text-foreground"
+            data-blog-search-clear
+            aria-label="Clear search"
+          >
+            Clear
+          </button>
+        </label>
+        <label class="flex w-full shrink-0 flex-col gap-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground sm:w-52">
+          {t.pages.blog.sortBy}
+          <select
+            data-blog-sort
+            aria-label={t.pages.blog.sortAria}
+            class="w-full rounded-full border border-border bg-background/60 px-4 py-2.5 text-sm font-medium normal-case tracking-normal text-foreground"
+          >
+            <option value="newest" selected>{t.pages.blog.newest}</option>
+            <option value="oldest">{t.pages.blog.oldest}</option>
+            <option value="az">{t.pages.blog.sortAz}</option>
+            <option value="za">{t.pages.blog.sortZa}</option>
+            <option value="read-short">{t.pages.blog.sortReadShort}</option>
+            <option value="read-long">{t.pages.blog.sortReadLong}</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="mx-auto mt-6 flex max-w-4xl flex-wrap justify-center gap-2" role="group" aria-label={t.pages.blog.filterAria}>
+        {
+          blogCategories.map((category, index) => (
+            <button
+              type="button"
+              class:list={[
+                'rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-foreground',
+                index === 0 && 'is-active border-primary text-foreground',
+              ]}
+              data-blog-filter={category === 'All Blogs' ? 'all' : category}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              {categoryLabel(category)}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16" aria-labelledby="blogs-title">
+    <div class="mx-auto max-w-6xl px-5">
+      <p
+        class="mb-6 text-sm text-muted-foreground"
+        data-blog-count
+        data-article-label={t.pages.blog.article}
+        data-articles-label={t.pages.blog.articles}
+      >
+        {posts.length} {t.pages.blog.articles}
+      </p>
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10" data-blog-grid>
+        {
+          posts.map((post, index) => (
+            <div
+              data-blog-item
+              data-tag={post.tag}
+              data-title={post.title.toLocaleLowerCase()}
+              data-ts={getBlogPostTimestamp(post.date)}
+              data-read-minutes={getBlogReadMinutes(post.readTime)}
+              data-search={blogSearchBlob(post)}
+            >
+              <BlogCard post={toBlogCardPost(post)} index={index} showDate eager={index === 0} readLabel={t.pages.blog.readMore} />
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-10 hidden rounded-xl border border-dashed border-border px-5 py-8 text-center text-sm text-muted-foreground" data-blog-empty>
+        {t.pages.blog.empty}
+      </p>
+    </div>
+  </section>
+
+  <section class="border-t border-border bg-muted/20 py-14 md:py-18" aria-labelledby="blogs-cta-title">
+    <div class="mx-auto max-w-6xl px-5 text-center">
+      <h2 id="blogs-cta-title" class="font-heading text-2xl font-bold md:text-3xl">{t.pages.blog.ctaHeading}</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-base">{t.pages.blog.ctaBody}</p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button as="a" href={ROUTES.products} variant="primary">
+          {t.pages.blog.ctaPrimary}
+          <Icon name="arrowRight" size={17} />
+        </Button>
+        <Button as="a" href={ROUTES.productsStorefront} variant="outline">{t.pages.blog.ctaPricing}</Button>
+        <Button as="a" href={ROUTES.forum} variant="outline">{t.pages.blog.ctaForum}</Button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const items = [...document.querySelectorAll('[data-blog-item]')];
+    const grid = document.querySelector('[data-blog-grid]');
+    const searchInput = document.querySelector<HTMLInputElement>('[data-blog-search]');
+    const clearBtn = document.querySelector<HTMLButtonElement>('[data-blog-search-clear]');
+    const sortSelect = document.querySelector<HTMLSelectElement>('[data-blog-sort]');
+    const filterButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-blog-filter]')];
+    const countLine = document.querySelector('[data-blog-count]');
+    const emptyState = document.querySelector('[data-blog-empty]');
+    const articleLabel = countLine?.getAttribute('data-article-label') ?? 'article';
+    const articlesLabel = countLine?.getAttribute('data-articles-label') ?? 'articles';
+    let activeFilter = 'all';
+
+  function toggleClear() {
+    if (!searchInput || !clearBtn) return;
+    clearBtn.classList.toggle('hidden', !searchInput.value.trim());
+  }
+
+  function updateBlog() {
+    const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
+    const sort = sortSelect?.value ?? 'newest';
+    const matching = items
+      .filter((item) => {
+        const tag = item.dataset.tag ?? '';
+        const matchesFilter = activeFilter === 'all' || tag === activeFilter;
+        const haystack = `${item.dataset.search ?? ''} ${item.dataset.title ?? ''}`.toLocaleLowerCase();
+        return matchesFilter && (!query || haystack.includes(query));
+      })
+      .sort((a, b) => {
+        const left = Number(a.dataset.ts ?? 0);
+        const right = Number(b.dataset.ts ?? 0);
+        const readL = Number(a.dataset.readMinutes ?? 0);
+        const readR = Number(b.dataset.readMinutes ?? 0);
+        const titleL = a.dataset.title ?? '';
+        const titleR = b.dataset.title ?? '';
+        if (sort === 'oldest') return left - right;
+        if (sort === 'az') return titleL.localeCompare(titleR);
+        if (sort === 'za') return titleR.localeCompare(titleL);
+        if (sort === 'read-short') return readL - readR;
+        if (sort === 'read-long') return readR - readL;
+        return right - left;
+      });
+
+    const visible = new Set(matching);
+    items.forEach((item) => {
+      item.hidden = !visible.has(item);
+    });
+    matching.forEach((item) => grid?.append(item));
+
+    if (countLine) {
+      countLine.textContent = `${matching.length} ${matching.length === 1 ? articleLabel : articlesLabel}`;
+    }
+    if (emptyState) emptyState.classList.toggle('hidden', matching.length > 0);
+    toggleClear();
+  }
+
+    searchInput?.addEventListener('input', updateBlog);
+    clearBtn?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      updateBlog();
+      searchInput?.focus();
+    });
+    sortSelect?.addEventListener('change', updateBlog);
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeFilter = button.dataset.blogFilter ?? 'all';
+        filterButtons.forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('is-active', active);
+          item.classList.toggle('border-primary', active);
+          item.classList.toggle('text-foreground', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        updateBlog();
+      });
+    });
+    updateBlog();
+  </script>
+</BaseLayout>

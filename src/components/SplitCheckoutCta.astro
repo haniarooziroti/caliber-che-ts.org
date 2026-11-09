@@ -1,0 +1,24 @@
+---
+import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
+import Icon from './icons/Icon.astro';
+
+interface Props {
+  label: string;
+  ariaLabel?: string;
+  class?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { label, ariaLabel, class: className, size = 'md' } = Astro.props;
+---
+
+<a
+  href={PRIMARY_CHECKOUT_PATH}
+  class:list={['split-checkout-cta', `split-checkout-cta--${size}`, className]}
+  aria-label={ariaLabel ?? label}
+>
+  <span class="split-checkout-cta__label">{label}</span>
+  <span class="split-checkout-cta__icon" aria-hidden="true">
+    <Icon name="arrowRight" size={size === 'lg' ? 20 : 17} />
+  </span>
+</a>

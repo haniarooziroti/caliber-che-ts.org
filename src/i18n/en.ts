@@ -43,7 +43,7 @@ export const en: Translations = {
     status: "Caliber — season build online",
     eyebrow: "Caliber cheats",
     titleLine1: "CALIBER",
-    titleLine2: "CHEATS",
+    titleLine2: "CHEAT",
     subtitle:
       "Caliber gaming tools for PC—player ESP, aimbot, wallhack reads, loot tags, and no recoil presets. Compare cheat features here; official cheat download is portal-only after purchase.",
     ctaPrimary: "Browse cheat modules",

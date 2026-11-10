@@ -1,10 +1,10 @@
 ---
 import { t } from '../i18n';
 import { ROUTES } from '../utils/path';
-import SplitCheckoutCta from './SplitCheckoutCta.astro';
-import { heroSlides } from '../data/products';
+import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
-import ImageSlider from './ImageSlider.astro';
+import HeroVideo from './HeroVideo.astro';
+import { CALIBER_MEDIA } from '../config/media';
 import Icon from './icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
@@ -51,12 +51,25 @@ const heroMarqueePills = [
             {h.ctaPrimary}
             <Icon name="arrowRight" size={18} />
           </Button>
-          <SplitCheckoutCta label={h.ctaBuy} size="lg" class="shrink-0" ariaLabel={h.ctaBuy} />
+          <Button
+            as="a"
+            href={PRIMARY_CHECKOUT_PATH}
+            variant="primary"
+            size="lg"
+            class="shrink-0 rounded-xl text-sm sm:text-base"
+          >
+            {h.ctaBuy}
+            <Icon name="arrowRight" size={18} />
+          </Button>
         </div>
       </div>
 
       <div class="mx-auto flex w-full max-w-xl flex-col items-center gap-5 lg:mx-0 lg:max-w-none lg:items-end">
-        <ImageSlider images={heroSlides} id="hero-slider" variant="hero" desktopOnly />
+        <HeroVideo
+          src="/videos/caliber-hero-snapyt.mp4"
+          poster={CALIBER_MEDIA.a01}
+          title="Caliber squad gameplay preview — press Play to start"
+        />
         <div class="grid w-full grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 lg:grid-cols-2">
           {h.metrics.map((m, i) => (
             <div class="flex min-w-0 items-center gap-3 rounded-xl border border-border/80 bg-card/70 px-3 py-3 shadow-sm shadow-black/10 transition-colors hover:border-primary/40">

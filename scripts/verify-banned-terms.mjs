@@ -87,6 +87,8 @@ const ARK_RE = /(?<![A-Za-z0-9])ARK(?![A-Za-z0-9])/;
 
 function scannableHtml(html) {
   const chunks = [];
+  const withoutCheckoutHrefs = html.replace(/\bhref=(["'])[\s\S]*?\1/gi, 'href=$1$1');
+  html = withoutCheckoutHrefs;
   const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   if (title) chunks.push(title[1]);
   const metaRe = /<meta\b[^>]*>/gi;

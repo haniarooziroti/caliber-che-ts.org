@@ -2,23 +2,419 @@ import type { BlogArticle } from './types';
 
 export const blogArticles: BlogArticle[] = [
   {
-    "slug": "caliber-cheats-buying-guide",
+    "slug": "caliber-cheats-faq",
+    "tag": "Guides",
+    "title": "Caliber Cheats FAQ — Common Questions Answered",
+    "seoTitle": "Caliber Cheats FAQ | Common Questions for PC Players",
+    "description": "Answers about Caliber modules, pricing, compatibility, safety, and support—quick reference with links to guides before you buy or install on PC.",
+    "excerpt": "Short answers linking to deeper guides and product pages.",
+    "keywords": "caliber cheats faq, caliber cheats questions",
+    "intent": "Informational",
+    "date": "2026-10-22",
+    "updated": "2026-11-05",
+    "readTime": "6 min read",
+    "image": "/images/gameplay/a07.webp",
+    "imageAlt": "Caliber cheats frequently asked questions",
+    "h1": "Caliber Cheats FAQ — Common Questions Answered",
+    "relatedSlugs": [
+      "best-caliber-cheats",
+      "caliber-cheats-pricing",
+      "caliber-cheats-safety"
+    ],
+    "faq": [
+      {
+        "q": "Where is official pricing?",
+        "a": "Module pages and the pricing blog summarize plan lengths—confirm live price at checkout."
+      },
+      {
+        "q": "Is there a single all-in-one cheat?",
+        "a": "Features are split across product URLs; the features guide explains how bundles differ."
+      },
+      {
+        "q": "What if a module is down?",
+        "a": "Check product status badges and the updates guide after game patches."
+      },
+      {
+        "q": "How do I contact support?",
+        "a": "Use the support page with your receipt email—avoid sharing passwords in tickets."
+      }
+    ],
+    "body": [
+      {
+        "type": "p",
+        "html": "This <strong>Caliber cheats FAQ</strong> points to longer guides. For account risk, read <a href=\"/blogs/caliber-cheats-safety/\">safety</a>; for modules, see <a href=\"/blogs/caliber-cheats-features/\">features</a>."
+      },
+      {
+        "type": "h2",
+        "text": "Buying"
+      },
+      {
+        "type": "p",
+        "html": "Start with <a href=\"/blogs/best-caliber-cheats/\">buyer guide</a> and <a href=\"/blogs/caliber-cheats-pricing/\">pricing</a>, then open the module that matches your role on <a href=\"/products/caliber/\">products</a>."
+      },
+      {
+        "type": "h2",
+        "text": "Setup"
+      },
+      {
+        "type": "p",
+        "html": "Follow <a href=\"/blogs/caliber-cheats-installation/\">installation guide</a> and <a href=\"/blogs/caliber-gaming-software-compatibility/\">compatibility</a> before enabling overlays in matchmaking."
+      },
+      {
+        "type": "cta",
+        "buttons": [
+          {
+            "label": "Open full FAQ page",
+            "href": "/faq/",
+            "variant": "primary"
+          },
+          {
+            "label": "Explore products",
+            "href": "/products/caliber/",
+            "variant": "outline"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "caliber-cheats-installation",
+    "tag": "Tutorials",
+    "title": "Caliber Cheats Installation — Requirements and Troubleshooting",
+    "seoTitle": "Caliber Cheats Installation | Setup & Troubleshooting",
+    "description": "Caliber installation requirements, loader basics, common Windows errors, and support paths—step-by-step checks before you enable modules in matchmaking.",
+    "excerpt": "Windows requirements, download hygiene, and first-run checks before you queue.",
+    "keywords": "caliber cheats installation, caliber loader setup",
+    "intent": "Informational",
+    "date": "2026-10-18",
+    "updated": "2026-11-04",
+    "readTime": "7 min read",
+    "image": "/images/gameplay/a05.webp",
+    "imageAlt": "Caliber software installation checklist",
+    "h1": "Caliber Cheats Installation — Requirements and Troubleshooting",
+    "relatedSlugs": [
+      "caliber-gaming-software-compatibility",
+      "caliber-cheats-safety",
+      "caliber-updates"
+    ],
+    "faq": [
+      {
+        "q": "What OS is required?",
+        "a": "Modules target 64-bit Windows 10/11—confirm on the product page and compatibility guide."
+      },
+      {
+        "q": "Game wont start after install?",
+        "a": "Revert overlays, verify game files, and contact support with your receipt email—avoid random reinstall loops."
+      }
+    ],
+    "body": [
+      {
+        "type": "p",
+        "html": "Install <strong>Caliber cheats</strong> only from the checkout path tied to your purchase. Follow portal instructions and keep antivirus exclusions minimal—see <a href=\"/blogs/caliber-cheats-safety/\">safety guide</a>."
+      },
+      {
+        "type": "h2",
+        "text": "Pre-install checklist"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Match <a href=\"/blogs/caliber-gaming-software-compatibility/\">compatibility guide</a> specs.",
+          "Update GPU drivers and Windows.",
+          "Close conflicting overlays (other tuners, legacy capture tools).",
+          "Read <a href=\"/faq/\">FAQ</a> for loader-specific steps."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "After patches"
+      },
+      {
+        "type": "p",
+        "html": "When Caliber updates, modules may pause—check <a href=\"/blogs/caliber-updates/\">updates guide</a> and live status on product pages before enabling features."
+      },
+      {
+        "type": "cta",
+        "buttons": [
+          {
+            "label": "Get support",
+            "href": "/support/",
+            "variant": "primary"
+          },
+          {
+            "label": "View products",
+            "href": "/products/caliber/",
+            "variant": "outline"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "caliber-cheats-features",
+    "tag": "Features",
+    "title": "Caliber Cheats Features — What Buyers Should Know",
+    "seoTitle": "Caliber Cheats Features | What Buyers Should Know",
+    "description": "Overview of Caliber cheat modules—ESP, aimbot, wallhack, loot ESP, no recoil, and utilities—and how to pick the right mix.",
+    "excerpt": "Module families on calibercheat.net and how features map to product URLs.",
+    "keywords": "caliber cheats features, caliber esp, caliber aimbot",
+    "intent": "Commercial",
+    "date": "2026-10-15",
+    "updated": "2026-11-03",
+    "readTime": "10 min read",
+    "image": "/images/gameplay/a04.webp",
+    "imageAlt": "Caliber module feature overview",
+    "h1": "Caliber Cheats Features — What Buyers Should Know",
+    "relatedSlugs": [
+      "best-caliber-cheats",
+      "caliber-esp-guide",
+      "caliber-cheats-comparison"
+    ],
+    "faq": [
+      {
+        "q": "Do I need every module?",
+        "a": "Most players buy one combat module plus optional utilities—use comparison and pricing guides before stacking plans."
+      }
+    ],
+    "body": [
+      {
+        "type": "p",
+        "html": "Before checkout, map <strong>Caliber cheats features</strong> to roles: awareness (ESP, wallhack), gunplay (aimbot, no recoil), and extras (loot ESP, stream-proof, utilities)."
+      },
+      {
+        "type": "h2",
+        "text": "Feature families"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Category",
+          "Typical use",
+          "Product path"
+        ],
+        "rows": [
+          [
+            "Player ESP",
+            "Operator awareness",
+            "/products/caliber/player-esp/"
+          ],
+          [
+            "Wallhack",
+            "Through-cover tracking",
+            "/products/caliber/wallhack/"
+          ],
+          [
+            "Aimbot",
+            "Aim assistance",
+            "/products/caliber/aimbot/"
+          ],
+          [
+            "No recoil",
+            "Spray control",
+            "/products/caliber/no-recoil/"
+          ],
+          [
+            "Loot ESP",
+            "Economy clears",
+            "/products/caliber/loot-esp/"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "Deep dives: <a href=\"/blogs/caliber-esp-guide/\">ESP guide</a>, <a href=\"/blogs/caliber-aimbot/\">aimbot guide</a>, and <a href=\"/blogs/caliber-cheats-pricing/\">pricing</a>."
+      },
+      {
+        "type": "cta",
+        "buttons": [
+          {
+            "label": "Explore Caliber products",
+            "href": "/products/caliber/",
+            "variant": "primary"
+          },
+          {
+            "label": "Buyer guide",
+            "href": "/blogs/best-caliber-cheats/",
+            "variant": "outline"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "caliber-aimbot",
+    "tag": "Features",
+    "title": "Caliber Aimbot Guide — Features and Compatibility",
+    "seoTitle": "Caliber Aimbot Guide | What PC Players Should Know",
+    "description": "Caliber aimbot settings explained: FOV, smoothing, visibility checks, and how to match aim modules to your PC setup, role, and product pages before checkout.",
+    "excerpt": "FOV, smoothness, bone selection, and compatibility notes for Caliber aim modules.",
+    "keywords": "caliber aimbot, caliber aim assist",
+    "intent": "Informational + Commercial",
+    "date": "2026-10-12",
+    "updated": "2026-11-02",
+    "readTime": "8 min read",
+    "image": "/images/gameplay/a03.webp",
+    "imageAlt": "Caliber aim module settings concept",
+    "h1": "Caliber Aimbot Guide — Features and Compatibility",
+    "relatedSlugs": [
+      "caliber-cheats-features",
+      "caliber-cheats-safety",
+      "caliber-cheats-installation"
+    ],
+    "faq": [
+      {
+        "q": "What settings matter most?",
+        "a": "FOV, smoothing, target bone, and visibility rules are the usual starting points—confirm each on the aimbot product page."
+      },
+      {
+        "q": "Does aim software replace practice?",
+        "a": "No. Recoil control and positioning still win rounds; software only adjusts input assistance where enabled."
+      }
+    ],
+    "body": [
+      {
+        "type": "p",
+        "html": "A <strong>Caliber aimbot</strong> module should document FOV limits, smoothness, bone priorities, and hotkeys. Use this guide to compare marketing claims against what the <a href=\"/products/caliber/aimbot/\">aimbot product page</a> actually lists."
+      },
+      {
+        "type": "h2",
+        "text": "FOV and smoothing"
+      },
+      {
+        "type": "p",
+        "html": "Tight FOV looks more natural but needs crosshair discipline; wide FOV snaps faster but can feel obvious. Smoothing trades speed for human-like motion—tune in private matches before ranked."
+      },
+      {
+        "type": "h2",
+        "text": "Visibility and safety expectations"
+      },
+      {
+        "type": "p",
+        "html": "Read <a href=\"/blogs/caliber-cheats-safety/\">safety considerations</a> and official Terms of Service. No module can guarantee zero account risk."
+      },
+      {
+        "type": "cta",
+        "buttons": [
+          {
+            "label": "View aimbot module",
+            "href": "/products/caliber/aimbot/",
+            "variant": "primary"
+          },
+          {
+            "label": "Installation help",
+            "href": "/blogs/caliber-cheats-installation/",
+            "variant": "outline"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "caliber-esp-guide",
+    "tag": "Features",
+    "title": "Caliber ESP Guide — Features and Uses Explained",
+    "seoTitle": "Caliber ESP Guide | Features & PC Compatibility",
+    "description": "Learn about Caliber ESP features, wallhack reads, compatibility limits, and buying considerations for PC players—mapped to live Player ESP and wallhack pages.",
+    "excerpt": "Player ESP, wallhack reads, filters, and how ESP modules map to Caliber product pages.",
+    "keywords": "caliber esp, caliber wallhack, caliber player esp",
+    "intent": "Informational + Commercial",
+    "date": "2026-10-08",
+    "updated": "2026-11-01",
+    "readTime": "9 min read",
+    "image": "/images/gameplay/a02.webp",
+    "imageAlt": "Caliber ESP overlay example on PC",
+    "h1": "Caliber ESP Guide — Features and Uses Explained",
+    "relatedSlugs": [
+      "caliber-cheats-features",
+      "best-caliber-cheats",
+      "caliber-cheats-comparison"
+    ],
+    "faq": [
+      {
+        "q": "What does Caliber ESP typically show?",
+        "a": "Product pages list box ESP, health, distance, skeleton, and filter options—verify the exact module before buying."
+      },
+      {
+        "q": "Is wallhack the same as player ESP?",
+        "a": "Wallhack emphasizes through-cover tracking; many bundles combine both—compare labels on each product page."
+      },
+      {
+        "q": "Where do I buy ESP modules?",
+        "a": "Start at the product hub, open Player ESP or Wallhack pages, then match duration on pricing."
+      }
+    ],
+    "body": [
+      {
+        "type": "p",
+        "html": "<strong>Caliber ESP</strong> modules focus on awareness—seeing operators, distances, and health states faster than the default HUD. This guide explains what buyers should verify on product pages, not every possible toggle name."
+      },
+      {
+        "type": "h2",
+        "text": "Core ESP features to compare"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Box or corner ESP with adjustable colors.",
+          "Health and armor-style bars where listed on the module page.",
+          "Distance readouts and team filters.",
+          "Skeleton or bone ESP on supported builds."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "Open <a href=\"/products/caliber/\">the product hub</a> and read <a href=\"/products/caliber/player-esp/\">Player ESP</a> plus <a href=\"/products/caliber/wallhack/\">Wallhack</a> for feature lists that match your squad role."
+      },
+      {
+        "type": "h2",
+        "text": "Wallhack vs. loot ESP"
+      },
+      {
+        "type": "p",
+        "html": "Wallhack emphasizes tracking through cover; loot ESP highlights items in the world. If you only need callouts, wallhack may be enough—see <a href=\"/blogs/caliber-cheats-comparison/\">module comparison</a> and <a href=\"/blogs/caliber-cheats-features/\">features overview</a>."
+      },
+      {
+        "type": "h2",
+        "text": "Performance and readability"
+      },
+      {
+        "type": "p",
+        "html": "Dense ESP can clutter 1080p screens. Pair module tuning with <a href=\"/blogs/caliber-fps-boost/\">FPS optimization</a> so overlays stay smooth in firefights."
+      },
+      {
+        "type": "cta",
+        "buttons": [
+          {
+            "label": "Explore Player ESP",
+            "href": "/products/caliber/player-esp/",
+            "variant": "primary"
+          },
+          {
+            "label": "Compare features",
+            "href": "/blogs/caliber-cheats-features/",
+            "variant": "outline"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "best-caliber-cheats",
     "tag": "Buying Guides",
-    "title": "Caliber Gaming Software: Complete Buyer's Guide",
-    "seoTitle": "Caliber Gaming Software Buyer Guide | calibercheat.net",
-    "description": "Caliber gaming software buying guide for PC: compatibility, features, pricing, customer support, and safety questions before checkout.",
+    "title": "Best Caliber Cheats for PC — Complete Buyer's Guide",
+    "seoTitle": "Best Caliber Cheats for PC | Features & Buying Guide",
+    "description": "Explore Caliber cheats for PC, compare modules, pricing and compatibility, and find the information you need before choosing.",
     "excerpt": "What to verify before buying Caliber gaming software—modules, PC fit, pricing, and support.",
-    "keywords": "Caliber gaming software, Caliber software, Caliber gaming tools, Caliber PC software",
+    "keywords": "best caliber cheats, caliber cheats for pc, buy caliber cheats",
     "intent": "Commercial + Transactional",
     "date": "2026-09-12",
     "updated": "2026-10-02",
     "readTime": "11 min read",
     "image": "/images/gameplay/a06.webp",
     "imageAlt": "Caliber PC overlay used in a gaming software buyer guide",
-    "h1": "Caliber Gaming Software: Complete Buyer's Guide",
+    "h1": "Best Caliber Cheats for PC — Complete Buyer's Guide",
     "relatedSlugs": [
       "caliber-cheats-pricing",
-      "caliber-free-vs-paid",
       "caliber-cheats-safety"
     ],
     "faq": [
@@ -54,7 +450,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Use <a href=\"/blogs/caliber-pc-requirements/\">the PC requirements guide</a> against EA's published specs, then <a href=\"/blogs/caliber-pc-optimization/\">run through PC optimization</a> so overlays do not fight low FPS. You want headroom before ranked, not a slideshow."
+        "html": "Use <a href=\"/blogs/caliber-gaming-software-compatibility/\">the PC requirements guide</a> against EA's published specs, then <a href=\"/blogs/caliber-fps-boost/\">run through PC optimization</a> so overlays do not fight low FPS. You want headroom before ranked, not a slideshow."
       },
       {
         "type": "h2",
@@ -70,7 +466,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Compare utilities on the <a href=\"/products/caliber/utilities/\">utilities page</a> and read <a href=\"/blogs/best-caliber-cheats-pc/\">best Caliber gaming tools</a> for how categories differ."
+        "html": "Compare utilities on the <a href=\"/products/caliber/utilities/\">utilities page</a> and read <a href=\"/blogs/best-caliber-cheats/\">best Caliber gaming tools</a> for how categories differ."
       },
       {
         "type": "h2",
@@ -111,102 +507,6 @@ export const blogArticles: BlogArticle[] = [
     ]
   },
   {
-    "slug": "best-caliber-cheats-pc",
-    "tag": "Reviews",
-    "title": "Best Caliber Gaming Tools for PC Players",
-    "seoTitle": "Best Caliber Gaming Tools for PC | calibercheat.net",
-    "description": "Review of Caliber PC gaming tools: overlays, performance utilities, capture, training apps, and how to compare features before buying.",
-    "excerpt": "Categories of Caliber gaming tools on PC—and how to compare them without hype.",
-    "keywords": "Best Caliber gaming tools, Caliber PC tools, Caliber gaming software, Caliber PC utilities",
-    "intent": "Commercial",
-    "date": "2026-08-28",
-    "updated": "2026-09-15",
-    "readTime": "10 min read",
-    "image": "/images/gameplay/a01.webp",
-    "imageAlt": "Caliber ESP and loot tags representing PC gaming tools",
-    "h1": "Best Caliber Gaming Tools for PC Players",
-    "relatedSlugs": [
-      "caliber-cheats-comparison",
-      "caliber-cheats-buying-guide",
-      "caliber-aim-training-tips"
-    ],
-    "faq": [
-      {
-        "q": "What counts as a gaming tool for Caliber?",
-        "a": "Overlays, performance tuners, capture software, and aim trainers—each solves a different problem."
-      },
-      {
-        "q": "Should I stack every tool at once?",
-        "a": "Add one category at a time so you know which change helped FPS or readability."
-      },
-      {
-        "q": "Where are module tools listed?",
-        "a": "The Caliber product catalog on calibercheat.net groups combat, vision, and utility modules."
-      }
-    ],
-    "body": [
-      {
-        "type": "p",
-        "html": "\"Best Caliber gaming tools\" searches mix three worlds: in-game overlays, honest PC tuning, and practice software. This article sorts categories so you can decide what belongs on your machine before you spend money."
-      },
-      {
-        "type": "h2",
-        "text": "In-game overlay modules"
-      },
-      {
-        "type": "p",
-        "html": "Combat and vision modules—<a href=\"/products/caliber/aimbot/\">aimbot</a>, <a href=\"/products/caliber/player-esp/\">player ESP</a>, <a href=\"/products/caliber/wallhack/\">wallhack</a>, <a href=\"/products/caliber/loot-esp/\">loot ESP</a>—are the core catalog on <a href=\"/products/caliber/\">calibercheat.net</a>. Read each page for feature lists, not forum rumors."
-      },
-      {
-        "type": "h2",
-        "text": "Performance utilities"
-      },
-      {
-        "type": "p",
-        "html": "<a href=\"/blogs/caliber-pc-optimization/\">PC optimization</a> and <a href=\"/blogs/caliber-fps-guide/\">FPS troubleshooting</a> belong in every stack because overlays need spare frame time. Driver updates and Windows Game Mode tweaks cost nothing."
-      },
-      {
-        "type": "h2",
-        "text": "Recording and streaming"
-      },
-      {
-        "type": "p",
-        "html": "OBS, GPU encoders, and the <a href=\"/products/caliber/stream-proof/\">stream-proof module</a> matter if you create content. Always record a local clip before going live—capture methods change after Caliber or OBS updates."
-      },
-      {
-        "type": "h2",
-        "text": "Training tools"
-      },
-      {
-        "type": "p",
-        "html": "<a href=\"/blogs/caliber-aim-training-tips/\">Aim trainers for Caliber</a> covers KovaaK's, Aim Lab, and routine ideas that transfer to Caliber gunplay without replacing ranked experience."
-      },
-      {
-        "type": "h2",
-        "text": "How to compare vendors"
-      },
-      {
-        "type": "p",
-        "html": "Use <a href=\"/blogs/caliber-cheats-comparison/\">our tools comparison</a> for a feature matrix mindset, then <a href=\"/blogs/caliber-free-vs-paid/\">free vs paid</a> for support expectations."
-      },
-      {
-        "type": "cta",
-        "buttons": [
-          {
-            "label": "Open product catalog",
-            "href": "/products/caliber/",
-            "variant": "primary"
-          },
-          {
-            "label": "Read buyer guide",
-            "href": "/blogs/caliber-cheats-buying-guide/",
-            "variant": "outline"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "slug": "caliber-cheats-pricing",
     "tag": "Buying Guides",
     "title": "Caliber Software Pricing: What Should You Look For?",
@@ -222,8 +522,7 @@ export const blogArticles: BlogArticle[] = [
     "imageAlt": "Caliber combat scene illustrating software pricing decisions",
     "h1": "Caliber Software Pricing: What Should You Look For?",
     "relatedSlugs": [
-      "caliber-cheats-buying-guide",
-      "caliber-free-vs-paid",
+      "best-caliber-cheats",
       "caliber-cheats-comparison"
     ],
     "faq": [
@@ -263,7 +562,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Portal login, documented install steps, and a ticket path beat mystery Discord links. Compare that to <a href=\"/blogs/caliber-free-vs-paid/\">free vs paid tools</a> where updates may stop without notice."
+        "html": "Portal login, documented install steps, and a ticket path beat mystery Discord links. Compare that to <a href=\"/blogs/caliber-cheats-pricing/\">free vs paid tools</a> where updates may stop without notice."
       },
       {
         "type": "h2",
@@ -279,7 +578,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Pair this with <a href=\"/blogs/caliber-cheats-buying-guide/\">the buyer guide</a> and skim <a href=\"/terms/\">terms</a> plus <a href=\"/faq/\">FAQ</a> for refund wording."
+        "html": "Pair this with <a href=\"/blogs/best-caliber-cheats/\">the buyer guide</a> and skim <a href=\"/terms/\">terms</a> plus <a href=\"/faq/\">FAQ</a> for refund wording."
       },
       {
         "type": "cta",
@@ -299,212 +598,22 @@ export const blogArticles: BlogArticle[] = [
     ]
   },
   {
-    "slug": "caliber-free-vs-paid",
-    "tag": "Comparisons",
-    "title": "Free vs Paid Caliber Gaming Tools",
-    "seoTitle": "Free vs Paid Caliber Tools Compared | calibercheat.net",
-    "description": "Compare free and paid Caliber gaming tools: features, updates, support, privacy, and when a paid catalog makes sense on PC.",
-    "excerpt": "Free downloads vs paid Caliber utilities—features, maintenance, and risk tradeoffs.",
-    "keywords": "Free vs paid Caliber tools, free Caliber tools, paid Caliber software, Caliber software comparison",
-    "intent": "Commercial Investigation",
-    "date": "2026-07-22",
-    "updated": "2026-08-20",
-    "readTime": "10 min read",
-    "image": "/images/gameplay/a04.webp",
-    "imageAlt": "Caliber canyon fight comparing free versus paid tooling approaches",
-    "h1": "Free vs Paid Caliber Gaming Tools",
-    "relatedSlugs": [
-      "caliber-cheats-pricing",
-      "caliber-cheats-safety",
-      "caliber-cheats-comparison"
-    ],
-    "faq": [
-      {
-        "q": "Are free Caliber tools ever enough?",
-        "a": "Sometimes for aim training or OBS—but overlays with support rarely stay free and maintained."
-      },
-      {
-        "q": "What is the biggest free-tool risk?",
-        "a": "Unknown installers, expired builds after patches, and zero refund path when something breaks."
-      },
-      {
-        "q": "How do paid catalogs help?",
-        "a": "Documented checkout, module pages, and support routes—you know who to contact after updates."
-      }
-    ],
-    "body": [
-      {
-        "type": "p",
-        "html": "The <strong>free vs paid Caliber tools</strong> debate is really about maintenance and accountability. Free repos and random forums might work once, then break on the next season with no one answering tickets."
-      },
-      {
-        "type": "h2",
-        "text": "Feature depth"
-      },
-      {
-        "type": "p",
-        "html": "Paid module pages on <a href=\"/products/caliber/\">calibercheat.net</a> list ESP, aim, and utility features plainly. Free packs often hide half the menu behind broken offsets after patches."
-      },
-      {
-        "type": "h2",
-        "text": "Support and updates"
-      },
-      {
-        "type": "p",
-        "html": "After a patch, paid customers expect status banners and reinstall notes—see <a href=\"/blogs/caliber-updates-compatibility/\">season updates for PC players</a>. Free users usually self-debug alone."
-      },
-      {
-        "type": "h2",
-        "text": "Privacy and installers"
-      },
-      {
-        "type": "p",
-        "html": "<a href=\"/blogs/caliber-cheats-safety/\">Software safety</a> applies to every download. Free files are not automatically malicious, but they skip the receipt trail a store checkout creates."
-      },
-      {
-        "type": "h2",
-        "text": "Choosing a path"
-      },
-      {
-        "type": "p",
-        "html": "Use free trainers and OBS where they shine. Buy catalog modules when you need documented support—start with <a href=\"/blogs/caliber-cheats-buying-guide/\">the buyer guide</a>."
-      },
-      {
-        "type": "cta",
-        "buttons": [
-          {
-            "label": "Compare paid modules",
-            "href": "/products/caliber/",
-            "variant": "primary"
-          },
-          {
-            "label": "Pricing guide",
-            "href": "/blogs/caliber-cheats-pricing/",
-            "variant": "outline"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "caliber-pc-optimization",
+    "slug": "caliber-fps-boost",
     "tag": "Gaming Performance",
-    "title": "Caliber PC Optimization Guide",
-    "seoTitle": "Caliber PC Optimization Guide | calibercheat.net",
-    "description": "Optimize Caliber on PC: graphics settings, Windows tuning, GPU drivers, background apps, network stability, and monitoring tools.",
-    "excerpt": "Practical Caliber PC optimization before you add overlays or utilities.",
-    "keywords": "Caliber PC optimization, Caliber FPS optimization, Caliber PC performance, Caliber lag reduction",
-    "intent": "Informational + Commercial",
-    "date": "2026-07-08",
-    "updated": "2026-08-01",
-    "readTime": "12 min read",
-    "image": "/images/gameplay/a05.webp",
-    "imageAlt": "High-ground Caliber view for PC optimization guide",
-    "h1": "Caliber PC Optimization Guide",
-    "relatedSlugs": [
-      "caliber-fps-guide",
-      "caliber-pc-requirements",
-      "best-caliber-cheats-pc"
-    ],
-    "faq": [
-      {
-        "q": "Should I optimize before buying software?",
-        "a": "Yes—stable FPS makes overlays readable and reduces stutter during fights."
-      },
-      {
-        "q": "Does optimization fix bad internet?",
-        "a": "Partially. Use wired Ethernet, pick sensible data center, and close upload-heavy apps."
-      },
-      {
-        "q": "Which settings matter most?",
-        "a": "Texture budget, model detail, and v-sync or frame cap choices usually move FPS the most."
-      }
-    ],
-    "body": [
-      {
-        "type": "p",
-        "html": "<strong>Caliber PC optimization</strong> is the layer every player controls without spending money. Clean Windows habits and in-game settings buy you FPS before you stack utilities from the <a href=\"/products/caliber/\">product catalog</a>."
-      },
-      {
-        "type": "h2",
-        "text": "In-game graphics"
-      },
-      {
-        "type": "ul",
-        "items": [
-          "Lower texture and model detail until GPU usage stays below constant pegging.",
-          "Disable pointless motion blur; cap FPS slightly below monitor refresh if tearing bothers you.",
-          "Test firing range after each change—pubs lie about performance."
-        ]
-      },
-      {
-        "type": "h2",
-        "text": "Windows and drivers"
-      },
-      {
-        "type": "p",
-        "html": "Install current GPU drivers from AMD/NVIDIA directly—not random \"optimizer\" bundles. Pair with <a href=\"/blogs/caliber-fps-guide/\">the FPS guide</a> for bottleneck clues."
-      },
-      {
-        "type": "h2",
-        "text": "Background load"
-      },
-      {
-        "type": "p",
-        "html": "Close browsers, sync clients, and VPNs you do not need. Overlays from <a href=\"/products/caliber/player-esp/\">player ESP</a> still cost GPU time—give them headroom."
-      },
-      {
-        "type": "h2",
-        "text": "Network stability"
-      },
-      {
-        "type": "p",
-        "html": "Packet loss shows up as stutter that looks like FPS drops. Use wired connections when possible and note server selection in game."
-      },
-      {
-        "type": "h2",
-        "text": "Utilities worth knowing"
-      },
-      {
-        "type": "p",
-        "html": "After baselines, explore legitimate tools in <a href=\"/blogs/best-caliber-cheats-pc/\">gaming tools roundup</a>—avoid anything promising impossible network fixes."
-      },
-      {
-        "type": "cta",
-        "buttons": [
-          {
-            "label": "PC requirements check",
-            "href": "/blogs/caliber-pc-requirements/",
-            "variant": "primary"
-          },
-          {
-            "label": "FPS guide",
-            "href": "/blogs/caliber-fps-guide/",
-            "variant": "outline"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "caliber-fps-guide",
-    "tag": "Guides",
-    "title": "Caliber FPS Guide: Improve Your PC Performance",
-    "seoTitle": "Caliber FPS Guide for PC Players | calibercheat.net",
-    "description": "Caliber FPS guide: understand frame time, graphics settings, display config, GPU/CPU bottlenecks, and common fixes for low FPS.",
+    "title": "Caliber FPS Guide — Improve PC Gaming Performance",
+    "seoTitle": "Caliber FPS Guide | Improve PC Gaming Performance",
+    "description": "Practical Caliber FPS tips: GPU drivers, in-game settings, Windows tweaks, and overlay overhead so squad fights stay smooth on mid-range and high-end PCs.",
     "excerpt": "Raise and stabilize Caliber FPS with settings and hardware habits that actually matter.",
-    "keywords": "Caliber FPS guide, increase Caliber FPS, Caliber low FPS fix, Caliber performance guide",
+    "keywords": "caliber fps boost, caliber pc optimization, caliber gaming performance",
     "intent": "Informational",
     "date": "2026-06-18",
     "updated": "2026-07-25",
     "readTime": "11 min read",
     "image": "/images/gameplay/a03.webp",
     "imageAlt": "Caliber aimdown sight view for FPS performance guide",
-    "h1": "Caliber FPS Guide: Improve Your PC Performance",
+    "h1": "Caliber FPS Guide — Improve PC Gaming Performance",
     "relatedSlugs": [
-      "caliber-pc-optimization",
-      "caliber-pc-requirements",
-      "caliber-beginners-guide"
+      "caliber-gaming-software-compatibility"
     ],
     "faq": [
       {
@@ -531,7 +640,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Use in-game FPS counter or vendor overlays. Note range vs endgame drops—compare with <a href=\"/blogs/caliber-pc-optimization/\">PC optimization steps</a>."
+        "html": "Use in-game FPS counter or vendor overlays. Note range vs endgame drops—compare with <a href=\"/blogs/caliber-fps-boost/\">PC optimization steps</a>."
       },
       {
         "type": "h2",
@@ -558,14 +667,14 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Fullscreen optimizations toggles, outdated drivers, and thermal throttling cause \"random\" lag. Verify specs via <a href=\"/blogs/caliber-pc-requirements/\">requirements guide</a>."
+        "html": "Fullscreen optimizations toggles, outdated drivers, and thermal throttling cause \"random\" lag. Verify specs via <a href=\"/blogs/caliber-gaming-software-compatibility/\">requirements guide</a>."
       },
       {
         "type": "cta",
         "buttons": [
           {
             "label": "Optimization guide",
-            "href": "/blogs/caliber-pc-optimization/",
+            "href": "/blogs/caliber-fps-boost/",
             "variant": "primary"
           },
           {
@@ -593,9 +702,8 @@ export const blogArticles: BlogArticle[] = [
     "imageAlt": "X-ray style Caliber overlay illustrating software safety topics",
     "h1": "Is Caliber Gaming Software Safe? What Buyers Should Know",
     "relatedSlugs": [
-      "caliber-free-vs-paid",
-      "caliber-cheats-buying-guide",
-      "caliber-updates-compatibility"
+      "best-caliber-cheats",
+      "caliber-updates"
     ],
     "faq": [
       {
@@ -630,7 +738,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "callout",
-        "html": "If a \"free\" repack asks for admin on a suspicious URL, stop. Compare with <a href=\"/blogs/caliber-free-vs-paid/\">free vs paid</a> risk notes."
+        "html": "If a \"free\" repack asks for admin on a suspicious URL, stop. Compare with <a href=\"/blogs/caliber-cheats-pricing/\">free vs paid</a> risk notes."
       },
       {
         "type": "h2",
@@ -653,7 +761,7 @@ export const blogArticles: BlogArticle[] = [
         "buttons": [
           {
             "label": "Buyer guide",
-            "href": "/blogs/caliber-cheats-buying-guide/",
+            "href": "/blogs/best-caliber-cheats/",
             "variant": "primary"
           },
           {
@@ -666,24 +774,23 @@ export const blogArticles: BlogArticle[] = [
     ]
   },
   {
-    "slug": "caliber-updates-compatibility",
+    "slug": "caliber-updates",
     "tag": "Updates",
-    "title": "Caliber Season Updates: What PC Players Should Know",
-    "seoTitle": "Caliber Season Updates for PC Players | calibercheat.net",
-    "description": "How PC players should handle Caliber season updates: official patch notes, compatibility checks, drivers, and keeping utilities current (Nov 2026).",
+    "title": "Caliber Updates — Software Compatibility and Changes",
+    "seoTitle": "Caliber Updates | Software Compatibility & Changes",
+    "description": "How Caliber game patches affect module compatibility, what to verify after updates, and where to check live product status before you re-enable overlays.",
     "excerpt": "Season update habits for PC—patch notes, drivers, and software status checks.",
-    "keywords": "Caliber season updates, Caliber latest update, Caliber patch notes, Caliber PC updates",
+    "keywords": "caliber updates, caliber software compatibility",
     "intent": "Informational",
     "date": "2026-05-20",
     "updated": "2026-11-01",
     "readTime": "9 min read",
     "image": "/images/gameplay/a09.webp",
     "imageAlt": "Scoped Caliber ESP view for season update readiness guide",
-    "h1": "Caliber Season Updates: What PC Players Should Know",
+    "h1": "Caliber Updates — Software Compatibility and Changes",
     "relatedSlugs": [
       "caliber-cheats-safety",
-      "caliber-pc-optimization",
-      "caliber-cheats-buying-guide"
+      "best-caliber-cheats"
     ],
     "faq": [
       {
@@ -718,7 +825,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Update GPU drivers after major patches, verify game files in the client, and rerun <a href=\"/blogs/caliber-fps-guide/\">FPS checks</a> if stutter appears."
+        "html": "Update GPU drivers after major patches, verify game files in the client, and rerun <a href=\"/blogs/caliber-fps-boost/\">FPS checks</a> if stutter appears."
       },
       {
         "type": "h2",
@@ -734,7 +841,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Warm up in firing range, re-test <a href=\"/blogs/caliber-pc-optimization/\">optimization presets</a>, and read forums for peer notes—not as gospel, but as signal."
+        "html": "Warm up in firing range, re-test <a href=\"/blogs/caliber-fps-boost/\">optimization presets</a>, and read forums for peer notes—not as gospel, but as signal."
       },
       {
         "type": "cta",
@@ -769,9 +876,7 @@ export const blogArticles: BlogArticle[] = [
     "imageAlt": "Caliber wallhack skeleton overlay for tools comparison article",
     "h1": "Caliber Gaming Tools Compared: Features, Performance and Value",
     "relatedSlugs": [
-      "best-caliber-cheats-pc",
-      "caliber-cheats-pricing",
-      "caliber-free-vs-paid"
+      "caliber-cheats-pricing"
     ],
     "faq": [
       {
@@ -790,7 +895,7 @@ export const blogArticles: BlogArticle[] = [
     "body": [
       {
         "type": "p",
-        "html": "An <strong>Caliber gaming tools comparison</strong> should score how tools behave on your PC—not marketing adjectives. Use the table below as a checklist when reading module pages and <a href=\"/blogs/best-caliber-cheats-pc/\">tool categories</a>."
+        "html": "An <strong>Caliber gaming tools comparison</strong> should score how tools behave on your PC—not marketing adjectives. Use the table below as a checklist when reading module pages and <a href=\"/blogs/best-caliber-cheats/\">tool categories</a>."
       },
       {
         "type": "h2",
@@ -812,7 +917,7 @@ export const blogArticles: BlogArticle[] = [
           [
             "Compatibility",
             "Windows 10/11, current Caliber build",
-            "/blogs/caliber-pc-requirements/"
+            "/blogs/caliber-gaming-software-compatibility/"
           ],
           [
             "Ease of use",
@@ -822,7 +927,7 @@ export const blogArticles: BlogArticle[] = [
           [
             "Performance",
             "FPS headroom after optimization",
-            "/blogs/caliber-fps-guide/"
+            "/blogs/caliber-fps-boost/"
           ],
           [
             "Pricing",
@@ -842,7 +947,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Dense ESP costs GPU time—tune in <a href=\"/blogs/caliber-pc-optimization/\">optimization guide</a> first. Streamers should cross-read <a href=\"/blogs/caliber-cheats-safety/\">safety</a> and stream-proof module docs."
+        "html": "Dense ESP costs GPU time—tune in <a href=\"/blogs/caliber-fps-boost/\">optimization guide</a> first. Streamers should cross-read <a href=\"/blogs/caliber-cheats-safety/\">safety</a> and stream-proof module docs."
       },
       {
         "type": "h2",
@@ -850,7 +955,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Value is support plus fit, not longest feature list. <a href=\"/blogs/caliber-free-vs-paid/\">Free vs paid</a> explains when catalogs beat random downloads."
+        "html": "Value is support plus fit, not longest feature list. <a href=\"/blogs/caliber-cheats-pricing/\">Free vs paid</a> explains when catalogs beat random downloads."
       },
       {
         "type": "cta",
@@ -862,7 +967,7 @@ export const blogArticles: BlogArticle[] = [
           },
           {
             "label": "Buyer guide",
-            "href": "/blogs/caliber-cheats-buying-guide/",
+            "href": "/blogs/best-caliber-cheats/",
             "variant": "outline"
           }
         ]
@@ -870,240 +975,23 @@ export const blogArticles: BlogArticle[] = [
     ]
   },
   {
-    "slug": "caliber-aim-training-tips",
-    "tag": "Reviews",
-    "title": "Best Aim Trainers for Caliber Players",
-    "seoTitle": "Best Aim Trainers for Caliber | calibercheat.net",
-    "description": "Review aim trainers for Caliber: KovaaK's, Aim Lab, practice routines, tracking improvement, and when training beats buying overlays.",
-    "excerpt": "Legit aim trainers and routines that translate to Caliber gunplay on PC—Kovaaks, Aim Lab, and sample drills.",
-    "keywords": "Best Caliber aim trainers, Caliber aim training, aim trainers for PC, Caliber aim improvement",
-    "intent": "Commercial + Transactional",
-    "date": "2026-04-18",
-    "updated": "2026-05-30",
-    "readTime": "11 min read",
-    "image": "/images/gameplay/a08.webp",
-    "imageAlt": "Caliber mid-range engagement for aim trainer guide",
-    "h1": "Best Aim Trainers for Caliber Players",
-    "relatedSlugs": [
-      "caliber-beginners-guide",
-      "caliber-fps-guide",
-      "best-caliber-cheats-pc"
-    ],
-    "faq": [
-      {
-        "q": "Do aim trainers replace ranked?",
-        "a": "No—they warm up tracking and flick consistency—you still need game sense from pubs."
-      },
-      {
-        "q": "Which trainers are popular on PC?",
-        "a": "KovaaK's and Aim Lab are common; 3D Aim Trainer is another option with official sites."
-      },
-      {
-        "q": "How long should sessions last?",
-        "a": "15–25 focused minutes beat hour-long autopilot grinding."
-      }
-    ],
-    "body": [
-      {
-        "type": "p",
-        "html": "<strong>Best Caliber aim trainers</strong> searches should end in a routine you actually run—not a wishlist. Training software complements—not replaces—modules you might explore on <a href=\"/products/caliber/aimbot/\">aimbot</a> pages."
-      },
-      {
-        "type": "h2",
-        "text": "Why aim training matters"
-      },
-      {
-        "type": "p",
-        "html": "Caliber mix strafe, recoil, and projectile speeds. Drills build mouse control before you stress them in chaos fights—pair with <a href=\"/blogs/caliber-beginners-guide/\">beginner fundamentals</a>."
-      },
-      {
-        "type": "h2",
-        "text": "KovaaK's"
-      },
-      {
-        "type": "p",
-        "html": "KovaaK's offers scenario packs for tracking and clicks—download only from the <a href=\"https://www.kovaaak.com/\" rel=\"noopener noreferrer\">official KovaaK site</a>."
-      },
-      {
-        "type": "h2",
-        "text": "Aim Lab"
-      },
-      {
-        "type": "p",
-        "html": "Aim Lab (Steam) provides structured tasks with stats over time—useful for logging improvement between seasons."
-      },
-      {
-        "type": "h2",
-        "text": "3D Aim Trainer"
-      },
-      {
-        "type": "p",
-        "html": "3D Aim Trainer runs in browser for quick sessions—visit the official publisher site rather than clones."
-      },
-      {
-        "type": "h2",
-        "text": "Sample routine"
-      },
-      {
-        "type": "ol",
-        "items": [
-          "5 minutes smooth tracking at medium sensitivity.",
-          "5 minutes flick scenarios on stationary targets.",
-          "10 minutes Caliber firing range transfers—swap legends weekly."
-        ]
-      },
-      {
-        "type": "cta",
-        "buttons": [
-          {
-            "label": "Aimbot module info",
-            "href": "/products/caliber/aimbot/",
-            "variant": "primary"
-          },
-          {
-            "label": "FPS guide",
-            "href": "/blogs/caliber-fps-guide/",
-            "variant": "outline"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "caliber-beginners-guide",
-    "tag": "Tutorials",
-    "title": "Caliber Beginner's Guide: Everything New Players Should Know",
-    "seoTitle": "Caliber Beginner Guide for PC | calibercheat.net",
-    "description": "Caliber beginner guide: legends, weapons, movement, map awareness, teamwork, mistakes to avoid, and practice paths for new PC players.",
-    "excerpt": "Foundational Caliber tips for new PC players—before advanced tools.",
-    "keywords": "Caliber beginner guide, Caliber tips, Caliber beginner tips, Caliber gameplay guide",
-    "intent": "Informational",
-    "date": "2026-04-02",
-    "updated": "2026-05-18",
-    "readTime": "13 min read",
-    "image": "/images/gameplay/a10.webp",
-    "imageAlt": "Rooftop Caliber ESP view for beginner guide",
-    "h1": "Caliber Beginner's Guide: Everything New Players Should Know",
-    "relatedSlugs": [
-      "caliber-aim-training-tips",
-      "caliber-pc-requirements",
-      "caliber-fps-guide"
-    ],
-    "faq": [
-      {
-        "q": "Which legend should beginners learn first?",
-        "a": "Pick one with simple kits—Pathfinder, Bloodhound, or Bangalore teach fundamentals without exotic cooldowns."
-      },
-      {
-        "q": "Should new players buy software day one?",
-        "a": "Learn recoil and positioning first—read buyer guides when you understand what modules do."
-      },
-      {
-        "q": "How do I improve fastest?",
-        "a": "Mix aim drills, review deaths, and comms—avoid blaming teammates only."
-      }
-    ],
-    "body": [
-      {
-        "type": "p",
-        "html": "This <strong>Caliber beginner guide</strong> is for PC players learning movement, team play, and economy before advanced overlays. More depth lives in our <a href=\"/blogs/\">blogs index</a>."
-      },
-      {
-        "type": "h2",
-        "text": "Core gameplay loop"
-      },
-      {
-        "type": "p",
-        "html": "Drop, loot, rotate early, fight with advantage. Third parties end more squads than aim—map audio matters."
-      },
-      {
-        "type": "h2",
-        "text": "Legends and abilities"
-      },
-      {
-        "type": "p",
-        "html": "Master one legend's kit before collecting cosmetics for ten others. Abilities win fights when synced with teammates."
-      },
-      {
-        "type": "h2",
-        "text": "Weapons and attachments"
-      },
-      {
-        "type": "p",
-        "html": "Learn one AR and one SMG recoil pattern. Attachments change handling—test in range after every loot."
-      },
-      {
-        "type": "h2",
-        "text": "Movement"
-      },
-      {
-        "type": "p",
-        "html": "Slide timing and mantle paths beat raw aim in early ranks. <a href=\"/blogs/caliber-aim-training-tips/\">Aim trainers</a> help once basics feel natural."
-      },
-      {
-        "type": "h2",
-        "text": "Map awareness"
-      },
-      {
-        "type": "p",
-        "html": "Ring location dictates fights—rotate before you are forced through open ground."
-      },
-      {
-        "type": "h2",
-        "text": "Common mistakes"
-      },
-      {
-        "type": "ul",
-        "items": [
-          "Chasing knocks across open fields.",
-          "Ignoring armor swaps mid fight.",
-          "Queuing ranked without warm-up."
-        ]
-      },
-      {
-        "type": "h2",
-        "text": "Next steps"
-      },
-      {
-        "type": "p",
-        "html": "Tune PC via <a href=\"/blogs/caliber-pc-requirements/\">requirements</a> and <a href=\"/blogs/caliber-fps-guide/\">FPS guide</a>. When ready to compare modules, read <a href=\"/blogs/caliber-cheats-buying-guide/\">buyer guide</a>."
-      },
-      {
-        "type": "cta",
-        "buttons": [
-          {
-            "label": "More guides",
-            "href": "/blogs/",
-            "variant": "primary"
-          },
-          {
-            "label": "Product hub",
-            "href": "/products/caliber/",
-            "variant": "outline"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "caliber-pc-requirements",
+    "slug": "caliber-gaming-software-compatibility",
     "tag": "Guides",
-    "title": "Caliber PC Requirements and Compatibility Guide",
-    "seoTitle": "Caliber PC Requirements Guide | calibercheat.net",
-    "description": "Caliber PC requirements: how to check CPU, GPU, RAM, storage, and Windows against official EA specs before buying software.",
+    "title": "Caliber Gaming Software Compatibility Guide",
+    "seoTitle": "Caliber Software Compatibility | PC Requirements Guide",
+    "description": "PC requirements, supported Windows builds, GPU headroom, and how Caliber ESP, aimbot, and utility modules fit your hardware before secure checkout.",
     "excerpt": "Minimum vs recommended specs—and how to verify your PC before Caliber modules.",
-    "keywords": "Caliber PC requirements, Caliber minimum requirements, Caliber recommended specs, Caliber PC compatibility",
+    "keywords": "caliber gaming software compatibility, caliber pc requirements",
     "intent": "Commercial Investigation",
     "date": "2026-03-15",
     "updated": "2026-04-28",
     "readTime": "10 min read",
     "image": "/images/gameplay/a01.webp",
     "imageAlt": "Wide Caliber POI ESP for PC requirements guide",
-    "h1": "Caliber PC Requirements and Compatibility Guide",
+    "h1": "Caliber Gaming Software Compatibility Guide",
     "relatedSlugs": [
-      "caliber-pc-optimization",
-      "caliber-fps-guide",
-      "caliber-cheats-buying-guide"
+      "caliber-fps-boost",
+      "best-caliber-cheats"
     ],
     "faq": [
       {
@@ -1142,7 +1030,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Caliber likes modern quad-core CPUs and discrete GPUs. Integrated graphics may run on low settings only—plan <a href=\"/blogs/caliber-fps-guide/\">FPS fixes</a> accordingly."
+        "html": "Caliber likes modern quad-core CPUs and discrete GPUs. Integrated graphics may run on low settings only—plan <a href=\"/blogs/caliber-fps-boost/\">FPS fixes</a> accordingly."
       },
       {
         "type": "h2",
@@ -1158,14 +1046,14 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "type": "p",
-        "html": "Modules need spare GPU budget—after meeting base specs, read <a href=\"/blogs/caliber-cheats-buying-guide/\">buyer guide</a> and <a href=\"/products/caliber/utilities/\">utilities</a> for add-ons like Cloud DMA that need extra hardware."
+        "html": "Modules need spare GPU budget—after meeting base specs, read <a href=\"/blogs/best-caliber-cheats/\">buyer guide</a> and <a href=\"/products/caliber/utilities/\">utilities</a> for add-ons like Cloud DMA that need extra hardware."
       },
       {
         "type": "cta",
         "buttons": [
           {
             "label": "Optimize PC",
-            "href": "/blogs/caliber-pc-optimization/",
+            "href": "/blogs/caliber-fps-boost/",
             "variant": "primary"
           },
           {

@@ -25,33 +25,33 @@ export interface MediaSlide {
 export const HERO_CAROUSEL_SLIDES: MediaSlide[] = [
   {
     src: CALIBER_MEDIA.a01,
-    alt: 'Caliber player ESP and loot tags across an industrial POI',
+    alt: 'Caliber tactical squad lineup on PC — hero preview',
+    caption: 'Caliber on PC',
+    captionDesc: 'Squad-based PvP before you tune modules.',
+  },
+  {
+    src: CALIBER_MEDIA.a04,
+    alt: 'Caliber overlay screenshot with ESP boxes in urban combat',
     caption: 'Player ESP',
-    captionDesc: 'Boxes, health, and loot context during a drop.',
-  },
-  {
-    src: CALIBER_MEDIA.a02,
-    alt: 'Caliber wallhack skeleton outlines through building cover',
-    caption: 'Wallhack read',
-    captionDesc: 'Silhouettes with name and range tags.',
-  },
-  {
-    src: CALIBER_MEDIA.a03,
-    alt: 'Caliber aimbot assist with ESP boxes during ADS combat',
-    caption: 'Aimbot tuning',
-    captionDesc: 'Lock and FOV during a mid-range fight.',
-  },
-  {
-    src: CALIBER_MEDIA.a09,
-    alt: 'Caliber ESP with scope view and enemy highlights',
-    caption: 'Scoped ESP',
-    captionDesc: 'Enemy highlights while aiming down sights.',
+    captionDesc: 'Operator tags and distance reads in a firefight.',
   },
   {
     src: CALIBER_MEDIA.a05,
-    alt: 'Caliber wallhack overlooking a valley with enemy boxes',
-    caption: 'Long-range wallhack',
-    captionDesc: 'High-ground intel before a push.',
+    alt: 'Caliber aimbot and ESP screenshot during a scoped engagement',
+    caption: 'Aim assistance',
+    captionDesc: 'Scope view with highlight boxes on targets.',
+  },
+  {
+    src: CALIBER_MEDIA.a02,
+    alt: 'Caliber cheat menu and ESP settings on PC',
+    caption: 'Module menu',
+    captionDesc: 'Tuning panels for ESP and aim features.',
+  },
+  {
+    src: CALIBER_MEDIA.a07,
+    alt: 'Caliber wallhack and player ESP in a night map',
+    caption: 'Wallhack intel',
+    captionDesc: 'Through-cover operator silhouettes before a push.',
   },
 ];
 

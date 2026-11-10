@@ -9,7 +9,7 @@ export const AFFILIATE_DISCLOSURE_LONG =
 
 export function isAffiliateHref(href: string | undefined): boolean {
   if (!href) return false;
-  return href.includes('/go/');
+  return href.includes('/go/') || href.includes('HANIA?to=');
 }
 
 export function affiliateRel(_href: string | undefined): string | undefined {

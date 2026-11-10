@@ -1,7 +1,7 @@
 ---
 import { t } from '../i18n';
 import { Button } from '@/components/starwind/button';
-import SplitCheckoutCta from './SplitCheckoutCta.astro';
+import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import AnimatedThemeSwitch from './AnimatedThemeSwitch.astro';
 import {
   Sheet,
@@ -15,7 +15,7 @@ import type { IconName } from './icons/types';
 
 const navIcons: Record<string, IconName> = {
   Products: 'navProducts',
-  Blogs: 'layers',
+  Guides: 'layers',
   Reviews: 'messageCircle',
   Forums: 'messageCircle',
   FAQ: 'navFaq',
@@ -49,12 +49,17 @@ const navIcons: Record<string, IconName> = {
     </nav>
 
     <div class="flex items-center gap-2">
-      <SplitCheckoutCta
-        label={t.ui.navTryNow}
-        ariaLabel={t.ui.navTryNowAria}
-        size="md"
-        class="hidden shrink-0 lg:inline-flex"
-      />
+      <Button
+        as="a"
+        href={PRIMARY_CHECKOUT_PATH}
+        variant="primary"
+        size="sm"
+        class="hidden shrink-0 rounded-xl lg:inline-flex"
+        aria-label={t.ui.navTryNowAria}
+      >
+        {t.ui.navTryNow}
+        <Icon name="arrowRight" size={16} />
+      </Button>
       <div class="hidden items-center sm:flex">
         <AnimatedThemeSwitch size="md" ariaLabel={t.ui.themeLight} class="inline-flex" />
       </div>
@@ -85,12 +90,17 @@ const navIcons: Record<string, IconName> = {
                 {link.label}
               </a>
             ))}
-            <SplitCheckoutCta
-              label={t.ui.navTryNow}
-              ariaLabel={t.ui.navTryNowAria}
-              size="md"
-              class="split-checkout-cta--block mt-1 w-full"
-            />
+            <Button
+              as="a"
+              href={PRIMARY_CHECKOUT_PATH}
+              variant="primary"
+              size="lg"
+              class="mt-1 w-full rounded-xl"
+              aria-label={t.ui.navTryNowAria}
+            >
+              {t.ui.navTryNow}
+              <Icon name="arrowRight" size={18} />
+            </Button>
           </nav>
           <div class="flex justify-center pt-1">
             <AnimatedThemeSwitch size="sm" ariaLabel={t.ui.themeLight} />

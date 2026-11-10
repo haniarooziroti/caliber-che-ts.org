@@ -5,15 +5,16 @@ import { blogArticles } from './articles';
 export type { BlogArticle, BlogBlock, BlogCategory, BlogFaqItem } from './types';
 export { BLOG_LINKS, blogAnchor, blogHref } from './links';
 
-export const blogCategories: Array<'All Blogs' | BlogCategory> = [
-  'All Blogs',
+export const blogCategories: Array<'All Guides' | BlogCategory> = [
+  'All Guides',
+  'Buying Guides',
+  'Features',
   'Guides',
-  'Reviews',
   'Comparisons',
+  'Tutorials',
   'Gaming Performance',
   'Updates',
-  'Buying Guides',
-  'Tutorials',
+  'Reviews',
 ];
 
 export { blogArticles };

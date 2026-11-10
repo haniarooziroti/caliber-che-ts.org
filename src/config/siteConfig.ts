@@ -14,7 +14,7 @@ export const PRICE_WEEKLY = 15;
 export const PRICE_MONTHLY = 30;
 export const PRICE_LIFETIME = 120;
 
-export const OG_DEFAULT_IMAGE = '/images/gameplay/a06.webp';
+export const OG_DEFAULT_IMAGE = '/og-image-v2.png';
 
 export function breakEvenMonths(): number {
   return Math.ceil(PRICE_LIFETIME / PRICE_MONTHLY);

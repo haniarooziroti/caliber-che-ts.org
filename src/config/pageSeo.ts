@@ -63,10 +63,10 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: 'Caliber gaming software, Caliber cheat setup guide, stream proof caliber',
   },
   '/products/caliber/cloud-dma/': {
-    title: 'Cloud DMA for Caliber | External Memory Read Setup',
+    title: 'Caliber Cloud DMA | Single-PC Hyper-V Checkouts',
     description:
-      'Cloud DMA specs and checkout for two-PC external memory setups with Caliber modules. Confirm firmware, cabling, and seller support before you buy.',
-    keywords: 'Cloud DMA, Caliber hardware, external read caliber',
+      'Cloud DMA for Caliber on one Windows PC: Hyper-V layer, no second tower, and merchant checkout for plans. Confirm your Windows edition before you buy.',
+    keywords: 'Cloud DMA, Caliber hardware, single PC Hyper-V',
   },
   '/products/caliber/hwid-spoofer/': {
     title: 'HWID Spoofer for Caliber | PC Identity Reset Workflow',
@@ -81,10 +81,10 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     keywords: 'Caliber utilities, Cloud DMA, HWID spoofer',
   },
   '/blogs/': {
-    title: 'Caliber Blogs & PC Buying Guides | calibercheat.net',
+    title: 'Caliber Cheats Guides | Features, Setup & Updates',
     description:
-      'Caliber blogs: buyer guides, FPS tuning, software safety, season updates, aim trainers, and tool comparisons for Windows PC players.',
-    keywords: 'Caliber blogs, Caliber guides, Caliber PC optimization',
+      'Caliber cheats guides: buyer checklists, ESP and aimbot explainers, pricing, safety, FPS tips, compatibility, and patch notes for PC players.',
+    keywords: 'caliber cheats guides, caliber esp guide, caliber aimbot guide',
   },
   '/forum/': {
     title: 'Caliber Forums | Aimbot, ESP & Setup',

@@ -1,3 +1,9 @@
+export declare const CHECKOUT_LINKS: {
+  readonly caliberNovaxware: string;
+  readonly cloudDMA: string;
+  readonly hwidSpoofer: string;
+};
+
 export declare const CHECKOUT_URLS: {
   readonly caliber: string;
   readonly 'cloud-dma': string;

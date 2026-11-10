@@ -50,8 +50,10 @@ const shareText = `${product.title} — Caliber cheat product on calibercheat.ne
       <ProductDetailHeader product={product} />
     </div>
 
-    <div class="product-detail-hero__grid mt-10 grid items-start gap-8">
-      <ProductScreenshotGallery images={product.images} id={`gallery-${product.slug}`} />
+    <div class="product-detail-hero__grid mt-8 md:mt-10">
+      <div class="product-detail-hero__media min-w-0">
+        <ProductScreenshotGallery images={product.images} id={`gallery-${product.slug}`} />
+      </div>
       <ProductCheckoutPanel product={product} />
     </div>
   </div>

@@ -1,0 +1,134 @@
+---
+interface Props {
+  src: string;
+  poster: string;
+  title?: string;
+}
+
+const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
+---
+
+<div
+  class="hero-video relative w-full overflow-hidden rounded-xl border border-border bg-card shadow-sm shadow-black/10"
+  data-hero-video
+>
+  <video
+    class="hero-video__media aspect-video w-full bg-black object-cover"
+    data-hero-video-el
+    playsinline
+    preload="metadata"
+    poster={poster}
+    aria-label={title}
+  >
+    <source src={src} type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div
+    class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-3 pb-3 pt-10 sm:px-4"
+    aria-hidden="true"
+  />
+
+  <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-center gap-2 p-3 sm:gap-3 sm:p-4">
+    <button
+      type="button"
+      class="hero-video__btn"
+      data-hero-video-back
+      aria-label="Rewind 10 seconds"
+    >
+      −10s
+    </button>
+    <button
+      type="button"
+      class="hero-video__btn hero-video__btn--primary"
+      data-hero-video-toggle
+      aria-label="Play video"
+      data-state="paused"
+    >
+      <span data-hero-video-label-play>Play</span>
+      <span class="hidden" data-hero-video-label-pause>Pause</span>
+    </button>
+    <button
+      type="button"
+      class="hero-video__btn"
+      data-hero-video-forward
+      aria-label="Forward 10 seconds"
+    >
+      +10s
+    </button>
+  </div>
+</div>
+
+<style>
+  .hero-video__btn {
+    pointer-events: auto;
+    min-width: 3.25rem;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in oklch, var(--foreground) 22%, transparent);
+    background: color-mix(in oklch, var(--background) 55%, transparent);
+    padding: 0.45rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--foreground);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .hero-video__btn:hover {
+    border-color: color-mix(in oklch, var(--primary) 55%, transparent);
+    background: color-mix(in oklch, var(--primary) 18%, var(--background));
+  }
+
+  .hero-video__btn--primary {
+    min-width: 5.5rem;
+    border-color: color-mix(in oklch, var(--primary) 50%, transparent);
+    background: color-mix(in oklch, var(--primary) 28%, var(--background));
+  }
+</style>
+
+<script>
+  const wrap = document.querySelector('[data-hero-video]');
+  const video = wrap?.querySelector('[data-hero-video-el]');
+  const toggle = wrap?.querySelector('[data-hero-video-toggle]');
+  const back = wrap?.querySelector('[data-hero-video-back]');
+  const forward = wrap?.querySelector('[data-hero-video-forward]');
+  const labelPlay = wrap?.querySelector('[data-hero-video-label-play]');
+  const labelPause = wrap?.querySelector('[data-hero-video-label-pause]');
+
+  function setPausedUi(paused: boolean) {
+    if (!toggle || !labelPlay || !labelPause) return;
+    toggle.dataset.state = paused ? 'paused' : 'playing';
+    toggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+    labelPlay.classList.toggle('hidden', !paused);
+    labelPause.classList.toggle('hidden', paused);
+  }
+
+  function seekBy(delta: number) {
+    if (!video) return;
+    const next = Math.min(Math.max(0, video.currentTime + delta), video.duration || Infinity);
+    video.currentTime = next;
+  }
+
+  toggle?.addEventListener('click', async () => {
+    if (!video) return;
+    if (video.paused) {
+      try {
+        await video.play();
+        setPausedUi(false);
+      } catch {
+        setPausedUi(true);
+      }
+    } else {
+      video.pause();
+      setPausedUi(true);
+    }
+  });
+
+  back?.addEventListener('click', () => seekBy(-10));
+  forward?.addEventListener('click', () => seekBy(10));
+
+  video?.addEventListener('ended', () => setPausedUi(true));
+  video?.addEventListener('pause', () => setPausedUi(true));
+  video?.addEventListener('play', () => setPausedUi(false));
+</script>

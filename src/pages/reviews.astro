@@ -31,6 +31,23 @@ const webPageLd = {
     name: 'calibercheat.net',
     url: SITE_ORIGIN,
   },
+  ...(displayStats.total > 0 && displayStats.average != null
+    ? {
+        mainEntity: {
+          '@type': 'Product',
+          name: 'Caliber Cheats',
+          description: 'Caliber PC modules: aimbot, ESP, wallhack, and related utilities.',
+          url: canonicalUrl('/products/caliber/'),
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: Number(displayStats.average.toFixed(1)),
+            reviewCount: displayStats.total,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        },
+      }
+    : {}),
 };
 
 const reviewListLd =

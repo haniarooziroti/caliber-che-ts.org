@@ -5,7 +5,8 @@ export type BlogCategory =
   | 'Gaming Performance'
   | 'Updates'
   | 'Buying Guides'
-  | 'Tutorials';
+  | 'Tutorials'
+  | 'Features';
 
 export type BlogBlock =
   | { type: 'p'; html: string }

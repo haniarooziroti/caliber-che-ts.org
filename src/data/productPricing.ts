@@ -41,7 +41,39 @@ const ugcPlans: ProductPlan[] = [
   },
 ];
 
+const cloudDmaPlans: ProductPlan[] = [
+  {
+    id: 'lifetime',
+    label: 'Lifetime',
+    priceUsd: 50,
+    priceNote: 'USD · unlimited access',
+    priceValidUntil: '2027-12-31',
+    availabilityUrl: 'https://schema.org/InStock',
+  },
+];
+
+const hwidSpooferPlans: ProductPlan[] = [
+  {
+    id: 'monthly',
+    label: 'Monthly',
+    priceUsd: 50,
+    priceNote: 'USD / 31 days',
+    priceValidUntil: '2027-12-31',
+    availabilityUrl: 'https://schema.org/InStock',
+  },
+  {
+    id: 'lifetime',
+    label: 'Lifetime',
+    priceUsd: 150,
+    priceNote: 'USD · unlimited access',
+    priceValidUntil: '2027-12-31',
+    availabilityUrl: 'https://schema.org/InStock',
+  },
+];
+
 export function getProductPlans(productSlug: string): ProductPlan[] {
+  if (productSlug === 'cloud-dma') return cloudDmaPlans;
+  if (productSlug === 'hwid-spoofer') return hwidSpooferPlans;
   if (productSlug === 'ugc') return ugcPlans;
   return standardPlans;
 }

@@ -33,13 +33,24 @@
 /go/caliber/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/store https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/store/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
-/go/cloud-dma https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
-/go/cloud-dma/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
-/go/hwid-spoofer https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
-/go/hwid-spoofer/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+/go/cloud-dma https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcloud-dma 302
+/go/cloud-dma/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcloud-dma 302
+/go/hwid-spoofer https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fhwid-spoofer 302
+/go/hwid-spoofer/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fhwid-spoofer 302
 /go/apex https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/apex/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/rust https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/rust/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/cs2 https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
 /go/cs2/ https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware 302
+
+# Blog slug migrations
+/blogs/caliber-cheats-buying-guide/ /blogs/best-caliber-cheats/ 301
+/blogs/best-caliber-cheats-pc/ /blogs/best-caliber-cheats/ 301
+/blogs/caliber-free-vs-paid/ /blogs/caliber-cheats-pricing/ 301
+/blogs/caliber-pc-optimization/ /blogs/caliber-fps-boost/ 301
+/blogs/caliber-fps-guide/ /blogs/caliber-fps-boost/ 301
+/blogs/caliber-updates-compatibility/ /blogs/caliber-updates/ 301
+/blogs/caliber-pc-requirements/ /blogs/caliber-gaming-software-compatibility/ 301
+/blogs/caliber-aim-training-tips/ /blogs/caliber-aimbot/ 301
+/blogs/caliber-beginners-guide/ /blogs/caliber-cheats-installation/ 301

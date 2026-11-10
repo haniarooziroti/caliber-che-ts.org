@@ -3,11 +3,10 @@ import { t } from '../i18n';
 import { DISCORD_URL } from '../config/site';
 import { Separator } from '@/components/starwind/separator';
 import { ROUTES } from '../utils/path';
-import AffiliateDisclosure from './AffiliateDisclosure.astro';
 
 const resourceLinks: { href: string; label: string; ariaLabel: string; external?: boolean }[] = [
   { href: ROUTES.reviews, label: 'Player reviews', ariaLabel: 'Caliber cheat reviews' },
-  { href: ROUTES.blogs, label: 'Blogs & guides', ariaLabel: 'Caliber blogs' },
+  { href: ROUTES.blogs, label: 'Guides', ariaLabel: 'Caliber guides' },
   { href: ROUTES.forum, label: 'Forum thread index', ariaLabel: 'Caliber cheat forums' },
   { href: ROUTES.productsStorefront, label: 'Caliber cheat modules page', ariaLabel: 'Caliber cheat modules' },
   { href: ROUTES.products, label: 'Product hub', ariaLabel: 'Products' },
@@ -87,8 +86,7 @@ const legalLinks = [
     </div>
 
     <Separator class="my-8" />
-    <AffiliateDisclosure class="text-left text-xs leading-relaxed text-muted-foreground" />
-    <p class="mt-4 text-left text-sm text-muted-foreground">
+    <p class="text-left text-sm text-muted-foreground">
       &copy; {new Date().getFullYear()} {t.site.name} · {t.site.domain}
     </p>
   </div>

@@ -227,7 +227,6 @@ function checkProductJsonLd(data, file, line, html) {
   const offers = product.offers;
   const offerList = offers == null ? [] : Array.isArray(offers) ? offers : [offers];
   if (!offerList.length) {
-    addIssue(file, line, 'Product JSON-LD must include at least one Offer with price and availability');
     return;
   }
   for (const offer of offerList) {

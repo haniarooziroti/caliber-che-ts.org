@@ -165,7 +165,7 @@ export function productSchema(input: {
   name: string;
   description: string;
   url: string;
-  /** Product detail page path for Offer.url (canonical product URL). Checkout CTAs stay on /go/ in the UI. */
+  /** Optional. Omit when the visible page does not show a verified price. */
   offerPagePath?: string;
   image?: string;
   sku?: string;

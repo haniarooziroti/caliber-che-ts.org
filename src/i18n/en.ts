@@ -23,6 +23,10 @@ export const en: Translations = {
       label: "Reviews"
     },
     {
+      href: "/blogs/",
+      label: "Guides"
+    },
+    {
       href: "/forum/",
       label: "Forums"
     },
@@ -384,8 +388,8 @@ export const en: Translations = {
         badge: "Hardware",
         category: "Hardware",
         title: "Caliber Cloud DMA",
-        subtitle: "External memory read path",
-        desc: "Cloud DMA checkout when your stack uses a second PC and supported DMA hardware instead of loader-only modules.",
+        subtitle: "Single-PC Hyper-V layer",
+        desc: "Cloud DMA checkout for a Hyper-V layer on one Windows PC. Plans and the final total are shown on the merchant checkout.",
         features: [
           "Two-PC workflow",
           "Firmware notes",
@@ -399,8 +403,8 @@ export const en: Translations = {
         badge: "Identity",
         category: "Utility",
         title: "Caliber HWID Spoofer",
-        subtitle: "Reset PC fingerprint",
-        desc: "HWID spoofer for buyers who need a different hardware fingerprint before a new Caliber account.",
+        subtitle: "Hardware fingerprint reset",
+        desc: "HWID spoofer for a different hardware fingerprint. Plans and the final total are shown on the merchant checkout.",
         features: [
           "HWID reset flow",
           "Disk & NIC options",
@@ -686,7 +690,7 @@ export const en: Translations = {
       {
         href: "/forum/",
         label: "Caliber cheats guides",
-        ariaLabel: "Blogs"
+        ariaLabel: "Guides"
       },
       {
         href: "/reviews/",
@@ -866,7 +870,7 @@ export const en: Translations = {
     },
     crumbs: {
       home: "Home",
-      blogs: "Blogs",
+      blogs: "Guides",
       forums: "Forums",
       reviews: "Reviews",
       products: "Products",
@@ -877,16 +881,16 @@ export const en: Translations = {
       support: "Support"
     },
     blog: {
-      schemaName: "Caliber Blogs",
-      h1Line1: "Blogs:",
-      h1Line2: "Guides, Reviews & Insights",
+      schemaName: "Caliber Cheats Guides",
+      h1Line1: "Caliber Cheats Guides —",
+      h1Line2: "Features, Setup & Updates",
       subtitle:
-        "Explore Caliber guides, gaming performance tips, software comparisons, season updates, buying guides, and reviews—then compare modules on the product hub.",
-      searchSr: "Search Caliber cheats blog",
-      searchPlaceholder: "Search guides, reviews, FPS, pricing…",
-      searchAria: "Search Caliber cheats blog",
+        "Original Caliber guides on ESP, aimbot, pricing, safety, PC performance, and patch compatibility—with links to the live product hub.",
+      searchSr: "Search Caliber guides and articles",
+      searchPlaceholder: "Search Caliber guides, features, and articles…",
+      searchAria: "Search Caliber guides",
       sortBy: "Sort by",
-      sortAria: "Sort blog articles",
+      sortAria: "Sort guides",
       newest: "Latest articles",
       oldest: "Oldest articles",
       sortAz: "Alphabetical A–Z",
@@ -894,13 +898,13 @@ export const en: Translations = {
       sortReadShort: "Shortest reading time",
       sortReadLong: "Longest reading time",
       filterAria: "Filter articles by category",
-      allBlogs: "All Blogs",
+      allBlogs: "All Guides",
       articles: "articles",
       article: "article",
       articlesCount: "{n} articles",
       empty: "No articles match your search.",
       related: "Related articles",
-      ctaHeading: "Blogs: Caliber cheats",
+      ctaHeading: "Guides: Caliber cheats",
       ctaBody: "Compare Caliber aimbot, player ESP, wallhack, loot ESP, and no recoil—then pick 1 week, 1 month, or lifetime on the product page.",
       ctaPrimary: "View Caliber cheats products",
       ctaPricing: "See pricing",
@@ -1026,7 +1030,7 @@ export const en: Translations = {
       ctaBody:
         "Read module pages, blogs, and FAQs—then open checkout when a plan matches your PC and play style.",
       ctaProducts: "Browse products",
-      ctaBlogs: "Read blogs",
+      ctaBlogs: "Read guides",
       ctaFaq: "FAQ",
       ctaCheckout: "Checkout"
     },
@@ -1050,7 +1054,7 @@ export const en: Translations = {
       compatibility: "Compatibility",
       systemRequirements: "System requirements",
       systemRequirementsDesc: "Confirm your rig and Steam setup before checkout or loader install.",
-      relatedGuidesEyebrow: "Blogs",
+      relatedGuidesEyebrow: "Guides",
       relatedGuidesTitle: "Guides about {name}",
       relatedGuidesDesc: "Setup tips, ESP tuning, and buy guides that match this module.",
       browseAllBlogs: "All Caliber guides",

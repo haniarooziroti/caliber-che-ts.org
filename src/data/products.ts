@@ -194,7 +194,7 @@ const galleryRaw = {
   },
   gpWallLoot: {
     src: `${gameplay}/a08.webp`,
-    alt: 'Caliber wallhack with loot ESP highlighting bins and enemy legends',
+    alt: 'Caliber wallhack with loot ESP highlighting bins and enemy players',
     caption: 'Wallhack + loot',
     captionDesc: 'Through-wall enemies plus loot and supply bin tags.',
   },
@@ -206,7 +206,7 @@ const galleryRaw = {
   },
   gpRecoilAds: {
     src: `${gameplay}/a07.webp`,
-    alt: 'Caliber no recoil ADS spray on an R-301 with enemy ESP highlight',
+    alt: 'Caliber no recoil ADS spray on an assault rifle with enemy ESP highlight',
     caption: 'No recoil ADS',
     captionDesc: 'Controlled spray while tracking a highlighted target.',
   },

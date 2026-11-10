@@ -809,7 +809,7 @@ export const blogArticles: BlogArticle[] = [
     "body": [
       {
         "type": "p",
-        "html": "<strong>Caliber season updates</strong> shuffle legends, weapons, and files on disk. PC players should read official patch notes first—this article does not list fictional balance changes. Information last reviewed <strong>November 2026</strong>."
+        "html": "<strong>Caliber season updates</strong> shuffle operators, weapons, and files on disk. PC players should read official patch notes first—this article does not list fictional balance changes. Information last reviewed <strong>November 2026</strong>."
       },
       {
         "type": "h2",

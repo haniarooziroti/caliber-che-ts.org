@@ -149,7 +149,7 @@ export const en: Translations = {
       {
         title: "No Recoil",
         subtitle: "Keep sprays on target.",
-        desc: "No recoil helps control R-301, Flatline, and other sprays without maxing strength on day one.",
+        desc: "No recoil helps control assault rifles and LMG sprays without maxing strength on day one.",
         bullets: [
           "Per-weapon strength",
           "Pairs with aimbot FOV",

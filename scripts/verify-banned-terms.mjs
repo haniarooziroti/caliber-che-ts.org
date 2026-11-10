@@ -62,6 +62,7 @@ const SOURCE_EXCLUDE_FILES = new Set(
     'scripts/rust-rebrand.mjs',
     'scripts/verify-banned-terms.mjs',
     'scripts/caliber-rebrand.mjs',
+    'scripts/check-leftovers.mjs',
   ].map((p) => p.replace(/\\/g, '/')),
 );
 

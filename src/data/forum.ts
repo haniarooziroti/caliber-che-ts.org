@@ -165,10 +165,10 @@ export const forumPosts: ForumPost[] = [
     ],
     comments: [
       {
-        author: 'pinkoctane',
+        author: 'pinklane',
         age: '3 days ago',
         score: 12,
-        body: 'esp always. aimbot bind only. loot esp off after first zone for me, too noisy',
+        body: 'esp always. aimbot bind only. loot esp off after the first push for me, too noisy',
       },
       {
         author: 'brassed',
@@ -243,7 +243,7 @@ export const forumPosts: ForumPost[] = [
     category: 'Settings',
     categoryTone: 'purple',
     title: 'No recoil settings that don’t feel blatant',
-    excerpt: 'Flatline and R-301 mainly. What strength are you running?',
+    excerpt: 'Assault rifles and LMGs mainly. What strength are you running?',
     author: 'spraylab',
     age: '2 hours ago',
     upvotes: 63,
@@ -256,7 +256,7 @@ export const forumPosts: ForumPost[] = [
         author: 'cara_main',
         age: '1 day ago',
         score: 10,
-        body: 'i keep it like 40-50% on 301. flatline a bit higher. max looks dumb on killcam',
+        body: 'i keep it like 40-50% on my main AR. lmg a bit higher. max looks dumb on replay',
       },
       {
         author: 'benchwarm',

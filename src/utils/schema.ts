@@ -25,11 +25,11 @@ export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'calibercheat.net',
+    name: 'robruncheat.org',
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Caliber cheats for PC: ESP, aimbot, wallhack, blogs, reviews, forums, and module guides on calibercheat.net.',
+      'Robrun cheats for PC: ESP, aimbot, wallhack, blogs, reviews, forums, and module guides on robruncheat.org.',
   };
 }
 
@@ -41,7 +41,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'calibercheat.net',
+    name: 'robruncheat.org',
     url: `${SITE_ORIGIN}/`,
     logo: {
       '@type': 'ImageObject',
@@ -72,7 +72,7 @@ export function collectionPageSchema(input: { name: string; description: string;
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'calibercheat.net',
+      name: 'robruncheat.org',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -88,7 +88,7 @@ export function webPageSchema(input: { name: string; description: string; url: s
     inLanguage: 'en-US',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'calibercheat.net',
+      name: 'robruncheat.org',
       url: `${SITE_ORIGIN}/`,
     },
   };
@@ -191,7 +191,7 @@ export function productSchema(input: {
     sku: input.sku ?? input.url.replace(/\//g, '-'),
     brand: {
       '@type': 'Brand',
-      name: 'calibercheat.net',
+      name: 'robruncheat.org',
     },
     ...(input.image ? { image: absoluteAssetUrl(input.image) } : {}),
     ...(offers ? { offers } : {}),
@@ -238,11 +238,11 @@ export function articleSchema(input: {
     inLanguage: 'en-US',
     author: {
       '@type': 'Organization',
-      name: 'calibercheat.net',
+      name: 'robruncheat.org',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'calibercheat.net',
+      name: 'robruncheat.org',
       logo: {
         '@type': 'ImageObject',
         url: `${SITE_ORIGIN}/favicon-v2-512.png`,

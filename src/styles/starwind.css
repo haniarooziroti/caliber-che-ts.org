@@ -117,23 +117,28 @@
 }
 
 .dark {
-  /* Caliber site palette */
-  --background: #0d0a14;
-  --foreground: oklch(0.96 0.01 280);
-  --card: #0f0c18;
-  --card-foreground: oklch(0.96 0.01 280);
-  --popover: #0f0c19;
-  --popover-foreground: oklch(0.96 0.01 280);
-  --primary: #8b6cff;
+  /* Robrun Cheats — dark violet / near black */
+  --background-main: #0d0a14;
+  --background-lower: #0f0c18;
+  --background-transition: #0e0b17;
+  --background-variation: #0f0c19;
+  --shadow-edge: #040306;
+  --background: var(--background-main);
+  --foreground: #ffffff;
+  --card: var(--background-variation);
+  --card-foreground: #ffffff;
+  --popover: var(--background-variation);
+  --popover-foreground: #ffffff;
+  --primary: #9567e8;
   --primary-foreground: #ffffff;
-  --primary-accent: #a084ff;
-  --secondary: #0e0b17;
-  --secondary-foreground: oklch(0.96 0.01 280);
-  --secondary-accent: oklch(0.96 0.01 280);
-  --muted: #0f0c19;
-  --muted-foreground: oklch(0.72 0.02 280);
-  --accent: #0e0b17;
-  --accent-foreground: oklch(0.96 0.01 280);
+  --primary-accent: #c2a2ff;
+  --secondary: var(--background-transition);
+  --secondary-foreground: #ffffff;
+  --secondary-accent: #ffffff;
+  --muted: var(--background-lower);
+  --muted-foreground: #ada6bb;
+  --accent: #c2a2ff;
+  --accent-foreground: #ffffff;
   --info: var(--color-sky-300);
   --info-foreground: var(--color-sky-950);
   --success: var(--color-green-300);
@@ -142,19 +147,25 @@
   --warning-foreground: var(--color-amber-950);
   --error: var(--color-red-800);
   --error-foreground: var(--color-neutral-50);
-  --border: color-mix(in oklch, #ffffff 10%, #040306);
-  --input: color-mix(in oklch, #ffffff 14%, #040306);
-  --outline: oklch(0.55 0.02 280);
+  --border: #282235;
+  --input: #282235;
+  --outline: #ada6bb;
+  --text-primary: #ffffff;
+  --text-secondary: #ada6bb;
 
   /* sidebars variables */
-  --sidebar-background: #0f0c18;
-  --sidebar-foreground: oklch(0.96 0.01 280);
-  --sidebar-primary: #8b6cff;
+  --sidebar-background: var(--background-lower);
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #9567e8;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #0e0b17;
-  --sidebar-accent-foreground: oklch(0.92 0.02 280);
-  --sidebar-border: color-mix(in oklch, #ffffff 8%, #040306);
-  --sidebar-outline: oklch(0.55 0.02 280);
+  --sidebar-accent: var(--background-transition);
+  --sidebar-accent-foreground: #ada6bb;
+  --sidebar-border: #282235;
+  --sidebar-outline: #ada6bb;
+}
+
+.dark a:hover {
+  --primary: #7d4fcc;
 }
 
 @layer base {

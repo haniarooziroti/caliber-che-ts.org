@@ -3,13 +3,33 @@ import { resolveSiteOrigin } from './site-origin.mjs';
 resolveSiteOrigin();
 
 /** Must match PRODUCT_BASE in src/config/site.ts */
-const PRODUCT_BASE = '/products/caliber/';
+const PRODUCT_BASE = '/products/robrun/';
 const productsBase = PRODUCT_BASE.replace(/\/$/, '');
 const utilitiesPath = `${productsBase}/utilities/`;
 const aimbotPath = `${productsBase}/aimbot/`;
 
 /** Static path redirects (301). Keys are pathname without query/hash. */
 export const PATH_REDIRECTS = new Map([
+  ['/blogs/robrun-cheats-faq', '/blogs/robrun-faq/'],
+  ['/blogs/robrun-cheats-faq/', '/blogs/robrun-faq/'],
+  ['/blogs/robrun-cheats-installation', '/blogs/robrun-installation/'],
+  ['/blogs/robrun-cheats-installation/', '/blogs/robrun-installation/'],
+  ['/blogs/robrun-cheats-features', '/blogs/robrun-features/'],
+  ['/blogs/robrun-cheats-features/', '/blogs/robrun-features/'],
+  ['/blogs/robrun-esp-guide', '/blogs/robrun-esp/'],
+  ['/blogs/robrun-esp-guide/', '/blogs/robrun-esp/'],
+  ['/blogs/best-robrun-cheats', '/blogs/robrun-buying-guide/'],
+  ['/blogs/best-robrun-cheats/', '/blogs/robrun-buying-guide/'],
+  ['/blogs/robrun-cheats-pricing', '/blogs/robrun-pricing/'],
+  ['/blogs/robrun-cheats-pricing/', '/blogs/robrun-pricing/'],
+  ['/blogs/robrun-fps-boost', '/blogs/robrun-performance/'],
+  ['/blogs/robrun-fps-boost/', '/blogs/robrun-performance/'],
+  ['/blogs/robrun-cheats-safety', '/blogs/robrun-safety/'],
+  ['/blogs/robrun-cheats-safety/', '/blogs/robrun-safety/'],
+  ['/blogs/robrun-cheats-comparison', '/blogs/robrun-comparison/'],
+  ['/blogs/robrun-cheats-comparison/', '/blogs/robrun-comparison/'],
+  ['/blogs/robrun-gaming-software-compatibility', '/blogs/robrun-compatibility/'],
+  ['/blogs/robrun-gaming-software-compatibility/', '/blogs/robrun-compatibility/'],
   ['/blog', '/blogs/'],
   ['/blog/', '/blogs/'],
   ['/about', '/about/'],

@@ -164,11 +164,42 @@
   border-radius: 1rem;
   background: color-mix(in srgb, var(--color-card) 72%, var(--color-background));
   padding: 1.35rem 1.25rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
 @media (min-width: 768px) {
   .reviews-page__summary-band {
     padding: 1.5rem 1.75rem 1.25rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'summary summary'
+      'toolbar toolbar';
+    align-items: end;
+    column-gap: 2rem;
+  }
+
+  .reviews-summary--top {
+    grid-area: summary;
+  }
+
+  .reviews-page__filters {
+    grid-area: toolbar;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    justify-self: stretch;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews-page__summary-band {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: 'summary toolbar';
+    align-items: center;
   }
 }
 

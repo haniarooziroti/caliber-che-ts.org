@@ -5,7 +5,7 @@ interface Props {
   title?: string;
 }
 
-const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
+const { src, poster, title = 'Robrun gameplay preview video' } = Astro.props;
 ---
 
 <div
@@ -16,6 +16,9 @@ const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
     class="hero-video__media aspect-video w-full bg-black object-cover"
     data-hero-video-el
     playsinline
+    muted
+    disablepictureinpicture
+    controlslist="nodownload noplaybackrate noremoteplayback"
     preload="metadata"
     poster={poster}
     aria-label={title}

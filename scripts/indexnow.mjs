@@ -12,7 +12,7 @@ const key = process.env.INDEXNOW_KEY?.trim();
 function resolveIndexNowHost() {
   const explicit = process.env.INDEXNOW_HOST?.trim();
   if (explicit && explicit.includes('workers.dev')) {
-    throw new Error('INDEXNOW_HOST must not contain workers.dev. Use calibercheat.net.');
+    throw new Error('INDEXNOW_HOST must not contain workers.dev. Use robruncheat.org.');
   }
   if (explicit) return explicit;
   return SITE_DOMAIN;

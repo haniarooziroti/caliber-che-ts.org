@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://calibercheat.net/sitemap.xml
+Sitemap: https://robruncheat.org/sitemap.xml

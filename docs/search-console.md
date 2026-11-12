@@ -1,14 +1,14 @@
-# Search Console workflow (calibercheat.net)
+# Search Console workflow (robruncheat.org)
 
-1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `calibercheat.net` if it is not already there.
-2. Under **Sitemaps**, submit: `https://calibercheat.net/sitemap.xml`
+1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `robruncheat.org` if it is not already there.
+2. Under **Sitemaps**, submit: `https://robruncheat.org/sitemap.xml`
 3. After deploys, optional: run `npm run build` so IndexNow runs when `INDEXNOW_KEY` is set.
 
 ## Useful URL patterns
 
 | Intent | Path |
 |--------|------|
-| Home / Caliber cheats overview | `/` |
-| Product hub | `/products/caliber/` |
+| Home / Robrun cheats overview | `/` |
+| Product hub | `/products/robrun/` |
 | Reviews | `/reviews/` |
 | Forums | `/forum/` |

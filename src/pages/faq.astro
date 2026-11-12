@@ -22,9 +22,9 @@ const shareUrl = canonicalUrl('/faq/');
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'FAQ | Caliber cheats, loader & checkout',
+      name: 'FAQ | Robrun cheats, loader & checkout',
       description:
-        'Answers about Caliber cheat tiers, ESP, aimbot, HWID tools, articles, and checkout through the linked store.',
+        'Answers about Robrun cheat tiers, ESP, aimbot, HWID tools, articles, and checkout through the linked store.',
       url: '/faq/',
     }),
     faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),

@@ -18,11 +18,11 @@ import {
 } from '@/components/starwind/table';
 
 const utilities = productPages.filter((p) => p.kind === 'utility');
-const seo = resolvePageSeo('/products/caliber/utilities/');
+const seo = resolvePageSeo('/products/robrun/utilities/');
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: productHub.path },
-  { name: 'Compare utilities', path: '/products/caliber/utilities/' },
+  { name: 'Compare utilities', path: '/products/robrun/utilities/' },
 ];
 
 const utilityUseCases: Record<string, string> = {
@@ -39,9 +39,9 @@ const utilityUseCases: Record<string, string> = {
   description={seo.description}
   jsonLd={[
     webPageSchema({
-      name: 'Compare Caliber utilities',
+      name: 'Compare Robrun utilities',
       description: seo.description,
-      url: '/products/caliber/utilities/',
+      url: '/products/robrun/utilities/',
     }),
     breadcrumbSchema(breadcrumbs),
     itemListSchema(
@@ -57,7 +57,7 @@ const utilityUseCases: Record<string, string> = {
       <Breadcrumbs items={breadcrumbs} />
 
       <header class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold uppercase md:text-4xl">Caliber cheat utilities compared</h1>
+        <h1 class="text-3xl font-bold uppercase md:text-4xl">Robrun cheat utilities compared</h1>
         <p class="text-lg text-muted-foreground">
           Cloud DMA, HWID spoofer, and module utilities solve different problems. Match the tool to your situation before checkout.
         </p>
@@ -111,7 +111,7 @@ const utilityUseCases: Record<string, string> = {
       </ul>
 
       <div class="mt-10">
-        <Button as="a" href={productHub.path} variant="outline">Return to Caliber cheat catalog hub</Button>
+        <Button as="a" href={productHub.path} variant="outline">Return to Robrun cheat catalog hub</Button>
       </div>
     </div>
   </section>

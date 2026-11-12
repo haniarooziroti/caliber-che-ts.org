@@ -37,6 +37,9 @@ const LEFTOVER_PATTERNS = [
   { pattern: /\bcs2-cheats\.org\b/i, label: 'cs2-cheats.org' },
   { pattern: /\bcheatsrust\b/i, label: 'cheatsrust' },
   { pattern: /\blevocheats\b/i, label: 'levocheats' },
+  { pattern: /\bcalibercheat\.net\b/i, label: 'calibercheat.net' },
+  { pattern: /\bCaliber cheats\b/i, label: 'Caliber cheats' },
+  { pattern: /\bCaliber\b/i, label: 'Caliber' },
 ];
 
 /**
@@ -44,10 +47,12 @@ const LEFTOVER_PATTERNS = [
  * @type {{ file: RegExp; pattern?: RegExp; reason: string; publicFacing: boolean }[]}
  */
 const ALLOWLIST = [
-  { file: /^scripts\/(caliber-rebrand|redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
+  { file: /^scripts\/(robrun-rebrand|redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
   { file: /^scripts\/rust-rebrand\.mjs$/, reason: 'historical migration script', publicFacing: false },
   { file: /^public\/_redirects$/, pattern: /apex|cs2|rust/i, reason: 'legacy SEO redirects', publicFacing: false },
-  { file: /^src\/config\/checkout-redirects\.mjs$/, pattern: /apex|cs2|rust/i, reason: 'legacy checkout/product redirects', publicFacing: false },
+  { file: /^src\/config\/checkout-redirects\.mjs$/, pattern: /apex|cs2|rust|caliber/i, reason: 'legacy checkout/product redirects', publicFacing: false },
+  { file: /^scripts\/caliber-rebrand\.mjs$/, reason: 'historical migration script', publicFacing: false },
+  { file: /^scripts\/site-origin\.mjs$/, pattern: /calibercheat/i, reason: 'wrong domain deny list', publicFacing: false },
   { file: /^src\/config\/sitemap\.ts$/, pattern: /cs2-cheats/i, reason: 'exclude legacy routes from sitemap', publicFacing: false },
   { file: /^scripts\/validate-seo\.mjs$/, pattern: /levocheats|cheatsrust/i, reason: 'forbidden legacy domain guard regexes', publicFacing: false },
   { file: /^scripts\/verify-domain\.mjs$/, pattern: /cs2|apex|rust/i, reason: 'domain verification deny list', publicFacing: false },
@@ -171,7 +176,7 @@ if (fs.existsSync(dist)) {
 }
 
 const wrongOrigin = failures.filter(
-  (f) => /https?:\/\//i.test(f.snippet) && !f.snippet.includes(SITE_ORIGIN) && f.snippet.includes('calibercheat'),
+  (f) => /https?:\/\//i.test(f.snippet) && !f.snippet.includes(SITE_ORIGIN) && f.snippet.includes('robruncheat'),
 );
 for (const f of wrongOrigin) {
   f.term = 'wrong canonical origin';

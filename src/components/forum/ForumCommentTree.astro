@@ -1,0 +1,44 @@
+---
+import type { ForumComment } from '../../data/forum';
+import ForumCommentTree from './ForumCommentTree.astro';
+
+interface Props {
+  comments: ForumComment[];
+  depth?: number;
+}
+
+const { comments, depth = 0 } = Astro.props;
+
+function initial(name: string) {
+  return name.replace(/^u\//, '').slice(0, 1).toUpperCase();
+}
+---
+
+{
+  comments.map((comment) => (
+    <div class:list={['forum-comment', depth > 0 && 'forum-comment--reply']}>
+      <div class="forum-comment__rail" aria-hidden="true">
+        <span class="forum-comment__avatar">{initial(comment.author)}</span>
+        {depth === 0 ? <span class="forum-comment__line" /> : null}
+      </div>
+      <div class="forum-comment__body">
+        <div class="forum-comment__meta">
+          <b>u/{comment.author}</b>
+          <span>·</span>
+          <span>{comment.age}</span>
+          <span>·</span>
+          <span>↑ {comment.score}</span>
+        </div>
+        <p>{comment.body}</p>
+        <div class="forum-comment__actions">
+          <span aria-hidden="true">Illustrative reply — read only</span>
+        </div>
+        {comment.replies && comment.replies.length > 0 ? (
+          <div class="forum-comment__replies">
+            <ForumCommentTree comments={comment.replies} depth={depth + 1} />
+          </div>
+        ) : null}
+      </div>
+    </div>
+  ))
+}

@@ -31,7 +31,7 @@ const featured = posts[0];
 const pb = t.pages.blog;
 
 function categoryLabel(category: (typeof blogCategories)[number]) {
-  if (category === 'All Guides') return t.pages.blog.allBlogs;
+  if (category === 'All Articles') return t.pages.blog.allBlogs;
   return t.pages.blog.categories[category as BlogCategory] ?? category;
 }
 ---
@@ -66,7 +66,7 @@ function categoryLabel(category: (typeof blogCategories)[number]) {
       },
       publisher: {
         '@type': 'Organization',
-        name: 'calibercheat.net',
+        name: 'robruncheat.org',
         url: SITE_ORIGIN,
       },
     },
@@ -90,7 +90,7 @@ function categoryLabel(category: (typeof blogCategories)[number]) {
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
       <header class="mx-auto mt-6 max-w-3xl text-center">
-        <p class="text-xs font-semibold uppercase tracking-wider text-primary">Caliber Guides</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-primary">Robrun Cheats</p>
         <h1 id="blogs-title" class="section-header__title mt-3 leading-tight">
           {pb.h1Line1}
           <span class="block text-foreground">{pb.h1Line2}</span>
@@ -181,7 +181,7 @@ function categoryLabel(category: (typeof blogCategories)[number]) {
                 'rounded-full border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-primary hover:text-foreground',
                 index === 0 && 'is-active border-primary text-foreground',
               ]}
-              data-blog-filter={category === 'All Guides' ? 'all' : category}
+              data-blog-filter={category === 'All Articles' ? 'all' : category}
               aria-pressed={index === 0 ? 'true' : 'false'}
             >
               {categoryLabel(category)}

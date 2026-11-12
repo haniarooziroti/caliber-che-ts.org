@@ -10,6 +10,8 @@ const root = process.cwd();
 const dist = resolveDistRoot(root);
 
 const FAIL_TERMS = [
+  'Caliber',
+  'calibercheat',
   'Apex Legends',
   'apex-cheats',
   'Apex',

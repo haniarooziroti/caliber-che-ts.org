@@ -6,7 +6,9 @@ export type BlogCategory =
   | 'Updates'
   | 'Buying Guides'
   | 'Tutorials'
-  | 'Features';
+  | 'Features'
+  | 'Compatibility'
+  | 'Safety & FAQs';
 
 export type BlogBlock =
   | { type: 'p'; html: string }

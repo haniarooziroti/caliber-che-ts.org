@@ -205,8 +205,8 @@ for (const file of htmlFiles.sort()) {
       issues.push(`${relFile}: H1 should reflect title keywords\n  title: ${title}\n  h1: ${h1s[0]}`);
       exit = 1;
     }
-    if (!h1s[0].toLowerCase().includes('caliber')) {
-      issues.push(`${relFile}: indexable H1 should include an Caliber-related keyword\n  h1: ${h1s[0]}`);
+    if (!h1s[0].toLowerCase().includes('robrun')) {
+      issues.push(`${relFile}: indexable H1 should include an Robrun-related keyword\n  h1: ${h1s[0]}`);
       exit = 1;
     }
   }

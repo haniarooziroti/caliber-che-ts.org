@@ -29,7 +29,7 @@ const DISPLAY_NAMES = [
 ];
 
 const PRODUCT_FIXTURES = [
-  { slug: 'aimbot', name: 'Caliber Aimbot' },
+  { slug: 'aimbot', name: 'Robrun Aimbot' },
   { slug: 'player-esp', name: 'Player ESP' },
   { slug: 'wallhack', name: 'Wallhack' },
   { slug: 'loot-esp', name: 'Loot ESP' },
@@ -72,7 +72,7 @@ const BODIES_LONG = [
   'Patch week paused injection for about a day. Status page matched what I saw—back online after the portal build refresh.',
   'No recoil preset took a night to tune per weapon. Not a substitute for spray control but steadier beams at mid range.',
   'Stream-proof test in OBS game capture showed no overlay on the recording—worth running your own clip before you go live.',
-  'Wallhack line colors stayed readable on urban map without blowing out contrast. Took ten minutes to match player ESP.',
+  'Wallhack line colors stayed readable on open-world district without blowing out contrast. Took ten minutes to match player ESP.',
   'Loot ESP filters stopped gray weapon spam. Shields and attachments only kept the overlay readable in hot drops.',
   'HWID spoofer steps were spelled out on the product page. Followed the reboot order and the loader picked up on second try.',
   'Cloud DMA path expects specific firmware—support linked the checklist before I bought. Setup was slower but documented.',

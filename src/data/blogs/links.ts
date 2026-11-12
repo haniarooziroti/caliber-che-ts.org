@@ -20,7 +20,7 @@ export const BLOG_LINKS = {
   streamProof: `${p}stream-proof/`,
   cloudDma: `${p}cloud-dma/`,
   hwidSpoofer: `${p}hwid-spoofer/`,
-  checkout: '/go/caliber/',
+  checkout: '/go/robrun/',
 } as const;
 
 export function blogHref(slug: string): string {

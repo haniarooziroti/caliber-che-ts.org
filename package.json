@@ -12,7 +12,8 @@
     "start": "node scripts/serve.mjs",
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "media:fetch": "node scripts/fetch-caliber-media.mjs",
+    "media:fetch": "node scripts/fetch-robrun-media.mjs",
+    "media:fetch-yt": "node scripts/fetch-robrun-youtube-media.mjs && node scripts/optimize-images.mjs",
     "seo:check": "node scripts/seo-check.mjs",
     "seo:live": "node scripts/validate-live-seo.mjs"
   },

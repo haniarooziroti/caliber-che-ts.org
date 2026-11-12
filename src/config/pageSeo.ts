@@ -95,7 +95,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/reviews/': {
     title: 'Robrun Cheats Reviews | Ratings & Buyer Feedback PC',
     description:
-      'Robrun Cheats customer ratings and feedback on modules, checkout, setup, and support from buyers using the PC catalog.',
+      'Robrun Cheats customer ratings and feedback on modules, checkout, setup, and support from buyers using the PC catalog pages.',
     keywords: 'Robrun Cheats reviews, Robrun cheats reviews, Robrun Cheats customer feedback',
   },
   '/faq/': {

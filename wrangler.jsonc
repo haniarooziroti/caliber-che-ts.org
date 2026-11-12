@@ -1,7 +1,12 @@
 {
-  // Cloudflare Workers Builds (dashboard): GitHub haniarooziroti/caliberche-t.net, branch main, root /, build npm run build
+  // Cloudflare Workers Builds: root /, Node 22+. Build step runs via wrangler before upload (see "build").
+  // Dashboard (if split fields): Build = npm run build, Deploy = npx wrangler deploy
+  // Dashboard (single field): Deploy = npm run deploy
   "name": "robruncheat-org",
   "compatibility_date": "2026-11-01",
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     "directory": "./dist",
     "html_handling": "auto-trailing-slash",

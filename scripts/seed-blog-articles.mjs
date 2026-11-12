@@ -605,7 +605,7 @@ const blogArticles = [
       },
       {
         q: 'Why no star ratings here?',
-        a: 'We avoid fabricated scores—use criteria and your own range tests.',
+        a: 'This guide compares features and requirements. Star ratings live on the reviews page.',
       },
       {
         q: 'Where is the catalog?',

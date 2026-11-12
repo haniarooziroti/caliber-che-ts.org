@@ -1,6 +1,6 @@
 /**
  * Customer reviews API — re-export for existing import paths.
- * Legacy fabricated review arrays were removed; only publishedCustomerReviews is used.
+ * Customer reviews shown on the site come from publishedCustomerReviews.
  */
 export {
   computeReviewStats,

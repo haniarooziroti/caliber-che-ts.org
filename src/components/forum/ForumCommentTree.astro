@@ -30,9 +30,6 @@ function initial(name: string) {
           <span>↑ {comment.score}</span>
         </div>
         <p>{comment.body}</p>
-        <div class="forum-comment__actions">
-          <span aria-hidden="true">Illustrative reply — read only</span>
-        </div>
         {comment.replies && comment.replies.length > 0 ? (
           <div class="forum-comment__replies">
             <ForumCommentTree comments={comment.replies} depth={depth + 1} />

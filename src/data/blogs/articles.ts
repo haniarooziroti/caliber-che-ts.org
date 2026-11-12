@@ -866,7 +866,7 @@ export const blogArticles: BlogArticle[] = [
     "title": "Robrun Gaming Tools Compared: Features, Performance and Value",
     "seoTitle": "Robrun Gaming Tools Compared for PC | robruncheat.org",
     "description": "Compare Robrun gaming tools by features, compatibility, ease of use, performance impact, pricing transparency, and support.",
-    "excerpt": "Side-by-side criteria for comparing Robrun gaming tools—without fake star ratings.",
+    "excerpt": "Side-by-side criteria for comparing Robrun gaming tools by features, compatibility, and support.",
     "keywords": "Robrun gaming tools comparison, compare Robrun software, Robrun software features, gaming software comparison",
     "intent": "Commercial Investigation",
     "date": "2026-05-05",
@@ -885,7 +885,7 @@ export const blogArticles: BlogArticle[] = [
       },
       {
         "q": "Why no star ratings here?",
-        "a": "We avoid fabricated scores—use criteria and your own range tests."
+        "a": "This guide compares features and requirements. Star ratings live on the reviews page."
       },
       {
         "q": "Where is the catalog?",

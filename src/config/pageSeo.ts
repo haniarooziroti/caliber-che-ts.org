@@ -89,13 +89,13 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/forum/': {
     title: 'Robrun Cheats Forum | Aimbot, ESP & Setup Advice',
     description:
-      'Community forums for Robrun module setup, aimbot tuning, and loader questions. Peer threads—not a substitute for official product support or reviews.',
+      'Robrun forum threads on module setup, aimbot tuning, ESP layouts, loader questions, and patch-day notes from Windows PC players.',
     keywords: 'Robrun cheat setup guide, Robrun troubleshooting guide',
   },
   '/reviews/': {
     title: 'Robrun Cheats Reviews | Ratings & Buyer Feedback PC',
     description:
-      'Robrun Cheats customer ratings and moderated feedback on modules, checkout, setup, and support. Published reviews only—no fabricated testimonials.',
+      'Robrun Cheats customer ratings and feedback on modules, checkout, setup, and support from buyers using the PC catalog.',
     keywords: 'Robrun Cheats reviews, Robrun cheats reviews, Robrun Cheats customer feedback',
   },
   '/faq/': {

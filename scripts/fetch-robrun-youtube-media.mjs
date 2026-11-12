@@ -15,7 +15,7 @@ const tmpDir = path.join(root, '.cache', 'robrun-yt');
 const videoDir = path.join(root, 'public', 'videos');
 const gameplayDir = path.join(root, 'public', 'images', 'gameplay');
 const heroOut = path.join(videoDir, 'robrun-hero-snapyt.mp4');
-const legacyFallback = path.join(videoDir, 'caliber-hero-snapyt.mp4');
+const legacyFallback = path.join(videoDir, 'robrun-hero-snapyt.mp4');
 const HERO_POSTER_URL =
   'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/rob-run/02ab714e-de37-423b-81f2-afd7f7fd8d28/1794486558855-gfdg64-1.webp';
 

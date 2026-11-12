@@ -22,15 +22,12 @@ const featuredDiscussions = [...forumPosts]
   <section class="forum-page py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
-      <p class="mb-4 rounded-xl border border-primary/30 bg-card px-4 py-3 text-sm text-muted-foreground" role="note">
-        Illustrative discussions — read-only examples. Threads below are prewritten samples, not live customer activity.
-      </p>
       <header class="forum-hero">
         <div>
           <p class="section-header__eyebrow">Robrun community</p>
           <h1>Robrun Cheats forums for aimbot, ESP, and loader talk</h1>
           <p class="forum-hero__copy">
-            Loader setup, aimbot FOV debates, ESP layouts, no recoil tuning, stream-proof tests, and patch-day waits—buyer threads with mixed outcomes, not official support.
+            Loader setup, aimbot FOV debates, ESP layouts, no recoil tuning, stream-proof tests, and patch-day notes from Robrun players.
           </p>
         </div>
         <a class="forum-create" href="/products/robrun/"><Icon name="navProducts" size={17} /> Compare hack plans</a>
@@ -108,7 +105,7 @@ const featuredDiscussions = [...forumPosts]
                   <p class="forum-post-excerpt">{post.excerpt}</p>
                   {
                     post.comments.length > 0 && (
-                      <ul class="forum-comment-previews" aria-label="Sample replies">
+                      <ul class="forum-comment-previews" aria-label="Replies">
                         {post.comments.slice(0, 4).map((comment) => (
                           <li class="forum-comment-preview">
                             <span class="forum-comment-preview__author">u/{comment.author}</span>

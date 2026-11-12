@@ -23,37 +23,37 @@ export interface MediaSlide {
   captionDesc: string;
 }
 
-/** Five slides — hero carousel autoplay (see hero-embla.ts). */
+/** Five slides — hero carousel autoplay (see hero-embla.ts). Frames from YT 0:47–1:57. */
 export const HERO_CAROUSEL_SLIDES: MediaSlide[] = [
   {
     src: ROBRUN_MEDIA.a01,
-    alt: 'Robrun tactical squad lineup on PC — hero preview',
+    alt: 'Robrun squad gameplay on PC — hero carousel',
     caption: 'Robrun on PC',
-    captionDesc: 'Squad-based PvP before you tune modules.',
-  },
-  {
-    src: ROBRUN_MEDIA.a04,
-    alt: 'Robrun overlay screenshot with ESP boxes in urban combat',
-    caption: 'Player ESP',
-    captionDesc: 'Operator tags and distance reads in a firefight.',
-  },
-  {
-    src: ROBRUN_MEDIA.a05,
-    alt: 'Robrun aimbot and ESP screenshot during a scoped engagement',
-    caption: 'Aim assistance',
-    captionDesc: 'Scope view with highlight boxes on targets.',
+    captionDesc: 'Live gameplay from the official preview window.',
   },
   {
     src: ROBRUN_MEDIA.a02,
-    alt: 'Robrun cheat menu and ESP settings on PC',
-    caption: 'Module menu',
-    captionDesc: 'Tuning panels for ESP and aim features.',
+    alt: 'Robrun combat movement during a squad fight',
+    caption: 'Squad fight',
+    captionDesc: 'Neutral lighting from the same match clip.',
   },
   {
-    src: ROBRUN_MEDIA.a07,
-    alt: 'Robrun wallhack and player ESP in a night map',
-    caption: 'Wallhack intel',
-    captionDesc: 'Through-cover operator silhouettes before a push.',
+    src: ROBRUN_MEDIA.a03,
+    alt: 'Robrun operator engagement in urban PvP',
+    caption: 'Urban PvP',
+    captionDesc: 'Frame pulled between 0:47 and 1:57.',
+  },
+  {
+    src: ROBRUN_MEDIA.a04,
+    alt: 'Robrun push through cover during ranked play',
+    caption: 'Cover push',
+    captionDesc: 'Lightweight WebP for fast loads.',
+  },
+  {
+    src: ROBRUN_MEDIA.a05,
+    alt: 'Robrun end-of-round combat highlight',
+    caption: 'Combat highlight',
+    captionDesc: 'Carousel rotates every few seconds on desktop.',
   },
 ];
 

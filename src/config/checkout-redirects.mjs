@@ -30,8 +30,14 @@ export const CHECKOUT_PATH_REDIRECTS = new Map([
   ['/go/hwid-spoofer/', CHECKOUT_URLS['hwid-spoofer']],
 ]);
 
+/** Cloudflare splat rules for legacy product URL trees */
+export const LEGACY_SPLAT_REDIRECTS = [
+  ['/products/apex-legends/*', '/products/robrun/:splat'],
+];
+
 export const LEGACY_PRODUCT_REDIRECTS = new Map([
   ['/products/rust-cheats/', '/products/robrun/'],
+  ['/products/apex-legends', '/products/robrun/'],
   ['/products/apex-legends/', '/products/robrun/'],
   ['/products/apex-hack/', '/products/robrun/'],
   ['/products/cs2-cheats/', '/products/robrun/'],

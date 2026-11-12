@@ -47,7 +47,7 @@ const LEFTOVER_PATTERNS = [
  * @type {{ file: RegExp; pattern?: RegExp; reason: string; publicFacing: boolean }[]}
  */
 const ALLOWLIST = [
-  { file: /^scripts\/(robrun-rebrand|redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
+  { file: /^scripts\/(robrun-rebrand|redirects|sync-public-redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
   { file: /^scripts\/rust-rebrand\.mjs$/, reason: 'historical migration script', publicFacing: false },
   { file: /^public\/_redirects$/, pattern: /apex|cs2|rust/i, reason: 'legacy SEO redirects', publicFacing: false },
   { file: /^src\/config\/checkout-redirects\.mjs$/, pattern: /apex|cs2|rust|caliber/i, reason: 'legacy checkout/product redirects', publicFacing: false },

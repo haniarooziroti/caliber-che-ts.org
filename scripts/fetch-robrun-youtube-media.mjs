@@ -1,5 +1,5 @@
 /**
- * Downloads YouTube gameplay, builds muted hero MP4 (from 0:49 when long enough), and refreshes a01–a11 webp masters.
+ * YouTube 3NxnMoqfEhs — gameplay 0:47–1:57, muted hero clip, a01–a11 lightweight WebP masters.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -7,17 +7,17 @@ import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const YT_URL = 'https://www.youtube.com/watch?v=3NxnMoqfEhs';
-const PREFERRED_START_SEC = 49;
-const HERO_DURATION_SEC = 75;
+const CLIP_START_SEC = 47;
+const CLIP_END_SEC = 117;
 const FRAME_COUNT = 11;
+const WEBP_QUALITY = 68;
+const MAX_WIDTH = 1280;
 
 const tmpDir = path.join(root, '.cache', 'robrun-yt');
 const videoDir = path.join(root, 'public', 'videos');
 const gameplayDir = path.join(root, 'public', 'images', 'gameplay');
 const heroOut = path.join(videoDir, 'robrun-hero-snapyt.mp4');
 const legacyFallback = path.join(videoDir, 'robrun-hero-snapyt.mp4');
-const HERO_POSTER_URL =
-  'https://ooszazcwzmwhitdxwtom.supabase.co/storage/v1/object/public/seo-media-library/rob-run/02ab714e-de37-423b-81f2-afd7f7fd8d28/1794486558855-gfdg64-1.webp';
 
 function ytDlp() {
   return process.env.YT_DLP || 'yt-dlp';
@@ -52,21 +52,32 @@ function probeDuration(file) {
   return Number.isFinite(n) ? n : 0;
 }
 
-async function download(url, dest) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.writeFileSync(dest, buf);
+function pngToWebp(png, webp) {
+  const vf = `scale='min(${MAX_WIDTH},iw)':-2`;
+  try {
+    run(ffmpeg(), [
+      '-y',
+      '-i',
+      png,
+      '-vf',
+      vf,
+      '-c:v',
+      'libwebp',
+      '-quality',
+      String(WEBP_QUALITY),
+      '-compression_level',
+      '6',
+      webp,
+    ]);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 fs.mkdirSync(tmpDir, { recursive: true });
 fs.mkdirSync(videoDir, { recursive: true });
 fs.mkdirSync(gameplayDir, { recursive: true });
-
-const posterPath = path.join(gameplayDir, 'hero-poster.webp');
-console.log('Downloading hero poster from Supabase…');
-await download(HERO_POSTER_URL, posterPath);
 
 const rawVideo = path.join(tmpDir, 'source.mp4');
 if (!fs.existsSync(rawVideo)) {
@@ -86,10 +97,11 @@ if (!fs.existsSync(rawVideo)) {
 }
 
 const duration = probeDuration(rawVideo);
-const heroStart = duration > PREFERRED_START_SEC + 5 ? PREFERRED_START_SEC : 0;
-const heroDuration = Math.min(HERO_DURATION_SEC, Math.max(5, duration - heroStart));
+const clipEnd = Math.min(CLIP_END_SEC, duration > 0 ? duration - 0.5 : CLIP_END_SEC);
+const clipDuration = Math.max(5, clipEnd - CLIP_START_SEC);
+const heroStart = duration > CLIP_START_SEC + 1 ? CLIP_START_SEC : 0;
 
-console.log(`Building muted hero clip from ${heroStart}s (${heroDuration}s)…`);
+console.log(`Building muted hero clip ${heroStart}s → ${heroStart + clipDuration}s…`);
 run(ffmpeg(), [
   '-y',
   '-ss',
@@ -97,14 +109,14 @@ run(ffmpeg(), [
   '-i',
   rawVideo,
   '-t',
-  String(heroDuration),
+  String(clipDuration),
   '-an',
   '-c:v',
   'libx264',
   '-preset',
   'medium',
   '-crf',
-  '23',
+  '24',
   '-movflags',
   '+faststart',
   '-pix_fmt',
@@ -112,24 +124,29 @@ run(ffmpeg(), [
   heroOut,
 ]);
 
-console.log(`Extracting ${FRAME_COUNT} gameplay frames…`);
-const interval = heroDuration / (FRAME_COUNT + 1);
+console.log(`Extracting ${FRAME_COUNT} gameplay frames (${CLIP_START_SEC}s–${clipEnd}s)…`);
+const posterPath = path.join(gameplayDir, 'hero-poster.webp');
+
 for (let i = 1; i <= FRAME_COUNT; i++) {
-  const t = heroStart + i * interval;
+  const t = heroStart + (i / (FRAME_COUNT + 1)) * clipDuration;
   const png = path.join(tmpDir, `frame-${String(i).padStart(2, '0')}.png`);
   const webp = path.join(gameplayDir, `a${String(i).padStart(2, '0')}.webp`);
-  if (
-    !tryRun(ffmpeg(), ['-y', '-ss', String(t), '-i', rawVideo, '-frames:v', '1', '-q:v', '2', png])
-  ) {
-    fs.copyFileSync(posterPath, webp);
+  if (!tryRun(ffmpeg(), ['-y', '-ss', String(t), '-i', rawVideo, '-frames:v', '1', '-q:v', '2', png])) {
+    console.warn(`Skip frame ${i} at ${t}s`);
     continue;
   }
-  try {
-    run(ffmpeg(), ['-y', '-i', png, '-vf', 'scale=1920:-2', webp]);
-  } catch {
-    fs.copyFileSync(posterPath, webp);
+  if (!pngToWebp(png, webp)) {
+    console.warn(`WebP encode failed for frame ${i}`);
+    continue;
   }
   console.log(`Wrote ${path.relative(root, webp)}`);
+  if (i === 1) {
+    fs.copyFileSync(webp, posterPath);
+  }
+}
+
+if (!fs.existsSync(posterPath) && fs.existsSync(path.join(gameplayDir, 'a01.webp'))) {
+  fs.copyFileSync(path.join(gameplayDir, 'a01.webp'), posterPath);
 }
 
 console.log(`Wrote ${path.relative(root, posterPath)}`);

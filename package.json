@@ -1,7 +1,13 @@
 {
-  "name": "site",
+  "name": "robruncheat-org",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "homepage": "https://robruncheat.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haniarooziroti/caliberche-t.net.git"
+  },
   "engines": {
     "node": ">=22.12.0"
   },

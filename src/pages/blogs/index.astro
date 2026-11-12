@@ -258,7 +258,7 @@ function categoryLabel(category: (typeof blogCategories)[number]) {
       searchInput.value = initialQ;
     }
 
-    function syncQueryParam(query: string) {
+    function syncQueryParam(query) {
       const url = new URL(window.location.href);
       if (query) url.searchParams.set('q', query);
       else url.searchParams.delete('q');

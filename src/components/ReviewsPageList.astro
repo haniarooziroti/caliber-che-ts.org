@@ -1,6 +1,7 @@
 ---
 import ReviewCard from './ReviewCard.astro';
 import ReviewsSummary from './reviews/ReviewsSummary.astro';
+import Icon from './icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import {
   computeReviewStats,
@@ -21,6 +22,20 @@ const pageSize = 12;
     <ReviewsSummary stats={stats} layout="top" />
     <div class="reviews-page__filters" aria-label={t.pages.reviews.sortAria}>
     <div class="reviews-main-toolbar">
+      <label class="reviews-controls__group reviews-main-toolbar__search min-w-0 flex-1">
+        <span class="reviews-controls__label">{t.pages.reviews.searchLabel}</span>
+        <span class="relative block">
+          <Icon name="search" size={16} class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            class="reviews-controls__search w-full rounded-xl border border-border bg-background py-2 pl-9 pr-3 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            placeholder={t.pages.reviews.searchPlaceholder}
+            aria-label={t.pages.reviews.searchAria}
+            data-review-search
+            autocomplete="off"
+          />
+        </span>
+      </label>
       <label class="reviews-controls__group reviews-main-toolbar__sort">
         <span class="reviews-controls__label">{t.pages.reviews.sortBy}</span>
         <select class="reviews-controls__select w-full" data-review-sort aria-label={t.pages.reviews.sortAria}>
@@ -53,6 +68,7 @@ const pageSize = 12;
               data-rating={review.rating}
               data-ts={reviewTimestamp(review)}
               data-helpful={review.helpfulCount ?? 0}
+              data-search={`${review.displayName} ${review.title ?? ''} ${review.content} ${review.productName ?? ''} ${review.productSlug ?? ''}`}
             >
               <ReviewCard review={review} />
             </div>
@@ -68,6 +84,13 @@ const pageSize = 12;
         data-review-none-published
       >
         {t.pages.reviews.emptyPublished}
+      </p>
+
+      <p
+        class="mt-10 hidden rounded-2xl border border-border/60 bg-muted/10 px-6 py-10 text-center text-sm text-muted-foreground"
+        data-review-empty-filtered
+      >
+        {t.pages.reviews.emptyFiltered}
       </p>
 
       <nav class="reviews-pagination mt-10 hidden" data-review-pagination aria-label="Reviews pagination">
@@ -111,8 +134,10 @@ const pageSize = 12;
   const items = [...document.querySelectorAll('[data-review-item]')];
   const grid = document.querySelector('[data-review-grid]');
   const sortSelect = document.querySelector('[data-review-sort]');
+  const searchInput = document.querySelector('[data-review-search]');
   const countLine = document.querySelector('[data-review-count]');
   const nonePublished = document.querySelector('[data-review-none-published]');
+  const emptyFiltered = document.querySelector('[data-review-empty-filtered]');
   const paginationNav = document.querySelector('[data-review-pagination]');
   const pageList = document.querySelector('[data-review-page-list]');
   const prevBtn = document.querySelector('[data-review-prev]');
@@ -122,8 +147,13 @@ const pageSize = 12;
 
   function matchingItems() {
     const sort = sortSelect?.value ?? 'recent';
+    const query = searchInput?.value.trim().toLocaleLowerCase() ?? '';
 
-    const matched = [...items];
+  const matched = items.filter((item) => {
+      if (!query) return true;
+      const haystack = (item.dataset.search ?? item.textContent ?? '').toLocaleLowerCase();
+      return haystack.includes(query);
+    });
 
     matched.sort((a, b) => {
       const tsL = Number(a.dataset.ts ?? 0);
@@ -184,7 +214,8 @@ const pageSize = 12;
       countLine.textContent = hasCatalog ? `${matched.length} ${noun}` : '0 reviews';
     }
 
-    nonePublished?.classList.toggle('hidden', hasCatalog);
+    nonePublished?.classList.toggle('hidden', hasCatalog || matched.length < items.length);
+    emptyFiltered?.classList.toggle('hidden', !hasCatalog || matched.length > 0);
 
     if (paginationNav) {
       const showPager = hasCatalog && matched.length > pageSize;
@@ -202,6 +233,11 @@ const pageSize = 12;
   }
 
   sortSelect?.addEventListener('change', () => {
+    currentPage = 1;
+    updateReviews();
+  });
+
+  searchInput?.addEventListener('input', () => {
     currentPage = 1;
     updateReviews();
   });

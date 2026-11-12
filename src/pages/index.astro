@@ -10,10 +10,10 @@ import { t } from '../i18n';
 import { resolvePageSeo, canonicalUrl } from '../config/seo';
 import ShareButtons from '../components/ShareButtons.astro';
 import { organizationSchema, websiteSchema } from '../utils/schema';
-import { HERO_CAROUSEL_SLIDES } from '../config/media';
+import { ROBRUN_HERO_POSTER } from '../config/media';
 import { heroPreloadSrc } from '../utils/responsiveImage';
 const seo = resolvePageSeo('/');
-const heroLcpImage = heroPreloadSrc(HERO_CAROUSEL_SLIDES[0]!.src);
+const heroLcpImage = heroPreloadSrc(ROBRUN_HERO_POSTER);
 const shareUrl = canonicalUrl('/');
 ---
 

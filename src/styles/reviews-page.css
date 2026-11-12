@@ -332,6 +332,11 @@
     justify-content: flex-end;
   }
 
+  .reviews-main-toolbar__search {
+    flex: 1 1 14rem;
+    max-width: 22rem;
+  }
+
   .reviews-main-toolbar__sort {
     flex: 1 1 11rem;
     max-width: 14rem;

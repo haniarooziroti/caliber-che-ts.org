@@ -10,4 +10,4 @@ export const FAQ_URL = '/faq/';
 export const SUPPORT_URL = '/support/';
 export const REVIEWS_URL = '/reviews/';
 
-export const OG_DEFAULT_IMAGE = '/images/gameplay/c01.webp';
+export const OG_DEFAULT_IMAGE = '/images/gameplay/hero-poster.webp';

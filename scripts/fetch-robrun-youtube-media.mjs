@@ -150,4 +150,17 @@ if (!fs.existsSync(posterPath) && fs.existsSync(path.join(gameplayDir, 'a01.webp
 }
 
 console.log(`Wrote ${path.relative(root, posterPath)}`);
+
+const robrunDir = path.join(root, 'public', 'images', 'robrun');
+fs.mkdirSync(robrunDir, { recursive: true });
+const aliasCount = Math.min(6, FRAME_COUNT);
+for (let i = 1; i <= aliasCount; i++) {
+  const src = path.join(gameplayDir, `a${String(i).padStart(2, '0')}.webp`);
+  const alias = path.join(robrunDir, `robrun-gameplay-${String(i).padStart(2, '0')}.webp`);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, alias);
+    console.log(`Wrote ${path.relative(root, alias)}`);
+  }
+}
+
 console.log('Done. Run: node scripts/optimize-images.mjs');

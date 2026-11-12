@@ -14,31 +14,51 @@ const lines = [
   '',
 ];
 
+/** Cloudflare rejects duplicate source paths in _redirects. First rule wins. */
+const seenFrom = new Set();
+
+function addRule(from, to, code) {
+  if (seenFrom.has(from)) return false;
+  seenFrom.add(from);
+  lines.push(`${from} ${to} ${code}`);
+  return true;
+}
+
 for (const [from, to] of PATH_REDIRECTS) {
   if (to.startsWith('http')) continue;
-  lines.push(`${from} ${to} 301`);
+  addRule(from, to, 301);
 }
 
 for (const [from, to] of LEGACY_SPLAT_REDIRECTS) {
-  lines.push(`${from} ${to} 301`);
+  addRule(from, to, 301);
 }
 
 for (const [from, to] of CHECKOUT_PATH_REDIRECTS) {
-  lines.push(`${from} ${to} 302`);
+  addRule(from, to, 302);
 }
 
 for (const [from, to] of LEGACY_PRODUCT_REDIRECTS) {
   const code = to.startsWith('http') ? 302 : 301;
-  lines.push(`${from} ${to} ${code}`);
+  addRule(from, to, code);
 }
 
 const blogRedirects = [
-  '/blogs/robrun-buying-guide/ /blogs/robrun-cheats-buying-guide/ 301',
-  '/blogs/robrun-performance/ /blogs/robrun-fps-boost/ 301',
-  '/blogs/robrun-compatibility/ /blogs/robrun-gaming-software-compatibility/ 301',
+  ['/blogs/robrun-buying-guide/', '/blogs/robrun-cheats-buying-guide/', 301],
+  ['/blogs/robrun-performance/', '/blogs/robrun-fps-boost/', 301],
+  ['/blogs/robrun-compatibility/', '/blogs/robrun-gaming-software-compatibility/', 301],
 ];
 
-lines.push('', '# Blog slug migrations (legacy inbound)', ...blogRedirects, '');
+lines.push('', '# Blog slug migrations (legacy inbound)');
+for (const [from, to, code] of blogRedirects) {
+  addRule(from, to, code);
+}
+lines.push('');
+
+if (seenFrom.size !== lines.filter((l) => l && !l.startsWith('#')).length) {
+  throw new Error('_redirects line count mismatch after deduplication');
+}
 
 fs.writeFileSync(out, `${lines.join('\n')}\n`, 'utf8');
-console.log(`Wrote ${path.relative(process.cwd(), out)} (${lines.length} lines)`);
+console.log(
+  `Wrote ${path.relative(process.cwd(), out)} (${seenFrom.size} unique rules, ${lines.length} lines)`,
+);

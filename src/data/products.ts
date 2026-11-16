@@ -306,7 +306,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Related modules' },
     {
       type: 'p',
-      text: 'Many players add [wallhack](/products/caliber/wallhack/) for thicker cover reads, or [loot ESP](/products/caliber/loot-esp/) for faster POI clears.',
+      text: 'Many players add [wallhack](/products/caliber/wallhack/) for thicker cover reads, or browse the [product hub](/products/caliber/) for other modules.',
     },
   ],
   wallhack: [
@@ -669,6 +669,6 @@ export const productHub = {
   title: t.products.title,
   subtitle: t.products.subtitle,
   description:
-    'Caliber cheats and hacks catalog for PC—compare aimbot, ESP, wallhack, and other cheat features. Read reviews, then checkout for portal cheat download.',
+    'Caliber cheats catalog for PC—compare aimbot, ESP, wallhack, Cloud DMA, and HWID spoofer. Read reviews, then checkout for portal access.',
   buyUrl: checkoutPath('caliber'),
 };

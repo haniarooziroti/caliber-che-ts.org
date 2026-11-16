@@ -22,7 +22,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/caliber/': {
     title: 'Caliber Cheats Catalog | Aimbot, ESP & Wallhack PC',
     description:
-      'Browse Caliber cheat modules on PC—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof overlays. Compare features before checkout.',
+      'Browse Caliber cheat modules on PC—aimbot, player ESP, wallhack, Cloud DMA, and HWID spoofer. Compare features before checkout.',
     keywords:
       'Caliber cheat download, Caliber cheat features, best Caliber gaming tools',
   },

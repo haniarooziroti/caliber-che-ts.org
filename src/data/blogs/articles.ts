@@ -179,7 +179,7 @@ export const blogArticles: BlogArticle[] = [
     "body": [
       {
         "type": "p",
-        "html": "Before checkout, map <strong>Caliber cheats features</strong> to roles: awareness (ESP, wallhack), gunplay (aimbot, no recoil), and extras (loot ESP, stream-proof, utilities)."
+        "html": "Before checkout, map <strong>Caliber cheats features</strong> to roles: awareness (ESP, wallhack), gunplay (aimbot), and utilities (Cloud DMA, HWID spoofer)."
       },
       {
         "type": "h2",
@@ -209,14 +209,14 @@ export const blogArticles: BlogArticle[] = [
             "/products/caliber/aimbot/"
           ],
           [
-            "No recoil",
-            "Spray control",
-            "/products/caliber/no-recoil/"
+            "Cloud DMA",
+            "Hyper-V layer",
+            "/products/caliber/cloud-dma/"
           ],
           [
-            "Loot ESP",
-            "Economy clears",
-            "/products/caliber/loot-esp/"
+            "HWID spoofer",
+            "Identity reset",
+            "/products/caliber/hwid-spoofer/"
           ]
         ]
       },

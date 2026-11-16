@@ -285,7 +285,7 @@ export const en: Translations = {
   products: {
     eyebrow: "Buy Caliber cheats",
     title: "Buy Caliber cheats modules",
-    subtitle: "Aimbot, player ESP, wallhack, loot ESP, no recoil, stream proof, Cloud DMA, and HWID spoofer—clear pages before you buy.",
+    subtitle: "Aimbot, player ESP, wallhack, plus Cloud DMA and HWID spoofer—clear pages before you buy.",
     viewAll: "All Caliber modules",
     get: "Buy now",
     explore: "Module details",
@@ -319,49 +319,6 @@ export const en: Translations = {
         ],
         more: 1,
         href: "/products/caliber/hwid-spoofer/"
-      },
-      {
-        badge: "Vision",
-        category: "Vision",
-        title: "Caliber Loot ESP",
-        subtitle: "Weapons and attachments through walls",
-        desc: "Loot ESP highlights valuable gear so you path through POIs with a plan.",
-        features: [
-          "Weapon labels",
-          "Shield highlights",
-          "Attachment tags",
-          "Noise filters"
-        ],
-        more: 2,
-        href: "/products/caliber/loot-esp/"
-      },
-      {
-        badge: "Combat",
-        category: "Combat",
-        title: "Caliber No Recoil",
-        subtitle: "Tighter sprays on common ARs",
-        desc: "No recoil for Caliber with per-weapon strength you can keep subtle.",
-        features: [
-          "Per-weapon strength",
-          "Pairs with aimbot",
-          "Pub and ranked presets"
-        ],
-        more: 1,
-        href: "/products/caliber/no-recoil/"
-      },
-      {
-        badge: "Capture",
-        category: "Capture",
-        title: "Caliber Stream Proof",
-        subtitle: "Hide overlays from OBS",
-        desc: "Stream-proof mode keeps ESP and aim visuals off your VOD while you still see them.",
-        features: [
-          "OBS capture hide",
-          "Game capture tests",
-          "Per-module toggle"
-        ],
-        more: 1,
-        href: "/products/caliber/stream-proof/"
       }
     ]
   },
@@ -559,7 +516,7 @@ export const en: Translations = {
       {
         num: "06",
         q: "Where are modules listed?",
-        a: "Aimbot, ESP, wallhack, loot ESP, no recoil, and stream-proof pages live under Products on caliber-cheats.org."
+        a: "Aimbot, ESP, wallhack, Cloud DMA, and HWID spoofer pages live under Products on caliber-cheats.org."
       }
     ]
   },
@@ -623,7 +580,7 @@ export const en: Translations = {
         {
           heading: "caliber-cheats.org: Caliber cheats",
           paragraphs: [
-            "caliber-cheats.org focuses on maintained module pages—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof options—so you can compare features before checkout.",
+            "caliber-cheats.org focuses on maintained module pages—aimbot, player ESP, wallhack, Cloud DMA, and HWID spoofer—so you can compare features before checkout.",
             "Product names on caliber-cheats.org are used for identification only; always read the live status banner before you launch.",
             "Forums and blogs on caliber-cheats.org cover settings talk, patch-day habits, and install steps when seasons or loaders change."
           ]

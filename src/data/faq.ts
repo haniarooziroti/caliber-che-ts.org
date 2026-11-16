@@ -32,7 +32,7 @@ function link(text: string, href: string): string {
 const aimbot = link('Caliber aimbot', productPath('aimbot'));
 const esp = link('player ESP', productPath('player-esp'));
 const wallhack = link('wallhack', productPath('wallhack'));
-const loot = link('loot ESP', productPath('loot-esp'));
+const utilities = link('utility modules', `${ROUTES.products}utilities/`);
 const productsHub = link('Caliber products', ROUTES.products);
 const faqPage = link('full FAQ', ROUTES.faq);
 const forums = link('forums', ROUTES.forum);
@@ -78,7 +78,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'Where are modules listed?',
-    aHtml: `Aimbot, ESP, wallhack, loot ESP, no recoil, and stream-proof pages are under ${productsHub}.`,
+    aHtml: `Aimbot, ESP, wallhack, Cloud DMA, and HWID spoofer pages are under ${productsHub}.`,
     a: a('Modules are listed under Products on caliber-cheats.org.'),
   },
   {
@@ -88,7 +88,7 @@ export const siteFaqs: SiteFaqItem[] = [
     q: 'What aimbot settings should I start with?',
     aHtml: `Start with a smaller FOV and moderate smoothness on the ${aimbot} page. Read the ${forums} for what other players run in ranked.`,
     a: a('Start with a smaller FOV and moderate smoothness. Raise values only after pubs feel stable.'),
-    scopes: ['aimbot', 'no-recoil'],
+    scopes: ['aimbot'],
   },
   {
     id: 'esp-first',
@@ -104,9 +104,9 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqEspVsScripts',
     q: 'What does player ESP include?',
-    aHtml: `${esp} typically covers boxes, health bars, distance, and optional skeleton lines. ${loot} is separate for gear labels.`,
+    aHtml: `${esp} typically covers boxes, health bars, distance, and optional skeleton lines. See ${utilities} for Cloud DMA and HWID options.`,
     a: a('Player ESP typically covers boxes, health bars, distance, and optional skeleton lines.'),
-    scopes: ['player-esp', 'loot-esp'],
+    scopes: ['player-esp'],
   },
   {
     id: 'stream-proof',
@@ -114,7 +114,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqStreamProof',
     q: 'Does stream-proof hide overlays from OBS?',
     a: a('Stream-proof mode is meant to keep overlays off capture. Always verify with a local recording, not only the OBS preview.'),
-    scopes: ['stream-proof'],
+    scopes: ['setup'],
   },
   {
     id: 'forums',

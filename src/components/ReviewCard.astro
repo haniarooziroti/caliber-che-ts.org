@@ -1,6 +1,7 @@
 ---
 import ReviewStars from './ReviewStars.astro';
 import type { CustomerReview } from '../data/customerReviews/types';
+import { getProductPage, productHub } from '../data/products';
 import { productPath } from '../utils/path';
 
 interface Props {
@@ -19,7 +20,11 @@ const dateLabel = new Date(review.createdAt).toLocaleDateString('en-US', {
   month: 'short',
   day: 'numeric',
 });
-const productHref = review.productSlug ? productPath(review.productSlug) : undefined;
+const productHref = review.productSlug
+  ? getProductPage(review.productSlug)
+    ? productPath(review.productSlug)
+    : productHub.path
+  : undefined;
 ---
 
 <article class="reviews-card reviews-card--elevated flex h-full flex-col">

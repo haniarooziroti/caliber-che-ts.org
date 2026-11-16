@@ -1,5 +1,6 @@
 const gameplay = '/images/gameplay';
 
+export const CALIBER_HERO_VIDEO = '/videos/caliber-hero-snapyt.mp4';
 export const CALIBER_HERO_POSTER = `${gameplay}/hero-poster.webp`;
 
 export const CALIBER_MEDIA = {

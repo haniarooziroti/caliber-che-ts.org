@@ -40,6 +40,9 @@ https://*.pages.dev/*
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
 

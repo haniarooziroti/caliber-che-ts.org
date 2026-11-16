@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/prune-legacy-gameplay.mjs && node scripts/generate-brand-icons.mjs && node scripts/optimize-images.mjs &&  astro build && node scripts/prune-dist-images.mjs && node scripts/finalize-sitemap.mjs && node scripts/indexnow.mjs && node scripts/verify-dist-html.mjs && node scripts/verify-public-media.mjs && node scripts/verify-blog-links.mjs && node scripts/verify-banned-terms.mjs && node scripts/check-leftovers.mjs && node scripts/verify-domain.mjs && node scripts/validate-seo.mjs && node scripts/seo-check.mjs",
+    "build": "node scripts/prune-legacy-gameplay.mjs && node scripts/generate-brand-icons.mjs && node scripts/optimize-images.mjs &&  astro build && node scripts/prune-dist-images.mjs && node scripts/finalize-sitemap.mjs && node scripts/indexnow.mjs && node scripts/verify-dist-html.mjs && node scripts/verify-hero-video.mjs && node scripts/verify-public-media.mjs && node scripts/verify-blog-links.mjs && node scripts/verify-banned-terms.mjs && node scripts/check-leftovers.mjs && node scripts/verify-domain.mjs && node scripts/validate-seo.mjs && node scripts/seo-check.mjs",
     "preview": "astro preview --host 0.0.0.0",
     "start": "node scripts/serve.mjs",
     "astro": "astro",

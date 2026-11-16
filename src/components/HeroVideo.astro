@@ -32,6 +32,14 @@ const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
     aria-hidden="true"
   />
 
+  <p
+    class="pointer-events-none absolute left-3 right-3 top-3 hidden rounded-md bg-black/70 px-2 py-1 text-center text-xs text-white"
+    data-hero-video-error
+    role="status"
+  >
+    Video could not load. Refresh the page or try another browser.
+  </p>
+
   <div class="absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-center gap-2 p-3 sm:gap-3 sm:p-4">
     <button
       type="button"
@@ -91,56 +99,75 @@ const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
 </style>
 
 <script>
-  const wrap = document.querySelector('[data-hero-video]');
-  const video = wrap?.querySelector('[data-hero-video-el]');
-  const toggle = wrap?.querySelector('[data-hero-video-toggle]');
-  const back = wrap?.querySelector('[data-hero-video-back]');
-  const forward = wrap?.querySelector('[data-hero-video-forward]');
-  const labelPlay = wrap?.querySelector('[data-hero-video-label-play]');
-  const labelPause = wrap?.querySelector('[data-hero-video-label-pause]');
+  const initHeroVideos = () => {
+    document.querySelectorAll('[data-hero-video]').forEach((wrap) => {
+      if (!(wrap instanceof HTMLElement) || wrap.hasAttribute('data-hero-bound')) return;
+      wrap.setAttribute('data-hero-bound', '');
 
-  if (video instanceof HTMLVideoElement) {
-    video.muted = true;
-    video.defaultMuted = true;
-    video.volume = 0;
-    video.setAttribute('muted', '');
-  }
+      const video = wrap.querySelector('[data-hero-video-el]');
+      const toggle = wrap.querySelector('[data-hero-video-toggle]');
+      const back = wrap.querySelector('[data-hero-video-back]');
+      const forward = wrap.querySelector('[data-hero-video-forward]');
+      const labelPlay = wrap.querySelector('[data-hero-video-label-play]');
+      const labelPause = wrap.querySelector('[data-hero-video-label-pause]');
+      const errorEl = wrap.querySelector('[data-hero-video-error]');
 
-  function setPausedUi(paused: boolean) {
-    if (!toggle || !labelPlay || !labelPause) return;
-    toggle.dataset.state = paused ? 'paused' : 'playing';
-    toggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
-    labelPlay.classList.toggle('hidden', !paused);
-    labelPause.classList.toggle('hidden', paused);
-  }
+      const showError = () => {
+        errorEl?.classList.remove('hidden');
+      };
 
-  function seekBy(delta: number) {
-    if (!video) return;
-    const next = Math.min(Math.max(0, video.currentTime + delta), video.duration || Infinity);
-    video.currentTime = next;
-  }
-
-  toggle?.addEventListener('click', async () => {
-    if (!(video instanceof HTMLVideoElement)) return;
-    video.muted = true;
-    video.volume = 0;
-    if (video.paused) {
-      try {
-        await video.play();
-        setPausedUi(false);
-      } catch {
-        setPausedUi(true);
+      if (video instanceof HTMLVideoElement) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.volume = 0;
+        video.setAttribute('muted', '');
+        video.addEventListener('error', showError);
       }
-    } else {
-      video.pause();
-      setPausedUi(true);
-    }
-  });
 
-  back?.addEventListener('click', () => seekBy(-10));
-  forward?.addEventListener('click', () => seekBy(10));
+      const setPausedUi = (paused: boolean) => {
+        if (!(toggle instanceof HTMLButtonElement)) return;
+        toggle.dataset.state = paused ? 'paused' : 'playing';
+        toggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+        labelPlay?.classList.toggle('hidden', !paused);
+        labelPause?.classList.toggle('hidden', paused);
+      };
 
-  video?.addEventListener('ended', () => setPausedUi(true));
-  video?.addEventListener('pause', () => setPausedUi(true));
-  video?.addEventListener('play', () => setPausedUi(false));
+      const seekBy = (delta: number) => {
+        if (!(video instanceof HTMLVideoElement)) return;
+        const max = Number.isFinite(video.duration) ? video.duration : Infinity;
+        video.currentTime = Math.min(Math.max(0, video.currentTime + delta), max);
+      };
+
+      toggle?.addEventListener('click', async () => {
+        if (!(video instanceof HTMLVideoElement)) return;
+        video.muted = true;
+        video.volume = 0;
+        if (video.paused) {
+          try {
+            if (video.readyState === 0) {
+              video.load();
+            }
+            await video.play();
+            setPausedUi(false);
+          } catch {
+            setPausedUi(true);
+            showError();
+          }
+        } else {
+          video.pause();
+          setPausedUi(true);
+        }
+      });
+
+      back?.addEventListener('click', () => seekBy(-10));
+      forward?.addEventListener('click', () => seekBy(10));
+
+      video?.addEventListener('ended', () => setPausedUi(true));
+      video?.addEventListener('pause', () => setPausedUi(true));
+      video?.addEventListener('play', () => setPausedUi(false));
+    });
+  };
+
+  initHeroVideos();
+  document.addEventListener('astro:after-swap', initHeroVideos);
 </script>

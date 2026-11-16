@@ -42,14 +42,19 @@ const LEFTOVER_PATTERNS = [
   { pattern: /\brobruncheat\.org\b/i, label: 'robruncheat.org' },
   { pattern: /\brobrun[\s-]?cheats\b/i, label: 'robrun cheats' },
   { pattern: /\bRobrun\b/i, label: 'Robrun' },
+  { pattern: /\brobrun\b/i, label: 'robrun' },
+  { pattern: /\bvalorant\b/i, label: 'valorant' },
 ];
+
+/** Public asset paths must not ship other-game media folders. */
+const BAD_PUBLIC_PATH = /(?:^|\/)(?:robrun|valorant|apex-legends|rust-cheats|cs2-cheats|dota-2)(?:\/|$)/i;
 
 /**
  * Allowlisted matches: migration scripts, redirect maps, validators — not user-facing.
  * @type {{ file: RegExp; pattern?: RegExp; reason: string; publicFacing: boolean }[]}
  */
 const ALLOWLIST = [
-  { file: /^scripts\/(caliber-rebrand|caliber-cheats-org-migrate|robrun-rebrand|redirects|sync-public-redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
+  { file: /^scripts\/(caliber-rebrand|caliber-cheats-org-migrate|redirects|sync-public-redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
   {
     file: /^scripts\/(fetch-caliber-media|prune-legacy-gameplay|verify-public-media|fetch-caliber-youtube-media)\.mjs$/,
     reason: 'Caliber media pipeline and legacy Caliber guards',
@@ -168,6 +173,27 @@ const failures = [];
 for (const file of collectSourceFiles()) {
   const rel = relPosix(file);
   scanText(fs.readFileSync(file, 'utf8'), rel, failures);
+}
+
+const publicRoot = path.join(root, 'public');
+if (fs.existsSync(publicRoot)) {
+  walk(
+    publicRoot,
+    (name, full) => {
+      const rel = relPosix(full);
+      if (!BAD_PUBLIC_PATH.test(rel)) return false;
+      return true;
+    },
+    [],
+  ).forEach((full) => {
+    failures.push({
+      file: relPosix(full),
+      line: 0,
+      term: 'legacy public asset path',
+      snippet: relPosix(full),
+      distHtml: false,
+    });
+  });
 }
 
 if (fs.existsSync(dist)) {

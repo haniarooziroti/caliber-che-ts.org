@@ -8,6 +8,9 @@ const bad = [
   /\/images\/gameplay\/c0\d/i,
   /\/images\/gameplay\/caliber-/i,
   /\/images\/gameplay\/caliber-(aimbot|esp|wallhack|recoil)-/i,
+  /\/images\/robrun\//i,
+  /\/videos\/robrun/i,
+  /\/products\/(robrun|apex-legends|valorant|rust-cheats|cs2-cheats)\//i,
   /supabase\.co.*cals/i,
 ];
 

@@ -11,6 +11,7 @@ const dist = resolveDistRoot(root);
 
 const FAIL_TERMS = [
   'Robrun',
+  'robrun',
   'robruncheat',
   'caliberche-t.net',
   'Apex Legends',
@@ -68,7 +69,6 @@ const SOURCE_EXCLUDE_FILES = new Set(
     'scripts/verify-banned-terms.mjs',
     'scripts/caliber-rebrand.mjs',
     'scripts/caliber-cheats-org-migrate.mjs',
-    'scripts/robrun-rebrand.mjs',
     'scripts/check-leftovers.mjs',
   ].map((p) => p.replace(/\\/g, '/')),
 );

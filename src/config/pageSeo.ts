@@ -9,122 +9,122 @@ export interface PageSeoEntry {
 }
 
 export const DEFAULT_SEO_KEYWORDS =
-  'Robrun cheats, Robrun aimbot, Robrun ESP, Robrun wallhack';
+  'Caliber cheats, Caliber aimbot, Caliber ESP, Caliber wallhack';
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Robrun Cheats for PC | ESP, Aimbot & Software Modules',
+    title: 'Caliber Cheats for PC | ESP, Aimbot & Features',
     description:
-      'Explore Robrun cheats for PC, compare available ESP and aimbot features, review compatibility, and find product information before buying.',
+      'Explore Caliber cheats for PC, compare ESP and aimbot features, review compatibility, and find product details before checkout.',
     keywords:
-      'Robrun cheats, Robrun aimbot, Robrun ESP, Robrun gaming tools, Robrun PC',
+      'caliber cheats, caliber cheats pc, caliber aimbot, caliber esp, caliber wallhack, caliber hacks, buy caliber cheats, caliber cheat software',
   },
-  '/products/robrun/': {
-    title: 'Robrun Cheats Catalog | Aimbot, ESP & Wallhack PC',
+  '/products/caliber/': {
+    title: 'Caliber Cheats Catalog | Aimbot, ESP & Wallhack PC',
     description:
-      'Browse Robrun cheat modules on PC—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof overlays. Compare features before checkout.',
+      'Browse Caliber cheat modules on PC—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof overlays. Compare features before checkout.',
     keywords:
-      'Robrun cheat download, Robrun cheat features, best Robrun gaming tools',
+      'Caliber cheat download, Caliber cheat features, best Caliber gaming tools',
   },
-  '/products/robrun/aimbot/': {
-    title: 'Robrun Aimbot Module | FOV, Smoothness & Bones PC',
+  '/products/caliber/aimbot/': {
+    title: 'Caliber Aimbot Module | FOV, Smoothness & Bones PC',
     description:
-      'Robrun aimbot settings for ranked and pubs: FOV, smoothness, and bone priority. Part of the Robrun cheat catalog on robruncheat.org.',
-    keywords: 'Robrun aimbot, Robrun cheat features, Robrun gaming software',
+      'Caliber aimbot settings for ranked and pubs: FOV, smoothness, and bone priority. Part of the Caliber cheat catalog on caliber-cheats.org.',
+    keywords: 'Caliber aimbot, Caliber cheat features, Caliber gaming software',
   },
-  '/products/robrun/player-esp/': {
-    title: 'Robrun Player ESP | Boxes, Health & Distance PC',
+  '/products/caliber/player-esp/': {
+    title: 'Caliber Player ESP | Boxes, Health & Distance PC',
     description:
-      'Player ESP with boxes, health bars, and distance tags for Robrun on PC. See how ESP fits your loadout before you open checkout on the linked store.',
-    keywords: 'Robrun ESP, Robrun cheat features, Robrun gameplay guide',
+      'Player ESP with boxes, health bars, and distance tags for Caliber on PC. See how ESP fits your loadout before you open checkout on the linked store.',
+    keywords: 'Caliber ESP, Caliber cheat features, Caliber gameplay guide',
   },
-  '/products/robrun/wallhack/': {
-    title: 'Robrun Wallhack Module | Cover Reads & Intel for PC',
+  '/products/caliber/wallhack/': {
+    title: 'Caliber Wallhack Module | Cover Reads & Intel for PC',
     description:
-      'Robrun wallhack for building clears and peek timing on PC. Pairs with player ESP in the same Robrun modules stack from robruncheat.org.',
-    keywords: 'Robrun wallhack, Robrun cheat features, Robrun hacks',
+      'Caliber wallhack for building clears and peek timing on PC. Pairs with player ESP in the same Caliber modules stack from caliber-cheats.org.',
+    keywords: 'Caliber wallhack, Caliber cheat features, Caliber hacks',
   },
-  '/products/robrun/loot-esp/': {
-    title: 'Robrun Loot ESP | Weapons, Attachments & Gear PC',
+  '/products/caliber/loot-esp/': {
+    title: 'Caliber Loot ESP | Weapons, Attachments & Gear PC',
     description:
-      'Loot ESP for faster POI paths on Robrun PC. Filter weapons and attachments in one overlay module from the robruncheat.org product catalog.',
-    keywords: 'Robrun gaming tools, Robrun ESP, Robrun game optimization',
+      'Loot ESP for faster POI paths on Caliber PC. Filter weapons and attachments in one overlay module from the caliber-cheats.org product catalog.',
+    keywords: 'Caliber gaming tools, Caliber ESP, Caliber game optimization',
   },
-  '/products/robrun/no-recoil/': {
-    title: 'Robrun No Recoil Module | Weapon Spray Control PC',
+  '/products/caliber/no-recoil/': {
+    title: 'Caliber No Recoil Module | Weapon Spray Control PC',
     description:
-      'Per-weapon no recoil presets for tighter sprays in Robrun on PC. Tune strength so FPS and overlays stay stable before you buy through checkout.',
-    keywords: 'Robrun game settings, Robrun performance optimization, Robrun aimbot',
+      'Per-weapon no recoil presets for tighter sprays in Caliber on PC. Tune strength so FPS and overlays stay stable before you buy through checkout.',
+    keywords: 'Caliber game settings, Caliber performance optimization, Caliber aimbot',
   },
-  '/products/robrun/stream-proof/': {
-    title: 'Robrun Stream Proof Overlays | OBS-Safe Capture PC',
+  '/products/caliber/stream-proof/': {
+    title: 'Caliber Stream Proof Overlays | OBS Capture Hide on PC',
     description:
-      'Stream-proof overlays for Robrun creators: hide ESP from capture while monitoring locally. Test capture scenes before ranked on Windows PC.',
-    keywords: 'Robrun gaming software, Robrun cheat setup guide, stream proof robrun',
+      'Stream-proof overlays for Caliber creators: hide ESP from capture while monitoring locally. Test capture scenes before ranked on Windows PC.',
+    keywords: 'Caliber gaming software, Caliber cheat setup guide, stream proof caliber',
   },
-  '/products/robrun/cloud-dma/': {
-    title: 'Robrun Cloud DMA | Single-PC Hyper-V for PC Checkouts',
+  '/products/caliber/cloud-dma/': {
+    title: 'Caliber Cloud DMA | Single-PC Hyper-V for PC Checkouts',
     description:
-      'Cloud DMA for Robrun on one Windows PC: Hyper-V layer, no second tower, and merchant checkout for plans. Confirm your Windows edition before you buy.',
-    keywords: 'Cloud DMA, Robrun hardware, single PC Hyper-V',
+      'Cloud DMA for Caliber on one Windows PC: Hyper-V layer, no second tower, and merchant checkout for plans. Confirm your Windows edition before you buy.',
+    keywords: 'Cloud DMA, Caliber hardware, single PC Hyper-V',
   },
-  '/products/robrun/hwid-spoofer/': {
-    title: 'HWID Spoofer for Robrun | PC Identity Reset Workflow',
+  '/products/caliber/hwid-spoofer/': {
+    title: 'HWID Spoofer for Caliber | PC Identity Reset Workflow',
     description:
-      'HWID spoofer workflow for new Robrun accounts on the same Windows PC. Read limits, reinstall notes, then open checkout when the tool fits your case.',
-    keywords: 'HWID spoofer, Robrun ban, PC fingerprint reset',
+      'HWID spoofer workflow for new Caliber accounts on the same Windows PC. Read limits, reinstall notes, then open checkout when the tool fits your case.',
+    keywords: 'HWID spoofer, Caliber ban, PC fingerprint reset',
   },
-  '/products/robrun/utilities/': {
-    title: 'Robrun Utility Tools | Cloud DMA & HWID Options PC',
+  '/products/caliber/utilities/': {
+    title: 'Caliber Utility Tools | Cloud DMA & HWID Options PC',
     description:
-      'Compare Cloud DMA and HWID spoofer utilities for Robrun buyers. Match the tool to your hardware or account situation before secure checkout.',
-    keywords: 'Robrun utilities, Cloud DMA, HWID spoofer',
+      'Compare Cloud DMA and HWID spoofer utilities for Caliber buyers. Match the tool to your hardware or account situation before secure checkout.',
+    keywords: 'Caliber utilities, Cloud DMA, HWID spoofer',
   },
   '/blogs/': {
-    title: 'Robrun Cheats — Guides & Articles | robruncheat.org',
+    title: 'Caliber Cheats — Guides & Blogs | caliber-cheats.org',
     description:
-      'Robrun cheats guides: buyer checklists, ESP and aimbot explainers, pricing, safety, FPS tips, compatibility, and patch notes for PC players.',
-    keywords: 'robrun cheats guides, robrun esp guide, robrun aimbot guide',
+      'Caliber cheats guides: buyer checklists, ESP and aimbot explainers, pricing, safety, FPS tips, compatibility, and patch notes for PC players.',
+    keywords: 'caliber cheats guides, caliber esp guide, caliber aimbot guide',
   },
   '/forum/': {
-    title: 'Robrun Cheats Forum | Aimbot, ESP & Setup Advice',
+    title: 'Caliber Cheats Forum | Aimbot, ESP & Setup Advice',
     description:
-      'Robrun forum threads on module setup, aimbot tuning, ESP layouts, loader questions, and patch-day notes from Windows PC players.',
-    keywords: 'Robrun cheat setup guide, Robrun troubleshooting guide',
+      'Caliber forum threads on module setup, aimbot tuning, ESP layouts, loader questions, and patch-day notes from Windows PC players.',
+    keywords: 'Caliber cheat setup guide, Caliber troubleshooting guide',
   },
   '/reviews/': {
-    title: 'Robrun Cheats Reviews | Ratings & Buyer Feedback PC',
+    title: 'Caliber Cheats Reviews | Ratings & Buyer Feedback PC',
     description:
-      'Robrun Cheats customer ratings and feedback on modules, checkout, setup, and support from buyers using the PC catalog pages.',
-    keywords: 'Robrun Cheats reviews, Robrun cheats reviews, Robrun Cheats customer feedback',
+      'Caliber Cheats customer ratings and feedback on modules, checkout, setup, and support from buyers using the PC catalog pages.',
+    keywords: 'Caliber Cheats reviews, Caliber cheats reviews, Caliber Cheats customer feedback',
   },
   '/faq/': {
-    title: 'Robrun Cheats FAQ | PC Setup, Loader & Checkout Help',
+    title: 'Caliber Cheats FAQ | PC Setup, Loader & Checkout Help',
     description:
-      'FAQ on Robrun software compatibility, PC requirements, cheat download rules, patch-day checks, and install steps for Windows players.',
-    keywords: 'Robrun PC requirements, Robrun software compatibility, Robrun cheat setup',
+      'FAQ on Caliber software compatibility, PC requirements, cheat download rules, patch-day checks, and install steps for Windows players.',
+    keywords: 'Caliber PC requirements, Caliber software compatibility, Caliber cheat setup',
   },
   '/support/': {
-    title: 'Robrun Cheats Support | Install & Loader Help Desk',
+    title: 'Caliber Cheats Support | Install & Loader Help Desk',
     description:
-      'Support for Robrun loader errors, lag after overlays, and checkout on robruncheat.org. Bring order email and PC specs when contacting the merchant.',
-    keywords: 'Robrun troubleshooting guide, Robrun performance optimization',
+      'Support for Caliber loader errors, lag after overlays, and checkout on caliber-cheats.org. Bring order email and PC specs when contacting the merchant.',
+    keywords: 'Caliber troubleshooting guide, Caliber performance optimization',
   },
   '/about/': {
-    title: 'About robruncheat.org | Robrun PC Module Catalog Hub',
+    title: 'About caliber-cheats.org | Caliber PC Module Catalog Hub',
     description:
-      'Independent catalog for Robrun modules and PC gaming tools. We explain features; checkout and downloads run on the linked merchant store.',
-    keywords: 'Robrun cheats, Robrun gaming tools, robruncheat.org',
+      'Independent catalog for Caliber modules and PC gaming tools. We explain features; checkout and downloads run on the linked merchant store.',
+    keywords: 'Caliber cheats, Caliber gaming tools, caliber-cheats.org',
   },
   '/terms/': {
-    title: 'Terms of Use | robruncheat.org Robrun Module Site',
+    title: 'Terms of Use | caliber-cheats.org Caliber Module Site',
     description:
-      'Terms for visitors using robruncheat.org pages, blogs, and forums before external checkout for Robrun modules and related utilities.',
+      'Terms for visitors using caliber-cheats.org pages, blogs, and forums before external checkout for Caliber modules and related utilities.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | robruncheat.org Visitor Information',
+    title: 'Privacy Policy | caliber-cheats.org Visitor Information',
     description:
-      'How robruncheat.org handles privacy for visitors browsing Robrun module pages, blogs, reviews, and support resources on this site.',
+      'How caliber-cheats.org handles privacy for visitors browsing Caliber module pages, blogs, reviews, and support resources on this site.',
   },
 };
 

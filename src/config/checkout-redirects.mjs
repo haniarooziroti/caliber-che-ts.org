@@ -1,52 +1,52 @@
-/** Affiliate checkout URLs — keep HANIA and the encoded `to` path exactly. */
-const ROBRUN_PRODUCT_URL = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Frobrun';
+/** Affiliate checkout URLs — keep HANIA and encoded store paths exactly. */
+const CALIBER_PRODUCT_URL = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcaliber-novaxware';
 const CLOUD_DMA_URL = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcloud-dma';
 const HWID_SPOOFER_URL = 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fhwid-spoofer';
 
 export const CHECKOUT_LINKS = {
-  robrun: ROBRUN_PRODUCT_URL,
+  caliber: CALIBER_PRODUCT_URL,
   cloudDMA: CLOUD_DMA_URL,
   hwidSpoofer: HWID_SPOOFER_URL,
 };
 
 export const CHECKOUT_URLS = {
-  robrun: CHECKOUT_LINKS.robrun,
+  caliber: CHECKOUT_LINKS.caliber,
   'cloud-dma': CHECKOUT_LINKS.cloudDMA,
   'hwid-spoofer': CHECKOUT_LINKS.hwidSpoofer,
 };
 
 export const CHECKOUT_PATH_REDIRECTS = new Map([
-  ['/go/robrun', CHECKOUT_URLS.robrun],
-  ['/go/robrun/', CHECKOUT_URLS.robrun],
-  ['/go/store', CHECKOUT_URLS.robrun],
-  ['/go/store/', CHECKOUT_URLS.robrun],
-  ['/go/caliber', CHECKOUT_URLS.robrun],
-  ['/go/caliber/', CHECKOUT_URLS.robrun],
-  ['/go/apex', CHECKOUT_URLS.robrun],
-  ['/go/apex/', CHECKOUT_URLS.robrun],
+  ['/go/caliber', CHECKOUT_URLS.caliber],
+  ['/go/caliber/', CHECKOUT_URLS.caliber],
+  ['/go/store', CHECKOUT_URLS.caliber],
+  ['/go/store/', CHECKOUT_URLS.caliber],
+  ['/go/robrun', CHECKOUT_URLS.caliber],
+  ['/go/robrun/', CHECKOUT_URLS.caliber],
+  ['/go/apex', CHECKOUT_URLS.caliber],
+  ['/go/apex/', CHECKOUT_URLS.caliber],
   ['/go/cloud-dma', CHECKOUT_URLS['cloud-dma']],
   ['/go/cloud-dma/', CHECKOUT_URLS['cloud-dma']],
   ['/go/hwid-spoofer', CHECKOUT_URLS['hwid-spoofer']],
   ['/go/hwid-spoofer/', CHECKOUT_URLS['hwid-spoofer']],
 ]);
 
-/** Cloudflare splat rules for legacy product URL trees */
 export const LEGACY_SPLAT_REDIRECTS = [
-  ['/products/apex-legends/*', '/products/robrun/:splat'],
+  ['/products/robrun/*', '/products/caliber/:splat'],
+  ['/products/apex-legends/*', '/products/caliber/:splat'],
 ];
 
 export const LEGACY_PRODUCT_REDIRECTS = new Map([
-  ['/products/rust-cheats/', '/products/robrun/'],
-  ['/products/apex-legends', '/products/robrun/'],
-  ['/products/apex-legends/', '/products/robrun/'],
-  ['/products/apex-hack/', '/products/robrun/'],
-  ['/products/cs2-cheats/', '/products/robrun/'],
-  ['/products/caliber/', '/products/robrun/'],
-  ['/products/caliber', '/products/robrun'],
-  ['/go/rust', CHECKOUT_URLS.robrun],
-  ['/go/rust/', CHECKOUT_URLS.robrun],
-  ['/go/cs2', CHECKOUT_URLS.robrun],
-  ['/go/cs2/', CHECKOUT_URLS.robrun],
+  ['/products/rust-cheats/', '/products/caliber/'],
+  ['/products/apex-legends', '/products/caliber/'],
+  ['/products/apex-legends/', '/products/caliber/'],
+  ['/products/apex-hack/', '/products/caliber/'],
+  ['/products/cs2-cheats/', '/products/caliber/'],
+  ['/products/robrun/', '/products/caliber/'],
+  ['/products/robrun', '/products/caliber'],
+  ['/go/rust', CHECKOUT_URLS.caliber],
+  ['/go/rust/', CHECKOUT_URLS.caliber],
+  ['/go/cs2', CHECKOUT_URLS.caliber],
+  ['/go/cs2/', CHECKOUT_URLS.caliber],
 ]);
 
 export function resolveCheckoutPathRedirect(pathname) {

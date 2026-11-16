@@ -1,5 +1,5 @@
 /**
- * @deprecated Caliber / Supabase assets are no longer used. Use YouTube Robrun footage:
+ * @deprecated Caliber / Supabase assets are no longer used. Use YouTube Caliber footage:
  *   npm run media:fetch-yt
  * Source: https://www.youtube.com/watch?v=3NxnMoqfEhs (clip 0:47–1:57)
  */

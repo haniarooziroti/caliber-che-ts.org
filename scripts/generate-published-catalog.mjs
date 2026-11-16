@@ -29,7 +29,7 @@ const DISPLAY_NAMES = [
 ];
 
 const PRODUCT_FIXTURES = [
-  { slug: 'aimbot', name: 'Robrun Aimbot' },
+  { slug: 'aimbot', name: 'Caliber Aimbot' },
   { slug: 'player-esp', name: 'Player ESP' },
   { slug: 'wallhack', name: 'Wallhack' },
   { slug: 'loot-esp', name: 'Loot ESP' },

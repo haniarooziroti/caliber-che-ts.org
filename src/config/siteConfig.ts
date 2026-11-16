@@ -1,7 +1,7 @@
 import { PRODUCT_BASE, SITE_URL } from './site';
 import { PRIMARY_CHECKOUT_PATH } from './checkout';
 
-export const SITE_NAME = 'Robrun Cheats';
+export const SITE_NAME = 'Caliber Cheats';
 export { SITE_URL };
 export const PRODUCT_URL = PRODUCT_BASE;
 export const CHECKOUT_URL = PRIMARY_CHECKOUT_PATH;

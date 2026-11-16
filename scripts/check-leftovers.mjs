@@ -38,8 +38,10 @@ const LEFTOVER_PATTERNS = [
   { pattern: /\bcheatsrust\b/i, label: 'cheatsrust' },
   { pattern: /\blevocheats\b/i, label: 'levocheats' },
   { pattern: /\bcalibercheat\.net\b/i, label: 'calibercheat.net' },
-  { pattern: /\bCaliber cheats\b/i, label: 'Caliber cheats' },
-  { pattern: /\bCaliber\b/i, label: 'Caliber' },
+  { pattern: /\bcaliberche-t\.net\b/i, label: 'caliberche-t.net' },
+  { pattern: /\brobruncheat\.org\b/i, label: 'robruncheat.org' },
+  { pattern: /\brobrun[\s-]?cheats\b/i, label: 'robrun cheats' },
+  { pattern: /\bRobrun\b/i, label: 'Robrun' },
 ];
 
 /**
@@ -47,15 +49,16 @@ const LEFTOVER_PATTERNS = [
  * @type {{ file: RegExp; pattern?: RegExp; reason: string; publicFacing: boolean }[]}
  */
 const ALLOWLIST = [
-  { file: /^scripts\/(robrun-rebrand|redirects|sync-public-redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
+  { file: /^scripts\/(caliber-rebrand|caliber-cheats-org-migrate|robrun-rebrand|redirects|sync-public-redirects|verify-banned-terms|check-leftovers|site-origin)\.mjs$/, reason: 'migration or validator tooling', publicFacing: false },
   {
-    file: /^scripts\/(fetch-caliber-media|prune-legacy-gameplay|verify-public-media|fetch-robrun-youtube-media)\.mjs$/,
-    reason: 'Robrun media pipeline and legacy Caliber guards',
+    file: /^scripts\/(fetch-caliber-media|prune-legacy-gameplay|verify-public-media|fetch-caliber-youtube-media)\.mjs$/,
+    reason: 'Caliber media pipeline and legacy Caliber guards',
     publicFacing: false,
   },
   { file: /^scripts\/rust-rebrand\.mjs$/, reason: 'historical migration script', publicFacing: false },
   { file: /^public\/_redirects$/, pattern: /apex|cs2|rust/i, reason: 'legacy SEO redirects', publicFacing: false },
-  { file: /^src\/config\/checkout-redirects\.mjs$/, pattern: /apex|cs2|rust|caliber/i, reason: 'legacy checkout/product redirects', publicFacing: false },
+  { file: /^src\/config\/checkout-redirects\.mjs$/, pattern: /apex|cs2|rust|caliber|robrun/i, reason: 'legacy checkout/product redirects', publicFacing: false },
+  { file: /^public\/_redirects$/, pattern: /robrun/i, reason: 'legacy Robrun SEO redirects', publicFacing: false },
   { file: /^scripts\/caliber-rebrand\.mjs$/, reason: 'historical migration script', publicFacing: false },
   { file: /^scripts\/site-origin\.mjs$/, pattern: /calibercheat/i, reason: 'wrong domain deny list', publicFacing: false },
   { file: /^src\/config\/sitemap\.ts$/, pattern: /cs2-cheats/i, reason: 'exclude legacy routes from sitemap', publicFacing: false },
@@ -181,7 +184,10 @@ if (fs.existsSync(dist)) {
 }
 
 const wrongOrigin = failures.filter(
-  (f) => /https?:\/\//i.test(f.snippet) && !f.snippet.includes(SITE_ORIGIN) && f.snippet.includes('robruncheat'),
+  (f) =>
+    /https?:\/\//i.test(f.snippet) &&
+    !f.snippet.includes(SITE_ORIGIN) &&
+    (f.snippet.includes('calibercheat') || f.snippet.includes('robruncheat')),
 );
 for (const f of wrongOrigin) {
   f.term = 'wrong canonical origin';

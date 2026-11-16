@@ -29,11 +29,11 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const aimbot = link('Robrun aimbot', productPath('aimbot'));
+const aimbot = link('Caliber aimbot', productPath('aimbot'));
 const esp = link('player ESP', productPath('player-esp'));
 const wallhack = link('wallhack', productPath('wallhack'));
 const loot = link('loot ESP', productPath('loot-esp'));
-const productsHub = link('Robrun products', ROUTES.products);
+const productsHub = link('Caliber products', ROUTES.products);
 const faqPage = link('full FAQ', ROUTES.faq);
 const forums = link('forums', ROUTES.forum);
 
@@ -42,21 +42,21 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'status',
     topic: 'setup',
     icon: 'faqStatus',
-    q: 'Where do I check if Robrun cheats is online?',
-    a: a('The live status banner is on robruncheat.org. Always check after an Robrun update before you buy or launch.'),
+    q: 'Where do I check if Caliber cheats is online?',
+    a: a('The live status banner is on caliber-cheats.org. Always check after an Caliber update before you buy or launch.'),
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: a('Your portal unlocks the loader and setup notes when payment clears. Follow those steps before opening Robrun.'),
+    a: a('Your portal unlocks the loader and setup notes when payment clears. Follow those steps before opening Caliber.'),
   },
   {
     id: 'ban-risk',
     topic: 'safety',
     icon: 'faqBanRisk',
-    q: 'Can I get banned using third-party Robrun cheats?',
+    q: 'Can I get banned using third-party Caliber cheats?',
     a: a('Yes. Any modification carries risk. Anti-cheat and report systems change over time. Read current status and accept the risk before use.'),
   },
   {
@@ -79,7 +79,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqProductsPage',
     q: 'Where are modules listed?',
     aHtml: `Aimbot, ESP, wallhack, loot ESP, no recoil, and stream-proof pages are under ${productsHub}.`,
-    a: a('Modules are listed under Products on robruncheat.org.'),
+    a: a('Modules are listed under Products on caliber-cheats.org.'),
   },
   {
     id: 'aimbot-settings',
@@ -143,15 +143,15 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'cheat-download',
     topic: 'setup',
     icon: 'faqAfterBuy',
-    q: 'Where does Robrun cheat download come from?',
+    q: 'Where does Caliber cheat download come from?',
     a: a('Only from the operator portal tied to your key after checkout—not email attachments or Discord DMs.'),
   },
   {
     id: 'pc-reqs',
     topic: 'setup',
     icon: 'faqPlatforms',
-    q: 'What are the Robrun PC requirements for this software?',
-    a: a('You still need a PC that runs Robrun smoothly on its own—64-bit Windows 10/11, current client, and admin rights for the loader.'),
+    q: 'What are the Caliber PC requirements for this software?',
+    a: a('You still need a PC that runs Caliber smoothly on its own—64-bit Windows 10/11, current client, and admin rights for the loader.'),
   },
   {
     id: 'update-compat',
@@ -165,14 +165,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqEspVsScripts',
     q: 'Can overlays hurt FPS or cause lag?',
-    aHtml: `Dense ${esp} layers can cost frames. Lower skeleton or glow strength, cap distance tags, and test in pubs—same ideas as normal ${link('Robrun game settings', '/forum/')} tuning.`,
+    aHtml: `Dense ${esp} layers can cost frames. Lower skeleton or glow strength, cap distance tags, and test in pubs—same ideas as normal ${link('Caliber game settings', '/forum/')} tuning.`,
     a: a('Dense ESP can cost frames. Lower skeleton or glow strength and test in pubs before ranked.'),
   },
   {
     id: 'install-guide',
     topic: 'setup',
     icon: 'faqBlogSetupLoader',
-    q: 'Is there an Robrun software installation guide?',
+    q: 'Is there an Caliber software installation guide?',
     aHtml: `Portal steps are the official path. For peer tips, see ${forums} threads on install order and Defender exclusions.`,
     a: a('Follow portal steps first; forums add troubleshooting detail from other PC players.'),
   },
@@ -180,7 +180,7 @@ export const siteFaqs: SiteFaqItem[] = [
 
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'Robrun cheats FAQ',
+  title: 'Caliber cheats FAQ',
   subtitle: 'Filter aimbot, ESP, products, setup, safety, and forum-related answers.',
 } as const;
 

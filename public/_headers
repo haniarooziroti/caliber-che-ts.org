@@ -2,8 +2,8 @@
   Cache-Control: public, max-age=3600, must-revalidate
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-# Preview Workers hosts — production robruncheat.org must remain indexable.
-https://robruncheat-org.hania-rooziroti.workers.dev/*
+# Preview Workers hosts — production caliber-cheats.org must remain indexable.
+https://caliber-cheats-org.hania-rooziroti.workers.dev/*
   X-Robots-Tag: noindex, nofollow
 https://*.workers.dev/*
   X-Robots-Tag: noindex, nofollow

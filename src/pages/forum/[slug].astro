@@ -17,7 +17,7 @@ if (!post) return Astro.redirect('/forum/');
 
 function forumDescription(excerpt: string): string {
   let text = excerpt.replace(/\s+/g, ' ').trim();
-  const tail = ' Robrun forum thread on loaders, ESP, aimbot, and anti-cheat updates.';
+  const tail = ' Caliber forum thread on loaders, ESP, aimbot, and anti-cheat updates.';
   if (text.length < 120) text = `${text}${tail}`;
   if (text.length > 155) text = `${text.slice(0, 152).replace(/\s+\S*$/, '')}.`;
   if (text.length < 120) text = `${text} Compare modules on the store page.`.slice(0, 155);
@@ -39,7 +39,7 @@ const relatedPosts = [
 
 /** Keep document titles within build SEO limits (47–62 chars). */
 function forumThreadPageTitle(threadTitle: string): string {
-  const prefix = 'Robrun Forum | ';
+  const prefix = 'Caliber Forum | ';
   const min = 47;
   const max = 62;
   let core = threadTitle.replace(/\s+/g, ' ').trim();
@@ -50,9 +50,9 @@ function forumThreadPageTitle(threadTitle: string): string {
   }
   if (full.length > max) full = `${full.slice(0, max - 1)}…`;
   if (full.length < min) {
-    const suffix = ' | Robrun PC';
+    const suffix = ' | Caliber PC';
     full = `${full}${suffix}`.slice(0, max);
-    if (full.length < min) full = `${prefix}${core} — Robrun cheats`.slice(0, max);
+    if (full.length < min) full = `${prefix}${core} — Caliber cheats`.slice(0, max);
   }
   return full;
 }
@@ -74,7 +74,7 @@ function forumThreadPageTitle(threadTitle: string): string {
                 <a href="/forum/" class="forum-community-name">{post.category}</a>
                 <span>·</span><span>u/{post.author}</span><span>·</span><span>{post.age}</span>
               </div>
-              <h1>Robrun cheats forum — {post.title}</h1>
+              <h1>Caliber cheats forum — {post.title}</h1>
               {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
               <p class="forum-post-excerpt">{post.excerpt}</p>
               <div class="forum-detail-copy">{post.body.map((paragraph) => <p>{paragraph}</p>)}</div>
@@ -98,9 +98,9 @@ function forumThreadPageTitle(threadTitle: string): string {
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
               <div class="forum-about__title"><span class={`forum-community-avatar tone-${post.categoryTone}`}>c</span><h2>{post.category}</h2></div>
-              <p>Robrun setup, aimbot, ESP, and loader discussions in {post.category}.</p>
+              <p>Caliber setup, aimbot, ESP, and loader discussions in {post.category}.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> threads</span><span><b>{forumPosts.filter((item) => item.category === post.category).length}</b> in this topic</span></div>
-              <a class="forum-join" href="/forum/">Return to Robrun cheat forum index</a>
+              <a class="forum-join" href="/forum/">Return to Caliber cheat forum index</a>
             </div>
           </section>
           <section class="forum-side-card forum-related-card" aria-labelledby="forum-related-title">

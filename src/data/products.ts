@@ -57,28 +57,28 @@ export interface ProductPage {
   seoDescription: string;
 }
 
-const productBase = '/products/robrun/';
+const productBase = '/products/caliber/';
 
 const productPageSeoDescription: Record<string, string> = {
-  aimbot: 'Robrun cheats aimbot with FOV, smoothness, and bone priority for ranked fights. Read tuning notes, then open checkout.',
-  'player-esp': 'Robrun cheats ESP with boxes, health bars, and distance tags. Compare player ESP, then buy when layouts feel clean.',
-  wallhack: 'Robrun wallhack for peek reads and building clears on PC. Pair with player ESP, then open the store.',
-  'loot-esp': 'Robrun loot ESP for weapons, shields, and attachments through walls. Filter clutter before checkout.',
-  'no-recoil': 'Robrun no recoil with per-weapon strength for AR control. Test presets, then buy for pubs or ranked.',
+  aimbot: 'Caliber cheats aimbot with FOV, smoothness, and bone priority for ranked fights. Read tuning notes, then open checkout.',
+  'player-esp': 'Caliber cheats ESP with boxes, health bars, and distance tags. Compare player ESP, then buy when layouts feel clean.',
+  wallhack: 'Caliber wallhack for peek reads and building clears on PC. Pair with player ESP, then open the store.',
+  'loot-esp': 'Caliber loot ESP for weapons, shields, and attachments through walls. Filter clutter before checkout.',
+  'no-recoil': 'Caliber no recoil with per-weapon strength for AR control. Test presets, then buy for pubs or ranked.',
   'stream-proof': 'Stream-proof hide for OBS while overlays stay on your monitor. Record a local test, then checkout.',
   'cloud-dma': 'Cloud DMA for a single Windows PC Hyper-V layer. No second tower. Plans are shown at merchant checkout.',
   'hwid-spoofer': 'HWID spoofer for PC identity resets before new accounts. Read limits and checkout when it matches your situation.',
 };
 
 const productRelatedForumSlugs: Record<string, string[]> = {
-  aimbot: ['aimbot-settings-what-level', 'no-recoil-settings-natural', 'robrun-loader-setup'],
-  'player-esp': ['player-esp-vs-wallhack', 'robrun-cheat-features-overview', 'esp-colors-ranked-visibility'],
-  wallhack: ['player-esp-vs-wallhack', 'robrun-cheat-features-overview', 'stream-proof-ranked-setup'],
-  'loot-esp': ['robrun-cheat-features-overview', 'player-esp-vs-wallhack', 'robrun-loader-setup'],
-  'no-recoil': ['no-recoil-settings-natural', 'aimbot-settings-what-level', 'robrun-cheat-features-overview'],
-  'stream-proof': ['stream-proof-ranked-setup', 'robrun-loader-setup', 'robrun-cheat-features-overview'],
-  'cloud-dma': ['robrun-loader-setup', 'robrun-cheat-features-overview', 'player-esp-vs-wallhack'],
-  'hwid-spoofer': ['robrun-loader-setup', 'robrun-cheat-features-overview', 'aimbot-settings-what-level'],
+  aimbot: ['aimbot-settings-what-level', 'no-recoil-settings-natural', 'caliber-loader-setup'],
+  'player-esp': ['player-esp-vs-wallhack', 'caliber-cheat-features-overview', 'esp-colors-ranked-visibility'],
+  wallhack: ['player-esp-vs-wallhack', 'caliber-cheat-features-overview', 'stream-proof-ranked-setup'],
+  'loot-esp': ['caliber-cheat-features-overview', 'player-esp-vs-wallhack', 'caliber-loader-setup'],
+  'no-recoil': ['no-recoil-settings-natural', 'aimbot-settings-what-level', 'caliber-cheat-features-overview'],
+  'stream-proof': ['stream-proof-ranked-setup', 'caliber-loader-setup', 'caliber-cheat-features-overview'],
+  'cloud-dma': ['caliber-loader-setup', 'caliber-cheat-features-overview', 'player-esp-vs-wallhack'],
+  'hwid-spoofer': ['caliber-loader-setup', 'caliber-cheat-features-overview', 'aimbot-settings-what-level'],
 };
 
 
@@ -86,7 +86,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '01',
     title: 'Review current status',
-    desc: 'Check the live banner on robruncheat.org before purchase—especially after an Robrun update.',
+    desc: 'Check the live banner on caliber-cheats.org before purchase—especially after an Caliber update.',
   },
   {
     num: '02',
@@ -113,17 +113,17 @@ function acquisitionFor(productName: string): ProductAcquisition {
 }
 
 const sharedGoodToKnow =
-  'Robrun receives frequent updates. Confirm module availability on the live status panel at robruncheat.org before you purchase or launch. Overlay behavior can change after patches.';
+  'Caliber receives frequent updates. Confirm module availability on the live status panel at caliber-cheats.org before you purchase or launch. Overlay behavior can change after patches.';
 
 const sharedLimitations =
-  'Third-party software in Robrun can violate the game Terms of Service and lead to account action. You use this software at your own risk. Compatibility and availability can change after game or Windows updates without notice.';
+  'Third-party software in Caliber can violate the game Terms of Service and lead to account action. You use this software at your own risk. Compatibility and availability can change after game or Windows updates without notice.';
 
-const robrunSystemRequirements: SystemRequirement[] = [
+const caliberSystemRequirements: SystemRequirement[] = [
   { icon: 'reqWindows', text: 'Supported 64-bit edition of Windows 10 or Windows 11.' },
-  { icon: 'reqSteam', text: 'Current Robrun PC client with latest patches applied.' },
+  { icon: 'reqSteam', text: 'Current Caliber PC client with latest patches applied.' },
   { icon: 'reqSettings', text: 'Administrator access for loader installation and updates.' },
   { icon: 'reqWifi', text: 'Stable internet connection for portal access and patch delivery.' },
-  { icon: 'reqCpu', text: 'A system that meets Robrun published hardware requirements.' },
+  { icon: 'reqCpu', text: 'A system that meets Caliber published hardware requirements.' },
 ];
 
 type GalleryKey = keyof typeof galleryRaw;
@@ -134,97 +134,97 @@ const galleryRaw = {
   // Shared pool — each key used at most twice across hero, products, and blogs
   gpEspWide: {
     src: `${gameplay}/a04.webp`,
-    alt: 'Robrun player ESP and operator boxes during urban combat',
+    alt: 'Caliber player ESP and operator boxes during urban combat',
     caption: 'Player + loot ESP',
     captionDesc: 'Enemy boxes, distance tags, and loot highlights in one view.',
   },
   gpWallSkeleton: {
     src: `${gameplay}/a07.webp`,
-    alt: 'Robrun wallhack ESP showing operator outlines through cover',
+    alt: 'Caliber wallhack ESP showing operator outlines through cover',
     caption: 'Wallhack skeletons',
     captionDesc: 'Through-wall silhouettes with name and range tags.',
   },
   gpAimLock: {
     src: `${gameplay}/a05.webp`,
-    alt: 'Robrun aimbot lock with ESP boxes during scoped combat',
+    alt: 'Caliber aimbot lock with ESP boxes during scoped combat',
     caption: 'Aimbot lock',
     captionDesc: 'Target lock with ESP boxes during an ADS fight.',
   },
   gpEspAimline: {
     src: `${gameplay}/a04.webp`,
-    alt: 'Robrun ESP with aimbot snapline tracking enemies across a canyon',
+    alt: 'Caliber ESP with aimbot snapline tracking enemies across a canyon',
     caption: 'ESP + snapline',
     captionDesc: 'Player ESP paired with a blue aim assist line.',
   },
   gpWallValley: {
     src: `${gameplay}/a05.webp`,
-    alt: 'Robrun wallhack and loot ESP overlooking a snowy Robrun valley',
+    alt: 'Caliber wallhack and loot ESP overlooking a snowy Caliber valley',
     caption: 'Valley wallhack',
     captionDesc: 'Long-range ESP boxes and loot outlines from high ground.',
   },
   gpAimSnap: {
     src: `${gameplay}/a05.webp`,
-    alt: 'Robrun aimbot snapline locking an operator through iron sights',
+    alt: 'Caliber aimbot snapline locking an operator through iron sights',
     caption: 'Aimbot snap',
     captionDesc: 'Snapline aim assist with electric-blue ESP boxes.',
   },
   gpAimBurst: {
     src: `${gameplay}/a04.webp`,
-    alt: 'Robrun aimbot tracking with ESP boxes during automatic fire',
+    alt: 'Caliber aimbot tracking with ESP boxes during automatic fire',
     caption: 'Aimbot spray',
     captionDesc: 'Aim assist and ESP during a mid-range spray.',
   },
   gpAimScope: {
     src: `${gameplay}/a05.webp`,
-    alt: 'Robrun aimbot ESP focusing a target through holographic sight',
+    alt: 'Caliber aimbot ESP focusing a target through holographic sight',
     caption: 'Scoped aimbot',
     captionDesc: 'ADS aim assist with box ESP on the active target.',
   },
   gpEspCanyon: {
     src: `${gameplay}/a04.webp`,
-    alt: 'Robrun player ESP boxes and loot tags in an Robrun canyon fight',
+    alt: 'Caliber player ESP boxes and loot tags in an Caliber canyon fight',
     caption: 'Canyon ESP',
     captionDesc: 'Readable player and loot ESP across open ground.',
   },
   gpEspScope: {
     src: `${gameplay}/a03.webp`,
-    alt: 'Robrun ESP settings and operator highlights on PC',
+    alt: 'Caliber ESP settings and operator highlights on PC',
     caption: 'Scoped ESP',
     captionDesc: 'Enemy and squad ESP while aiming down sights.',
   },
   gpWallLoot: {
     src: `${gameplay}/a08.webp`,
-    alt: 'Robrun wallhack with loot ESP highlighting bins and enemy players',
+    alt: 'Caliber wallhack with loot ESP highlighting bins and enemy players',
     caption: 'Wallhack + loot',
     captionDesc: 'Through-wall enemies plus loot and supply bin tags.',
   },
   gpWallRoof: {
     src: `${gameplay}/a10.webp`,
-    alt: 'Robrun rooftop wallhack showing enemy and teammate ESP boxes',
+    alt: 'Caliber rooftop wallhack showing enemy and teammate ESP boxes',
     caption: 'Rooftop wallhack',
     captionDesc: 'Enemy and squad ESP from a high POI overlook.',
   },
   gpRecoilAds: {
     src: `${gameplay}/a07.webp`,
-    alt: 'Robrun no recoil ADS spray on an assault rifle with enemy ESP highlight',
+    alt: 'Caliber no recoil ADS spray on an assault rifle with enemy ESP highlight',
     caption: 'No recoil ADS',
     captionDesc: 'Controlled spray while tracking a highlighted target.',
   },
   gpRecoilMenu: {
     src: `${gameplay}/a06.webp`,
-    alt: 'Robrun no recoil stable aim menu toggles during Robrun combat',
+    alt: 'Caliber no recoil stable aim menu toggles during Caliber combat',
     caption: 'No recoil menu',
     captionDesc: 'No recoil, stable aim, and accuracy toggles mid-fight.',
   },
   gpRecoilTrack: {
     src: `${gameplay}/a07.webp`,
-    alt: 'Robrun no recoil tracking with box ESP at mid range',
+    alt: 'Caliber no recoil tracking with box ESP at mid range',
     caption: 'Recoil tracking',
     captionDesc: 'Steady AR tracking with ESP distance tags.',
   },
   gpAimXray: {
     src: `${gameplay}/a11.webp`,
-    alt: 'Robrun aimbot and wallhack x-ray view with loot ESP overlays',
+    alt: 'Caliber aimbot and wallhack x-ray view with loot ESP overlays',
     caption: 'X-ray aim view',
     captionDesc: 'Through-structure ESP with aim assist and loot glow.',
   },
@@ -245,14 +245,14 @@ function slide(...keys: GalleryKey[]): ProductSlide[] {
 function slugFromHref(href: string): string {
   const bare = href.replace(/^\/(?:de|fr|es|pt-BR|ru|pl|tr|it)(?=\/)/, '');
   const segment = bare.replace(productBase, '').replace(/^\//, '').replace(/\/$/, '');
-  return segment || 'robrun-module';
+  return segment || 'caliber-module';
 }
 
 const tierAbout: Record<string, ProductPage['about']> = {
   aimbot: [
     {
       type: 'p',
-      text: 'Robrun aimbot is for players who want smoother tracking without maxing every slider on day one. FOV, smoothness, and bone priority are the three controls that matter most before ranked.',
+      text: 'Caliber aimbot is for players who want smoother tracking without maxing every slider on day one. FOV, smoothness, and bone priority are the three controls that matter most before ranked.',
     },
     { type: 'h2', text: 'Start calm, then tighten' },
     {
@@ -294,7 +294,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Who usually buys aimbot' },
     {
       type: 'p',
-      text: 'Players who already understand Robrun gunplay but want more consistent tracking in chaotic close fights. If you only want information, start with [player ESP](/products/robrun/player-esp/) instead.',
+      text: 'Players who already understand Caliber gunplay but want more consistent tracking in chaotic close fights. If you only want information, start with [player ESP](/products/caliber/player-esp/) instead.',
     },
   ],
   'player-esp': [
@@ -306,7 +306,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Related modules' },
     {
       type: 'p',
-      text: 'Many players add [wallhack](/products/robrun/wallhack/) for thicker cover reads, or [loot ESP](/products/robrun/loot-esp/) for faster POI clears.',
+      text: 'Many players add [wallhack](/products/caliber/wallhack/) for thicker cover reads, or [loot ESP](/products/caliber/loot-esp/) for faster POI clears.',
     },
   ],
   wallhack: [
@@ -345,7 +345,7 @@ const utilityBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Pairs well with aimbot' },
     {
       type: 'p',
-      text: 'Many players combine moderate no recoil with a calm [aimbot](/products/robrun/aimbot/) FOV instead of pushing either module to the limit.',
+      text: 'Many players combine moderate no recoil with a calm [aimbot](/products/caliber/aimbot/) FOV instead of pushing either module to the limit.',
     },
   ],
   'stream-proof': [
@@ -364,7 +364,7 @@ const utilityBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'When Cloud DMA fits' },
     {
       type: 'p',
-      text: 'Cloud DMA is for buyers who already run or plan a two-PC external read setup with supported firmware. It is not the same checkout path as standard Robrun module keys.',
+      text: 'Cloud DMA is for buyers who already run or plan a two-PC external read setup with supported firmware. It is not the same checkout path as standard Caliber module keys.',
     },
     { type: 'h2', text: 'Hardware first' },
     {
@@ -394,7 +394,7 @@ const productContent: Record<
     images: slide('gpAimSnap', 'gpAimBurst', 'gpAimScope'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Advanced aimbot',
       'FOV limiter',
@@ -407,13 +407,13 @@ const productContent: Record<
       'Pairs with no recoil',
       'Cloud config backup',
       'Portal updates',
-      '24/7 support',
+      'Support portal',
     ],
     overview: {
       title: 'Aimbot built around controllable tracking',
       paragraphs: [
-        'This Robrun aimbot focuses on FOV, smoothness, and bone selection so you can keep tracking controlled in pubs and ranked. Start with a smaller FOV, then raise it only if your fights need it.',
-        'Most buyers pair aimbot with player ESP rather than running aim alone. Check status on robruncheat.org before every session.',
+        'This Caliber aimbot focuses on FOV, smoothness, and bone selection so you can keep tracking controlled in pubs and ranked. Start with a smaller FOV, then raise it only if your fights need it.',
+        'Most buyers pair aimbot with player ESP rather than running aim alone. Check status on caliber-cheats.org before every session.',
       ],
     },
   },
@@ -421,7 +421,7 @@ const productContent: Record<
     images: slide('gpEspWide', 'gpEspScope', 'gpWallSkeleton'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Player ESP',
       'Box ESP',
@@ -434,7 +434,7 @@ const productContent: Record<
       'Stream-proof ready',
       'Cloud config backup',
       'Portal updates',
-      '24/7 support',
+      'Support portal',
     ],
     overview: {
       title: 'Player ESP for cleaner information',
@@ -448,7 +448,7 @@ const productContent: Record<
     images: slide('gpWallLoot', 'gpWallRoof', 'gpWallSkeleton'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Wallhack overlays',
       'Through-cover silhouettes',
@@ -458,12 +458,12 @@ const productContent: Record<
       'Stream-proof ready',
       'Cloud config backup',
       'Portal updates',
-      '24/7 support',
+      'Support portal',
     ],
     overview: {
       title: 'Wallhack for cover-heavy fights',
       paragraphs: [
-        'Robrun wallhack helps you track enemies behind walls and inside buildings. It is strongest when paired with player ESP health bars so you know whether a peek is worth taking.',
+        'Caliber wallhack helps you track enemies behind walls and inside buildings. It is strongest when paired with player ESP health bars so you know whether a peek is worth taking.',
         'Use wallhack for information, then still play the angle. That combination tends to feel more stable than swinging every silhouette you see.',
       ],
     },
@@ -472,7 +472,7 @@ const productContent: Record<
     images: slide('gpWallLoot', 'gpEspCanyon', 'gpEspAimline'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Loot ESP',
       'Weapon labels',
@@ -495,7 +495,7 @@ const productContent: Record<
     images: slide('gpRecoilAds', 'gpRecoilMenu', 'gpRecoilTrack'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'No recoil',
       'Per-weapon strength',
@@ -508,7 +508,7 @@ const productContent: Record<
     overview: {
       title: 'No recoil with room to tune',
       paragraphs: [
-        'No recoil for Robrun keeps common AR sprays tighter. The useful approach is moderate strength on the guns you main, not maximum values on every weapon.',
+        'No recoil for Caliber keeps common AR sprays tighter. The useful approach is moderate strength on the guns you main, not maximum values on every weapon.',
         'Combine with a calm aimbot FOV if you want tracking and spray control together.',
       ],
     },
@@ -517,7 +517,7 @@ const productContent: Record<
     images: slide('gpAimXray', 'gpWallSkeleton', 'gpEspWide'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Single-PC Hyper-V layer',
       'No second tower required',
@@ -530,7 +530,7 @@ const productContent: Record<
       title: 'Cloud DMA for a single Windows PC',
       paragraphs: [
         'Cloud DMA on the linked checkout is a single-PC Hyper-V layer, not a second tower or an external DMA card. Confirm Windows edition and virtualization before you pay.',
-        'If you only need aimbot or ESP inside the main Robrun catalog, start with those module pages instead of this add-on.',
+        'If you only need aimbot or ESP inside the main Caliber catalog, start with those module pages instead of this add-on.',
       ],
     },
   },
@@ -538,7 +538,7 @@ const productContent: Record<
     images: slide('gpEspScope', 'gpWallRoof', 'gpRecoilMenu'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'HWID reset workflow',
       'Disk and NIC options',
@@ -559,7 +559,7 @@ const productContent: Record<
     images: slide('gpAimXray', 'gpAimLock', 'gpWallValley'),
     goodToKnow: sharedGoodToKnow,
     limitations: sharedLimitations,
-    systemRequirements: robrunSystemRequirements,
+    systemRequirements: caliberSystemRequirements,
     fullFeatures: [
       'Stream-proof mode',
       'OBS-friendly capture',
@@ -602,7 +602,7 @@ function buildTierPages(): ProductPage[] {
       goodToKnow: content.goodToKnow,
       limitations: content.limitations,
       fullFeatures: content.fullFeatures,
-      systemRequirements: robrunSystemRequirements,
+      systemRequirements: caliberSystemRequirements,
       about: tierAbout[slug],
       body: tierBodies[slug] ?? [],
       relatedForumSlugs: productRelatedForumSlugs[slug] ?? [],
@@ -635,7 +635,7 @@ function buildUtilityPages(): ProductPage[] {
         goodToKnow: content.goodToKnow,
         limitations: content.limitations,
         fullFeatures: content.fullFeatures,
-        systemRequirements: robrunSystemRequirements,
+        systemRequirements: caliberSystemRequirements,
         body: utilityBodies[slug] ?? [],
         relatedForumSlugs: productRelatedForumSlugs[slug] ?? [],
       };
@@ -669,6 +669,6 @@ export const productHub = {
   title: t.products.title,
   subtitle: t.products.subtitle,
   description:
-    'Robrun cheats and hacks catalog for PC—compare aimbot, ESP, wallhack, and other cheat features. Read reviews, then checkout for portal cheat download.',
-  buyUrl: checkoutPath('robrun'),
+    'Caliber cheats and hacks catalog for PC—compare aimbot, ESP, wallhack, and other cheat features. Read reviews, then checkout for portal cheat download.',
+  buyUrl: checkoutPath('caliber'),
 };

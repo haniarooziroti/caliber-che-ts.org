@@ -7,16 +7,16 @@ import path from 'node:path';
 const ROOT = process.cwd();
 
 const SLUG_MAP = {
-  'robrun-cheats-faq': 'robrun-faq',
-  'robrun-cheats-installation': 'robrun-installation',
-  'robrun-cheats-features': 'robrun-features',
-  'robrun-esp-guide': 'robrun-esp',
-  'best-robrun-cheats': 'robrun-buying-guide',
-  'robrun-cheats-pricing': 'robrun-pricing',
-  'robrun-fps-boost': 'robrun-performance',
-  'robrun-cheats-safety': 'robrun-safety',
-  'robrun-cheats-comparison': 'robrun-comparison',
-  'robrun-gaming-software-compatibility': 'robrun-compatibility',
+  'caliber-cheats-faq': 'caliber-faq',
+  'caliber-cheats-installation': 'caliber-installation',
+  'caliber-cheats-features': 'caliber-features',
+  'caliber-esp-guide': 'caliber-esp',
+  'best-caliber-cheats': 'caliber-buying-guide',
+  'caliber-cheats-pricing': 'caliber-pricing',
+  'caliber-fps-boost': 'caliber-performance',
+  'caliber-cheats-safety': 'caliber-safety',
+  'caliber-cheats-comparison': 'caliber-comparison',
+  'caliber-gaming-software-compatibility': 'caliber-compatibility',
 };
 
 function walk(dir, out = []) {
@@ -48,7 +48,7 @@ for (const file of files) {
 const redirectsPath = path.join(ROOT, 'scripts', 'redirects.mjs');
 let redirects = fs.readFileSync(redirectsPath, 'utf8');
 const insertMarker = "export const PATH_REDIRECTS = new Map([";
-if (!redirects.includes('/blogs/robrun-buying-guide/')) {
+if (!redirects.includes('/blogs/caliber-buying-guide/')) {
   const blogRedirects = Object.entries(SLUG_MAP)
     .map(([from, to]) => `  ['/blogs/${from}', '/blogs/${to}/'],\n  ['/blogs/${from}/', '/blogs/${to}/'],`)
     .join('\n');

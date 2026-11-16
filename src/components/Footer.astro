@@ -5,10 +5,10 @@ import { Separator } from '@/components/starwind/separator';
 import { ROUTES } from '../utils/path';
 
 const resourceLinks: { href: string; label: string; ariaLabel: string; external?: boolean }[] = [
-  { href: ROUTES.reviews, label: 'Player reviews', ariaLabel: 'Robrun cheat reviews' },
-  { href: ROUTES.blogs, label: 'Guides', ariaLabel: 'Robrun guides' },
-  { href: ROUTES.forum, label: 'Forum thread index', ariaLabel: 'Robrun cheat forums' },
-  { href: ROUTES.productsStorefront, label: 'Robrun cheat modules page', ariaLabel: 'Robrun cheat modules' },
+  { href: ROUTES.reviews, label: 'Player reviews', ariaLabel: 'Caliber cheat reviews' },
+  { href: ROUTES.blogs, label: 'Guides', ariaLabel: 'Caliber guides' },
+  { href: ROUTES.forum, label: 'Forum thread index', ariaLabel: 'Caliber cheat forums' },
+  { href: ROUTES.productsStorefront, label: 'Caliber cheat modules page', ariaLabel: 'Caliber cheat modules' },
   { href: ROUTES.products, label: 'Product hub', ariaLabel: 'Products' },
   { href: '/support/', label: 'Support & ticket tips', ariaLabel: t.footer.support },
   {
@@ -31,7 +31,7 @@ const legalLinks = [
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div class="space-y-4">
         <a href="/" class="inline-flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-bold" aria-label={t.ui.homeAria}>
-          <img src="/favicon-v2-32.png" alt="robruncheat.org Robrun cheats favicon" width="32" height="32" class="rounded-md" />
+          <img src="/favicon-v2-32.png" alt="caliber-cheats.org Caliber cheats favicon" width="32" height="32" class="rounded-md" />
           <span aria-hidden="true">{t.site.name}</span>
         </a>
         <p class="text-sm text-muted-foreground">{t.footer.tagline}</p>

@@ -7,7 +7,7 @@ const dist = resolveDistRoot();
 const bad = [
   /\/images\/gameplay\/c0\d/i,
   /\/images\/gameplay\/caliber-/i,
-  /\/images\/gameplay\/robrun-(aimbot|esp|wallhack|recoil)-/i,
+  /\/images\/gameplay\/caliber-(aimbot|esp|wallhack|recoil)-/i,
   /supabase\.co.*cals/i,
 ];
 

@@ -13,11 +13,11 @@ const FRAME_COUNT = 11;
 const WEBP_QUALITY = 68;
 const MAX_WIDTH = 1280;
 
-const tmpDir = path.join(root, '.cache', 'robrun-yt');
+const tmpDir = path.join(root, '.cache', 'caliber-yt');
 const videoDir = path.join(root, 'public', 'videos');
 const gameplayDir = path.join(root, 'public', 'images', 'gameplay');
-const heroOut = path.join(videoDir, 'robrun-hero-snapyt.mp4');
-const legacyFallback = path.join(videoDir, 'robrun-hero-snapyt.mp4');
+const heroOut = path.join(videoDir, 'caliber-hero-snapyt.mp4');
+const legacyFallback = path.join(videoDir, 'caliber-hero-snapyt.mp4');
 
 function ytDlp() {
   return process.env.YT_DLP || 'yt-dlp';
@@ -151,12 +151,12 @@ if (!fs.existsSync(posterPath) && fs.existsSync(path.join(gameplayDir, 'a01.webp
 
 console.log(`Wrote ${path.relative(root, posterPath)}`);
 
-const robrunDir = path.join(root, 'public', 'images', 'robrun');
-fs.mkdirSync(robrunDir, { recursive: true });
+const caliberDir = path.join(root, 'public', 'images', 'caliber');
+fs.mkdirSync(caliberDir, { recursive: true });
 const aliasCount = Math.min(6, FRAME_COUNT);
 for (let i = 1; i <= aliasCount; i++) {
   const src = path.join(gameplayDir, `a${String(i).padStart(2, '0')}.webp`);
-  const alias = path.join(robrunDir, `robrun-gameplay-${String(i).padStart(2, '0')}.webp`);
+  const alias = path.join(caliberDir, `caliber-gameplay-${String(i).padStart(2, '0')}.webp`);
   if (fs.existsSync(src)) {
     fs.copyFileSync(src, alias);
     console.log(`Wrote ${path.relative(root, alias)}`);

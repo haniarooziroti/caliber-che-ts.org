@@ -10,7 +10,7 @@ import {
 
 const out = path.join(process.cwd(), 'public', '_redirects');
 const lines = [
-  '# Robrun Cheats — Cloudflare Static Assets: relative 301s and absolute 302s.',
+  '# Caliber Cheats — Cloudflare Static Assets: relative 301s and absolute 302s.',
   '',
 ];
 
@@ -43,9 +43,9 @@ for (const [from, to] of LEGACY_PRODUCT_REDIRECTS) {
 }
 
 const blogRedirects = [
-  ['/blogs/robrun-buying-guide/', '/blogs/robrun-cheats-buying-guide/', 301],
-  ['/blogs/robrun-performance/', '/blogs/robrun-fps-boost/', 301],
-  ['/blogs/robrun-compatibility/', '/blogs/robrun-gaming-software-compatibility/', 301],
+  ['/blogs/caliber-buying-guide/', '/blogs/caliber-cheats-buying-guide/', 301],
+  ['/blogs/caliber-performance/', '/blogs/caliber-fps-boost/', 301],
+  ['/blogs/caliber-compatibility/', '/blogs/caliber-gaming-software-compatibility/', 301],
 ];
 
 lines.push('', '# Blog slug migrations (legacy inbound)');

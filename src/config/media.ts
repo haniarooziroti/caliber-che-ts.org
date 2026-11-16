@@ -1,8 +1,8 @@
 const gameplay = '/images/gameplay';
 
-export const ROBRUN_HERO_POSTER = `${gameplay}/hero-poster.webp`;
+export const CALIBER_HERO_POSTER = `${gameplay}/hero-poster.webp`;
 
-export const ROBRUN_MEDIA = {
+export const CALIBER_MEDIA = {
   a01: `${gameplay}/a01.webp`,
   a02: `${gameplay}/a02.webp`,
   a03: `${gameplay}/a03.webp`,
@@ -23,38 +23,38 @@ export interface MediaSlide {
   captionDesc: string;
 }
 
-/** Five slides — hero carousel autoplay (see hero-embla.ts). Frames from YT 0:47–1:57. */
+/** Hero carousel — Caliber gameplay stills (see hero-embla.ts). */
 export const HERO_CAROUSEL_SLIDES: MediaSlide[] = [
   {
-    src: ROBRUN_MEDIA.a01,
-    alt: 'Robrun squad gameplay on PC — hero carousel',
-    caption: 'Robrun on PC',
-    captionDesc: 'Live gameplay from the official preview window.',
+    src: CALIBER_MEDIA.a01,
+    alt: 'Caliber cheats PC gameplay — hero carousel',
+    caption: 'Caliber on PC',
+    captionDesc: 'Squad gameplay still from the Caliber preview set.',
   },
   {
-    src: ROBRUN_MEDIA.a02,
-    alt: 'Robrun combat movement during a squad fight',
-    caption: 'Squad fight',
-    captionDesc: 'Neutral lighting from the same match clip.',
+    src: CALIBER_MEDIA.a02,
+    alt: 'Caliber ESP and combat positioning on PC',
+    caption: 'ESP & positioning',
+    captionDesc: 'Compare modules before checkout on the product hub.',
   },
   {
-    src: ROBRUN_MEDIA.a03,
-    alt: 'Robrun operator engagement in urban PvP',
-    caption: 'Urban PvP',
-    captionDesc: 'Frame pulled between 0:47 and 1:57.',
+    src: CALIBER_MEDIA.a03,
+    alt: 'Caliber operator engagement in PvP',
+    caption: 'PvP engagement',
+    captionDesc: 'Caliber cheat features vary by module and patch.',
   },
   {
-    src: ROBRUN_MEDIA.a04,
-    alt: 'Robrun push through cover during ranked play',
-    caption: 'Cover push',
-    captionDesc: 'Lightweight WebP for fast loads.',
+    src: CALIBER_MEDIA.a04,
+    alt: 'Caliber ranked match combat on PC',
+    caption: 'Ranked play',
+    captionDesc: 'Read guides for aimbot and wallhack setup.',
   },
   {
-    src: ROBRUN_MEDIA.a05,
-    alt: 'Robrun end-of-round combat highlight',
-    caption: 'Combat highlight',
+    src: CALIBER_MEDIA.a05,
+    alt: 'Caliber cheats interface overlay on PC',
+    caption: 'Module overlay',
     captionDesc: 'Carousel rotates every few seconds on desktop.',
   },
 ];
 
-export const DEFAULT_OG_IMAGE_ABSOLUTE = ROBRUN_MEDIA.a06;
+export const DEFAULT_OG_IMAGE_ABSOLUTE = CALIBER_MEDIA.a06;

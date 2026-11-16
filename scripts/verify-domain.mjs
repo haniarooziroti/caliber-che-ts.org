@@ -97,7 +97,7 @@ function isThirdPartyMediaUrl(url) {
   return THIRD_PARTY_MEDIA_HOSTS.some((suffix) => host === suffix || host.endsWith(`.${suffix}`));
 }
 
-const PRODUCT_PAGE_MARKERS = ['/products/robrun/aimbot/', '/products/robrun/hwid-spoofer/', '/products/robrun/ugc/', '/products/robrun/cloud-dma/'];
+const PRODUCT_PAGE_MARKERS = ['/products/caliber/aimbot/', '/products/caliber/hwid-spoofer/', '/products/caliber/ugc/', '/products/caliber/cloud-dma/'];
 
 function isProductPageFile(relDist) {
   return PRODUCT_PAGE_MARKERS.some((p) => relDist.replace(/\\/g, '/').includes(p.replace(/^\//, '')));

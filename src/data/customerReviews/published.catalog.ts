@@ -10,7 +10,7 @@ export const publishedReviewCatalog = [
     "content": "Key arrived quickly. Loader opened after a reboot.",
     "createdAt": "2024-06-01",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published",
     "helpfulCount": 1
@@ -108,7 +108,7 @@ export const publishedReviewCatalog = [
     "content": "HWID spoofer steps were spelled out on the product page. Followed the reboot order and the loader picked up on second try.",
     "createdAt": "2024-06-18",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -206,7 +206,7 @@ export const publishedReviewCatalog = [
     "content": "Wallhack line colors stayed readable on open-world district without blowing out contrast. Took ten minutes to match player ESP.",
     "createdAt": "2024-07-05",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -303,7 +303,7 @@ export const publishedReviewCatalog = [
     "content": "Verified email matched checkout instantly.",
     "createdAt": "2024-07-22",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -401,7 +401,7 @@ export const publishedReviewCatalog = [
     "content": "Checkout email was instant. Support answered a borderless vs exclusive fullscreen question the same night.",
     "createdAt": "2024-08-08",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -498,7 +498,7 @@ export const publishedReviewCatalog = [
     "content": "Tightened aimbot FOV and smoothing before ranked. Tracking feels less snappy than stock settings but more natural in clips.",
     "createdAt": "2024-08-25",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published",
     "helpfulCount": 5
@@ -596,7 +596,7 @@ export const publishedReviewCatalog = [
     "content": "Ranked session felt stable after FOV tweaks.",
     "createdAt": "2024-09-11",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -694,7 +694,7 @@ export const publishedReviewCatalog = [
     "content": "Wallhack line colors stayed readable on open-world district without blowing out contrast. Took ten minutes to match player ESP.",
     "createdAt": "2024-09-21",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -791,7 +791,7 @@ export const publishedReviewCatalog = [
     "content": "No recoil preset took a night to tune per weapon. Not a substitute for spray control but steadier beams at mid range.",
     "createdAt": "2024-10-08",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -889,7 +889,7 @@ export const publishedReviewCatalog = [
     "content": "Menu labels match what the product page lists.",
     "createdAt": "2024-10-25",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -986,7 +986,7 @@ export const publishedReviewCatalog = [
     "content": "Tightened aimbot FOV and smoothing before ranked. Tracking feels less snappy than stock settings but more natural in clips.",
     "createdAt": "2024-11-11",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published",
     "helpfulCount": 9
@@ -1084,7 +1084,7 @@ export const publishedReviewCatalog = [
     "content": "HWID spoofer steps were spelled out on the product page. Followed the reboot order and the loader picked up on second try.",
     "createdAt": "2024-11-28",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -1182,7 +1182,7 @@ export const publishedReviewCatalog = [
     "content": "ESP filters cut clutter on a 1080p panel.",
     "createdAt": "2024-12-15",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -1279,7 +1279,7 @@ export const publishedReviewCatalog = [
     "content": "No recoil preset took a night to tune per weapon. Not a substitute for spray control but steadier beams at mid range.",
     "createdAt": "2025-01-01",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },
@@ -1377,7 +1377,7 @@ export const publishedReviewCatalog = [
     "content": "Checkout email was instant. Support answered a borderless vs exclusive fullscreen question the same night.",
     "createdAt": "2025-01-11",
     "productSlug": "aimbot",
-    "productName": "Robrun Aimbot",
+    "productName": "Caliber Aimbot",
     "verifiedPurchase": true,
     "status": "published"
   },

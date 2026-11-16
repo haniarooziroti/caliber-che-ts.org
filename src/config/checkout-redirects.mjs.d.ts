@@ -1,11 +1,11 @@
 export declare const CHECKOUT_LINKS: {
-  readonly robrun: string;
+  readonly caliber: string;
   readonly cloudDMA: string;
   readonly hwidSpoofer: string;
 };
 
 export declare const CHECKOUT_URLS: {
-  readonly robrun: string;
+  readonly caliber: string;
   readonly 'cloud-dma': string;
   readonly 'hwid-spoofer': string;
 };

@@ -10,13 +10,16 @@ const root = process.cwd();
 const dist = resolveDistRoot(root);
 
 const FAIL_TERMS = [
-  'Caliber',
-  'calibercheat',
+  'Robrun',
+  'robruncheat',
+  'caliberche-t.net',
   'Apex Legends',
   'apex-cheats',
   'Apex',
   'zadeyo',
   'undetected',
+  'bypass',
+  'safe',
   'levocheats',
   'cheatsrust',
   'apexhack',
@@ -64,6 +67,8 @@ const SOURCE_EXCLUDE_FILES = new Set(
     'scripts/rust-rebrand.mjs',
     'scripts/verify-banned-terms.mjs',
     'scripts/caliber-rebrand.mjs',
+    'scripts/caliber-cheats-org-migrate.mjs',
+    'scripts/robrun-rebrand.mjs',
     'scripts/check-leftovers.mjs',
   ].map((p) => p.replace(/\\/g, '/')),
 );

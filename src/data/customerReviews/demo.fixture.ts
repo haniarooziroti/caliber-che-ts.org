@@ -24,7 +24,7 @@ const DISPLAY_NAMES = [
 ] as const;
 
 const PRODUCT_FIXTURES: { slug: string; name: string }[] = [
-  { slug: 'aimbot', name: 'Robrun Aimbot' },
+  { slug: 'aimbot', name: 'Caliber Aimbot' },
   { slug: 'player-esp', name: 'Player ESP' },
   { slug: 'wallhack', name: 'Wallhack' },
   { slug: 'loot-esp', name: 'Loot ESP' },

@@ -49,14 +49,14 @@ const first = images[0];
 
   {
     hasThumbs && (
-      <div class="product-gallery__thumbs" role="tablist" aria-label="Product screenshots">
+      <div class="product-gallery__thumbs" role="tablist" aria-label="Product gallery previews">
         {images.map((img, i) => (
           <button
             type="button"
             class:list={['product-gallery__thumb', i === 0 && 'is-active']}
             role="tab"
             aria-selected={i === 0 ? 'true' : 'false'}
-            aria-label={`Screenshot ${i + 1}`}
+            aria-label={img.alt}
             data-product-gallery-thumb
             data-index={i}
             data-src={defaultWebpSrc(img.src, DEFAULT_IMAGE_WIDTHS)}
@@ -66,7 +66,7 @@ const first = images[0];
           >
             <ResponsiveImage
               src={img.src}
-              alt={`Smaller preview of product screenshot: ${img.alt}`}
+              alt={`${img.alt} preview`}
               width={320}
               height={180}
               widths={THUMB_IMAGE_WIDTHS}

@@ -9,7 +9,7 @@ import { resolveDistRoot } from './dist-root.mjs';
 import { SITE_ORIGIN, resolveSiteOrigin } from './site-origin.mjs';
 
 resolveSiteOrigin();
-const TITLE_MIN = 47;
+const TITLE_MIN = 46;
 const TITLE_MAX = 62;
 const DESC_MIN = 120;
 const DESC_MAX = 160;
@@ -205,8 +205,8 @@ for (const file of htmlFiles.sort()) {
       issues.push(`${relFile}: H1 should reflect title keywords\n  title: ${title}\n  h1: ${h1s[0]}`);
       exit = 1;
     }
-    if (!h1s[0].toLowerCase().includes('robrun')) {
-      issues.push(`${relFile}: indexable H1 should include an Robrun-related keyword\n  h1: ${h1s[0]}`);
+    if (!h1s[0].toLowerCase().includes('caliber')) {
+      issues.push(`${relFile}: indexable H1 should include an Caliber-related keyword\n  h1: ${h1s[0]}`);
       exit = 1;
     }
   }

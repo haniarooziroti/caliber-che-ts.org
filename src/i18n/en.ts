@@ -6,16 +6,16 @@ const productBase = PRODUCT_BASE;
 
 export const en: Translations = {
   site: {
-    name: "Robrun Cheats",
-    domain: "robruncheat.org",
-    title: "Robrun Cheats for PC | ESP, Aimbot & Software Modules",
+    name: "Caliber Cheats",
+    domain: "caliber-cheats.org",
+    title: "Caliber Cheats for PC | ESP, Aimbot & Features",
     description:
-      "Explore Robrun cheats for PC, compare available ESP and aimbot features, review compatibility, and find product information before buying.",
-    brandMarkAlt: "robruncheat.org"
+      "Explore Caliber cheats for PC, compare ESP and aimbot features, review compatibility, and find product details before checkout.",
+    brandMarkAlt: "caliber-cheats.org"
   },
   nav: [
     {
-      href: "/products/robrun/",
+      href: "/products/caliber/",
       label: "Products"
     },
     {
@@ -40,20 +40,20 @@ export const en: Translations = {
     }
   ],
   hero: {
-    status: "ROB RUN — PC build",
-    eyebrow: "robrun cheats",
-    titleLine1: "Robrun Cheats",
+    status: "Caliber — PC build",
+    eyebrow: "caliber cheats",
+    titleLine1: "Caliber Cheats",
     titleLine2: "for PC",
     subtitle:
-      "Product pages for ROB RUN on Windows PC—compare listed ESP, aimbot, and overlay options before merchant checkout. Features and availability are shown on each module; we do not guarantee detection or account outcomes.",
+      "Product pages for Caliber on Windows PC—compare listed ESP, aimbot, and overlay options before merchant checkout. Features and availability are shown on each module; we do not guarantee detection or account outcomes.",
     ctaPrimary: "Browse cheat modules",
     ctaBuy: "Buy now",
     modesLabel: "Play styles",
     modes: [
       "Ranked",
       "Pubs",
-      "heist modes",
-      "chase sequences"
+      "Team modes",
+      "Custom lobbies"
     ],
     metrics: [
       {
@@ -70,14 +70,14 @@ export const en: Translations = {
       },
       {
         label: "Support",
-        strong: "24/7"
+        strong: "Portal"
       }
     ]
   },
   features: {
-    eyebrow: "Robrun cheats modules",
-    title: "Robrun ESP, Aimbot & Software Features",
-    subtitle: "Explore module families listed for ROB RUN on PC—open each product page for current feature bullets before checkout.",
+    eyebrow: "Caliber cheats modules",
+    title: "Caliber ESP, Aimbot & Software Features",
+    subtitle: "Explore module families listed for Caliber on PC—open each product page for current feature bullets before checkout.",
     items: [
       {
         title: "Aimbot",
@@ -91,7 +91,7 @@ export const en: Translations = {
           "Presets for close and long range"
         ],
         tags: [
-          "robrun aimbot",
+          "caliber aimbot",
           "smooth aim",
           "fov aimbot"
         ],
@@ -108,7 +108,7 @@ export const en: Translations = {
           "Skeleton ESP option"
         ],
         tags: [
-          "robrun esp",
+          "caliber esp",
           "player esp",
           "box esp"
         ],
@@ -124,113 +124,19 @@ export const en: Translations = {
           "Readable in close fights"
         ],
         tags: [
-          "robrun wallhack",
+          "caliber wallhack",
           "wallhack",
           "through walls"
         ],
         bento: "sm:col-span-2 lg:col-span-4 lg:col-start-9 lg:row-start-2"
-      },
-      {
-        title: "Loot ESP",
-        subtitle: "Loot with intent.",
-        desc: "Loot ESP marks weapons, shields, and attachments so you spend less time scanning every bin.",
-        bullets: [
-          "Weapon and attachment labels",
-          "Shield and heal highlights",
-          "Filter noisy common loot"
-        ],
-        tags: [
-          "loot esp",
-          "robrun loot",
-          "weapon esp"
-        ],
-        bento: "sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-3"
-      },
-      {
-        title: "No Recoil",
-        subtitle: "Keep sprays on target.",
-        desc: "No recoil helps control assault rifles and LMG sprays without maxing strength on day one.",
-        bullets: [
-          "Per-weapon strength",
-          "Pairs with aimbot FOV",
-          "Start low, then tune"
-        ],
-        tags: [
-          "no recoil",
-          "robrun no recoil",
-          "spray control"
-        ],
-        bento: "sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-3"
-      },
-      {
-        title: "Weapon ESP",
-        subtitle: "See what they are holding.",
-        desc: "Weapon ESP shows enemy loadouts so you know when a push is a shotgun fight or a sniper hold.",
-        bullets: [
-          "Enemy weapon labels",
-          "Useful before door peeks",
-          "Works with box ESP"
-        ],
-        tags: [
-          "weapon esp",
-          "robrun weapon esp"
-        ],
-        bento: "sm:col-span-2 lg:col-span-8 lg:row-span-2 lg:col-start-1 lg:row-start-4"
-      },
-      {
-        title: "Health Bars",
-        subtitle: "Finish fights cleanly.",
-        desc: "Health bar ESP shows remaining HP and shields so you commit when the fight is actually winnable.",
-        bullets: [
-          "Shield and health split",
-          "Visible through cover",
-          "Great with aimbot focus"
-        ],
-        tags: [
-          "health bar esp",
-          "robrun health esp"
-        ],
-        bento: "sm:col-span-2 lg:col-span-4 lg:row-span-2 lg:col-start-9 lg:row-start-4"
-      },
-      {
-        title: "Stream Proof",
-        subtitle: "Keep capture clean.",
-        desc: "Stream-proof mode keeps overlays on your monitor while OBS and game capture stay clean.",
-        bullets: [
-          "OBS and Game Bar friendly",
-          "Per-module toggle",
-          "Test with a local recording"
-        ],
-        tags: [
-          "stream proof",
-          "obs safe",
-          "capture hide"
-        ],
-        bento: "sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-6"
-      },
-      {
-        title: "Cloud & DMA options",
-        subtitle: "Flexible delivery paths.",
-        desc: "Cloud config sync and optional DMA / AWS paths for players who need a different setup route.",
-        bullets: [
-          "Cloud preset backup",
-          "Optional cloud-DMA path",
-          "AWS option when listed"
-        ],
-        tags: [
-          "cloud dma",
-          "Robrun cheats",
-          "config sync"
-        ],
-        bento: "sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-6"
       }
     ]
   },
   whyUs: {
-    eyebrow: "Why robruncheat.org",
-    title: "Compare Robrun cheats modules",
+    eyebrow: "Why caliber-cheats.org",
+    title: "Compare Caliber cheats modules",
     subtitle: "Aimbot, ESP, and wallhack pages with live status—no fluff.",
-    usLabel: "robruncheat.org",
+    usLabel: "caliber-cheats.org",
     otherLabel: "Typical shop",
     rows: [
       {
@@ -243,7 +149,7 @@ export const en: Translations = {
       },
       {
         title: "Stream-proof coverage",
-        desc: "Creators get capture-safe options without hunting buried toggles."
+        desc: "Creators get stream-proof options without hunting buried toggles."
       },
       {
         title: "Live status before launch",
@@ -270,9 +176,9 @@ export const en: Translations = {
         desc: "ESP, aimbot, wallhack, loot, recoil, and more."
       },
       {
-        value: "24/7",
-        title: "Support window",
-        desc: "Help when loader or config questions come up."
+        value: "Forum",
+        title: "Support channel",
+        desc: "Loader and config questions through the support portal and forums."
       }
     ]
   },
@@ -284,7 +190,7 @@ export const en: Translations = {
       "Think of it as a short cheat setup guide: confirm status, pick modules, pay, then follow the software installation guide in your portal—never random links.",
     ctaPrimary: "View products",
     ctaSecondary: "Read forums",
-    ctaPrimaryHref: "/products/robrun/",
+    ctaPrimaryHref: "/products/caliber/",
     ctaSecondaryHref: "/forum/",
     steps: [
       {
@@ -299,7 +205,7 @@ export const en: Translations = {
       },
       {
         step: "03",
-        title: "Verify status & queue Robrun",
+        title: "Verify status & queue Caliber",
         desc: "Confirm the status banner is online, load your preset, then jump into a pub before ranked."
       }
     ]
@@ -308,11 +214,11 @@ export const en: Translations = {
     eyebrow: "Compatibility",
     title: "Runs on your rig.",
     subtitle:
-      "Robrun software compatibility starts with matching game and Windows builds—check status after each season update or latest update patch.",
+      "Caliber software compatibility starts with matching game and Windows builds—check status after each season update or latest update patch.",
     items: [
       "Windows 10 or Windows 11 (64-bit) — core PC requirements",
-      "Intel or AMD CPU meeting Robrun PC requirements",
-      "Current Robrun PC client (Origin / EA app)",
+      "Intel or AMD CPU meeting Caliber PC requirements",
+      "Current Caliber PC client (Origin / EA app)",
       "Administrator rights for loader install",
       "Stable internet for portal cheat download",
       "Headroom for FPS settings if you run dense ESP"
@@ -320,7 +226,7 @@ export const en: Translations = {
   },
   cheats: {
     eyebrow: "Featured modules",
-    title: "Robrun cheat modules",
+    title: "Caliber cheat modules",
     subtitle: "Start with aimbot, player ESP, or wallhack—then layer loot ESP and no recoil if you need them.",
     viewAll: "All products",
     explore: "Open page",
@@ -329,7 +235,7 @@ export const en: Translations = {
         badge: "Most picked",
         tier: "Aimbot",
         name: "Aimbot",
-        title: "Robrun Aimbot",
+        title: "Caliber Aimbot",
         desc: "Smooth aimbot with FOV and bone controls for close fights and mid-range sprays.",
         features: [
           "FOV limiter",
@@ -339,14 +245,14 @@ export const en: Translations = {
           "Visibility check"
         ],
         more: 3,
-        href: "/products/robrun/aimbot/",
+        href: "/products/caliber/aimbot/",
         variant: "popular"
       },
       {
         badge: "Vision",
         tier: "ESP",
         name: "ESP",
-        title: "Robrun Player ESP",
+        title: "Caliber Player ESP",
         desc: "Player ESP with boxes, health bars, distance, and skeleton options through cover.",
         features: [
           "Box ESP",
@@ -356,14 +262,14 @@ export const en: Translations = {
           "Team filters"
         ],
         more: 2,
-        href: "/products/robrun/player-esp/",
+        href: "/products/caliber/player-esp/",
         variant: "essential"
       },
       {
         badge: "Awareness",
         tier: "Wallhack",
         name: "Wallhack",
-        title: "Robrun Wallhack",
+        title: "Caliber Wallhack",
         desc: "Wallhack overlays for building clears and angle holds when info matters most.",
         features: [
           "Through-wall silhouettes",
@@ -371,23 +277,23 @@ export const en: Translations = {
           "Readable close range"
         ],
         more: 1,
-        href: "/products/robrun/wallhack/",
+        href: "/products/caliber/wallhack/",
         variant: "limited"
       }
     ]
   },
   products: {
-    eyebrow: "Buy Robrun cheats",
-    title: "Buy Robrun cheats modules",
+    eyebrow: "Buy Caliber cheats",
+    title: "Buy Caliber cheats modules",
     subtitle: "Aimbot, player ESP, wallhack, loot ESP, no recoil, stream proof, Cloud DMA, and HWID spoofer—clear pages before you buy.",
-    viewAll: "All Robrun modules",
+    viewAll: "All Caliber modules",
     get: "Buy now",
     explore: "Module details",
     items: [
       {
         badge: "Hardware",
         category: "Hardware",
-        title: "Robrun Cloud DMA",
+        title: "Caliber Cloud DMA",
         subtitle: "Single-PC Hyper-V layer",
         desc: "Cloud DMA checkout for a Hyper-V layer on one Windows PC. Plans and the final total are shown on the merchant checkout.",
         features: [
@@ -397,12 +303,12 @@ export const en: Translations = {
           "Portal docs"
         ],
         more: 2,
-        href: "/products/robrun/cloud-dma/"
+        href: "/products/caliber/cloud-dma/"
       },
       {
         badge: "Identity",
         category: "Utility",
-        title: "Robrun HWID Spoofer",
+        title: "Caliber HWID Spoofer",
         subtitle: "Hardware fingerprint reset",
         desc: "HWID spoofer for a different hardware fingerprint. Plans and the final total are shown on the merchant checkout.",
         features: [
@@ -412,12 +318,12 @@ export const en: Translations = {
           "Portal access"
         ],
         more: 1,
-        href: "/products/robrun/hwid-spoofer/"
+        href: "/products/caliber/hwid-spoofer/"
       },
       {
         badge: "Vision",
         category: "Vision",
-        title: "Robrun Loot ESP",
+        title: "Caliber Loot ESP",
         subtitle: "Weapons and attachments through walls",
         desc: "Loot ESP highlights valuable gear so you path through POIs with a plan.",
         features: [
@@ -427,35 +333,35 @@ export const en: Translations = {
           "Noise filters"
         ],
         more: 2,
-        href: "/products/robrun/loot-esp/"
+        href: "/products/caliber/loot-esp/"
       },
       {
         badge: "Combat",
         category: "Combat",
-        title: "Robrun No Recoil",
+        title: "Caliber No Recoil",
         subtitle: "Tighter sprays on common ARs",
-        desc: "No recoil for Robrun with per-weapon strength you can keep subtle.",
+        desc: "No recoil for Caliber with per-weapon strength you can keep subtle.",
         features: [
           "Per-weapon strength",
           "Pairs with aimbot",
           "Pub and ranked presets"
         ],
         more: 1,
-        href: "/products/robrun/no-recoil/"
+        href: "/products/caliber/no-recoil/"
       },
       {
         badge: "Capture",
         category: "Capture",
-        title: "Robrun Stream Proof",
+        title: "Caliber Stream Proof",
         subtitle: "Hide overlays from OBS",
         desc: "Stream-proof mode keeps ESP and aim visuals off your VOD while you still see them.",
         features: [
-          "OBS safe mode",
+          "OBS capture hide",
           "Game capture tests",
           "Per-module toggle"
         ],
         more: 1,
-        href: "/products/robrun/stream-proof/"
+        href: "/products/caliber/stream-proof/"
       }
     ]
   },
@@ -524,7 +430,7 @@ export const en: Translations = {
     badge: "4 steps",
     titleBefore: "Key in hand",
     titleHighlight: "in a few clicks",
-    subtitle: "A straight path from purchase to an Robrun preset you can reuse every session.",
+    subtitle: "A straight path from purchase to an Caliber preset you can reuse every session.",
     ctaLabel: "Start checkout",
     ctaHref: PRIMARY_CHECKOUT_PATH,
     ctaSecondary: "Ask in forums",
@@ -568,7 +474,7 @@ export const en: Translations = {
       {
         num: "02",
         title: "FPS & overlay load",
-        desc: "Trim skeleton ESP and glow if FPS dips. Robrun performance optimization often means fewer layers, not more."
+        desc: "Trim skeleton ESP and glow if FPS dips. Caliber performance optimization often means fewer layers, not more."
       },
       {
         num: "03",
@@ -579,15 +485,15 @@ export const en: Translations = {
   },
   support: {
     eyebrow: "Support",
-    title: "Robrun Cheats support for loader setup & checkout",
+    title: "Caliber Cheats support for loader setup & checkout",
     subtitle: "Tell us where you are stuck—loader, configs, or checkout.",
     channels: [
       {
-        icon: "headphones",
-        title: "Chat before checkout",
-        desc: "Unsure which module page fits? Ask before you pay.",
-        linkLabel: "Open checkout help",
-        href: "/support/"
+        icon: "navProducts",
+        title: "Compare modules",
+        desc: "Open the Caliber product hub to compare aimbot, ESP, wallhack, and add-ons before checkout.",
+        linkLabel: "View products",
+        href: "/products/caliber/"
       },
       {
         icon: "navFaq",
@@ -612,7 +518,7 @@ export const en: Translations = {
       },
       {
         title: "Platform",
-        desc: "Windows 10 or 11, and your Robrun client type."
+        desc: "Windows 10 or 11, and your Caliber client type."
       },
       {
         title: "Error detail",
@@ -627,17 +533,17 @@ export const en: Translations = {
     items: [
       {
         num: "01",
-        q: "Where do I check if Robrun cheats is online?",
-        a: "Use the live status banner on robruncheat.org before you buy or launch—especially after a game update."
+        q: "Where do I check if Caliber cheats is online?",
+        a: "Use the live status banner on caliber-cheats.org before you buy or launch—especially after a game update."
       },
       {
         num: "02",
         q: "What happens after I buy?",
-        a: "Your portal unlocks the loader and setup notes when payment clears. Follow those steps before opening Robrun."
+        a: "Your portal unlocks the loader and setup notes when payment clears. Follow those steps before opening Caliber."
       },
       {
         num: "03",
-        q: "Can I get banned using third-party Robrun cheats?",
+        q: "Can I get banned using third-party Caliber cheats?",
         a: "Yes. Any third-party tool can lead to account action. Read the current status and accept the risk before use."
       },
       {
@@ -653,12 +559,12 @@ export const en: Translations = {
       {
         num: "06",
         q: "Where are modules listed?",
-        a: "Aimbot, ESP, wallhack, loot ESP, no recoil, and stream-proof pages live under Products on robruncheat.org."
+        a: "Aimbot, ESP, wallhack, loot ESP, no recoil, and stream-proof pages live under Products on caliber-cheats.org."
       }
     ]
   },
   footer: {
-    tagline: "Robrun cheats — Robrun aimbot, player ESP, and wallhack. robruncheat.org",
+    tagline: "Caliber cheats — Caliber aimbot, player ESP, and wallhack. caliber-cheats.org",
     explore: "Explore",
     exploreLinks: [
       {
@@ -668,18 +574,18 @@ export const en: Translations = {
         scrollTarget: "features"
       },
       {
-        href: "/products/robrun/aimbot/",
-        label: "Robrun aimbot",
+        href: "/products/caliber/aimbot/",
+        label: "Caliber aimbot",
         ariaLabel: "Aimbot"
       },
       {
-        href: "/products/robrun/player-esp/",
+        href: "/products/caliber/player-esp/",
         label: "Player ESP",
         ariaLabel: "Player ESP"
       },
       {
-        href: "/products/robrun/",
-        label: "All Robrun products",
+        href: "/products/caliber/",
+        label: "All Caliber products",
         ariaLabel: "Products"
       },
       {
@@ -689,7 +595,7 @@ export const en: Translations = {
       },
       {
         href: "/forum/",
-        label: "Robrun cheats guides",
+        label: "Caliber cheats guides",
         ariaLabel: "Guides"
       },
       {
@@ -711,15 +617,15 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: "About robruncheat.org",
-      description: "robruncheat.org is the home for Robrun module pages, forums, and setup notes—compare aimbot, ESP, and wallhack options before checkout.",
+      title: "About caliber-cheats.org",
+      description: "caliber-cheats.org is the home for Caliber module pages, forums, and setup notes—compare aimbot, ESP, and wallhack options before checkout.",
       sections: [
         {
-          heading: "robruncheat.org: Robrun cheats",
+          heading: "caliber-cheats.org: Caliber cheats",
           paragraphs: [
-            "robruncheat.org focuses on maintained module pages—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof options—so you can compare features before checkout.",
-            "Product names on robruncheat.org are used for identification only; always read the live status banner before you launch.",
-            "Forums and blogs on robruncheat.org cover settings talk, patch-day habits, and install steps when seasons or loaders change."
+            "caliber-cheats.org focuses on maintained module pages—aimbot, player ESP, wallhack, loot ESP, no recoil, and stream-proof options—so you can compare features before checkout.",
+            "Product names on caliber-cheats.org are used for identification only; always read the live status banner before you launch.",
+            "Forums and blogs on caliber-cheats.org cover settings talk, patch-day habits, and install steps when seasons or loaders change."
           ]
         },
         {
@@ -738,13 +644,13 @@ export const en: Translations = {
       ]
     },
     privacy: {
-      title: "Robrun Cheats privacy policy",
-      description: "How robruncheat.org handles analytics, cookies, and contact data.",
+      title: "Caliber Cheats privacy policy",
+      description: "How caliber-cheats.org handles analytics, cookies, and contact data.",
       sections: [
         {
           heading: "Information we collect",
           paragraphs: [
-            "We may collect standard web analytics such as page views, device type, browser, and approximate region when analytics are enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on robruncheat.org."
+            "We may collect standard web analytics such as page views, device type, browser, and approximate region when analytics are enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on caliber-cheats.org."
           ]
         },
         {
@@ -768,27 +674,27 @@ export const en: Translations = {
       ]
     },
     terms: {
-      title: "Robrun Cheats terms & conditions",
-      description: "Purchase, license, refund, and use terms for products listed on robruncheat.org.",
+      title: "Caliber Cheats terms & conditions",
+      description: "Purchase, license, refund, and use terms for products listed on caliber-cheats.org.",
       sections: [
         {
           heading: "Agreement",
           paragraphs: [
-            "Last updated: October 2026. By using robruncheat.org or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy."
+            "Last updated: October 2026. By using caliber-cheats.org or completing checkout for any product listed here, you agree to these Terms & Conditions and our Privacy Policy."
           ]
         },
         {
           heading: "What you purchase",
           paragraphs: [
-            "We list access to Robrun cheats modules for Windows, delivered through an operator portal and loader.",
-            "Feature lists on each product page describe what is included at the time of purchase. Modules can change when Robrun or anti-cheat systems update."
+            "We list access to Caliber cheats modules for Windows, delivered through an operator portal and loader.",
+            "Feature lists on each product page describe what is included at the time of purchase. Modules can change when Caliber or anti-cheat systems update."
           ]
         },
         {
           heading: "Checkout and delivery",
           paragraphs: [
-            "Payment and license delivery run on external checkout pages. robruncheat.org does not process or store payment card numbers.",
-            "After purchase, use the portal linked from your order flow to download the current loader and setup notes before launching Robrun."
+            "Payment and license delivery run on external checkout pages. caliber-cheats.org does not process or store payment card numbers.",
+            "After purchase, use the portal linked from your order flow to download the current loader and setup notes before launching Caliber."
           ]
         },
         {
@@ -807,7 +713,7 @@ export const en: Translations = {
         {
           heading: "Availability and risk",
           paragraphs: [
-            "Third-party tools for Robrun can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.",
+            "Third-party tools for Caliber can conflict with game updates and anti-cheat systems. You use this software at your own risk, including possible account action.",
             "Check the homepage status banner before every session."
           ]
         },
@@ -827,7 +733,7 @@ export const en: Translations = {
     },
     support: {
       title: "Support",
-      description: "Get help with Robrun cheat loaders, configs, and checkout on robruncheat.org."
+      description: "Get help with Caliber cheat loaders, configs, and checkout on caliber-cheats.org."
     }
   },
   ui: {
@@ -835,8 +741,8 @@ export const en: Translations = {
     browseCheats: "Buy now",
     browseCheatsMobile: "Buy now",
     navTryNow: "Buy now",
-    navTryNowAria: "Buy Robrun cheats",
-    homeAria: "Robrun cheats home",
+    navTryNowAria: "Buy Caliber cheats",
+    homeAria: "Caliber cheats home",
     checkoutAria: "Start checkout",
     discordAria: "Join Discord",
     menuOpen: "Open menu",
@@ -861,9 +767,9 @@ export const en: Translations = {
   pages: {
     notFound: {
       title: "Page not found",
-      description: "The page you requested could not be found on robruncheat.org.",
+      description: "The page you requested could not be found on caliber-cheats.org.",
       heading: "Page not found",
-      body: "That URL does not exist or may have moved. Head back to the homepage or browse Robrun cheat modules.",
+      body: "That URL does not exist or may have moved. Head back to the homepage or browse Caliber cheat modules.",
       backHome: "Back to home",
       viewProducts: "View products",
       openForums: "Open forums"
@@ -881,36 +787,36 @@ export const en: Translations = {
       support: "Support"
     },
     blog: {
-      schemaName: "Robrun Cheats — Guides & Articles",
-      h1Line1: "Robrun Cheats —",
-      h1Line2: "Guides & Articles",
+      schemaName: "Caliber Cheats — Guides & Blogs",
+      h1Line1: "Caliber Cheats —",
+      h1Line2: "Guides & Blogs",
       subtitle:
-        "Original Robrun guides on ESP, aimbot, pricing, safety, PC performance, and patch compatibility—with links to the live product hub.",
-      searchSr: "Search Robrun guides and articles",
-      searchPlaceholder: "Search Robrun guides, features, and articles…",
-      searchAria: "Search Robrun guides",
+        "Original Caliber guides on ESP, aimbot, pricing, safety, PC performance, and patch compatibility—with links to the live product hub.",
+      searchSr: "Search Caliber guides and blogs",
+      searchPlaceholder: "Search Caliber guides, ESP, aimbot, and wallhack…",
+      searchAria: "Search Caliber guides",
       sortBy: "Sort by",
       sortAria: "Sort guides",
-      newest: "Latest articles",
-      oldest: "Oldest articles",
+      newest: "Latest guides",
+      oldest: "Oldest guides",
       sortAz: "Alphabetical A–Z",
       sortZa: "Alphabetical Z–A",
       sortReadShort: "Shortest reading time",
       sortReadLong: "Longest reading time",
-      filterAria: "Filter articles by category",
-      allBlogs: "All Articles",
-      articles: "articles",
-      article: "article",
-      articlesCount: "{n} articles",
-      empty: "No articles match your search.",
-      related: "Related articles",
-      ctaHeading: "Guides: Robrun cheats",
-      ctaBody: "Compare Robrun aimbot, player ESP, wallhack, loot ESP, and no recoil—then pick 1 week, 1 month, or lifetime on the product page.",
-      ctaPrimary: "View Robrun cheats products",
+      filterAria: "Filter guides by category",
+      allBlogs: "All guides",
+      articles: "guides",
+      article: "guide",
+      articlesCount: "{n} guides",
+      empty: "No guides match your search.",
+      related: "Related guides",
+      ctaHeading: "Guides: Caliber cheats",
+      ctaBody: "Compare Caliber aimbot, player ESP, wallhack, loot ESP, and no recoil—then pick 1 week, 1 month, or lifetime on the product page.",
+      ctaPrimary: "View Caliber cheats products",
       ctaPricing: "See pricing",
       ctaForum: "Open forum",
       readMore: "Open guide",
-      readyHeading: "Ready for Robrun cheats?",
+      readyHeading: "Ready for Caliber cheats?",
       readyBody: "Compare modules and pricing, then check live status before you buy.",
       categories: {
         Guides: "Guides",
@@ -930,7 +836,7 @@ export const en: Translations = {
     faq: {
       heading: "FAQ: ESP, aimbot & checkout",
       allQuestions: "ALL QUESTIONS",
-      schemaDesc: "Answers about ESP, aimbot, wallhack, checkout, and setup on robruncheat.org.",
+      schemaDesc: "Answers about ESP, aimbot, wallhack, checkout, and setup on caliber-cheats.org.",
       sectionEyebrow: "All topics",
       sectionTitle: "Browse by category",
       sectionSubtitle: "Filter aimbot, ESP, products, setup, safety, and forum-related answers.",
@@ -954,11 +860,11 @@ export const en: Translations = {
       sortPopular: "Popular",
       sortLatest: "Latest",
       browseForums: "Browse forums",
-      moreThreads: "More Robrun cheat threads in this topic.",
+      moreThreads: "More Caliber cheat threads in this topic.",
       discussions: "discussions",
       inThisTopic: "in this topic",
       moreDiscussions: "More discussions",
-      viewAll: "All Robrun forums",
+      viewAll: "All Caliber forums",
       replies: "replies",
       upvotes: "upvotes",
       viewProducts: "View products",
@@ -980,7 +886,7 @@ export const en: Translations = {
       next: "Next",
       previousPageAria: "Previous page",
       nextPageAria: "Next page",
-      aboutTitle: "Forums: Robrun cheats",
+      aboutTitle: "Forums: Caliber cheats",
       aboutBody: "These forums are for aimbot levels, ESP layouts, and install steps before you queue ranked—browse threads or compare modules on the product page.",
       topicsHeading: "Topics",
       openRelated: "Open related threads",
@@ -995,8 +901,8 @@ export const en: Translations = {
     reviews: {
       crumb: "Reviews",
       eyebrow: "Buyer feedback",
-      h1: "Robrun Cheats customer reviews",
-      h1Sub: "Real Experiences From Robrun Cheats Customers",
+      h1: "Caliber Cheats customer reviews",
+      h1Sub: "Real Experiences From Caliber Cheats Customers",
       heroDesc:
         "Purchase notes on aimbot, player ESP, wallhack, loot ESP, stream proof, Cloud DMA, and HWID tools—shared before checkout.",
       starFilterLabel: "Filter by star rating",
@@ -1050,7 +956,7 @@ export const en: Translations = {
       allModules: "All modules",
       whatsIncluded: "What's included",
       productDescription: "Product description",
-      productDescriptionDesc: "How this build fits ranked PvP, chase sequences, and patch-day workflows.",
+      productDescriptionDesc: "How this build fits ranked PvP, team modes, and patch-day workflows.",
       showMore: "Show more",
       showLess: "Show less",
       compatibility: "Compatibility",
@@ -1059,7 +965,7 @@ export const en: Translations = {
       relatedGuidesEyebrow: "Guides",
       relatedGuidesTitle: "Guides about {name}",
       relatedGuidesDesc: "Setup tips, ESP tuning, and buy guides that match this module.",
-      browseAllBlogs: "All Robrun guides",
+      browseAllBlogs: "All Caliber guides",
       reqPermissions: "Permissions",
       reqRestorePoint: "Restore point",
       reqSetupGuide: "Setup guide",
@@ -1071,7 +977,7 @@ export const en: Translations = {
           {
             num: "01",
             title: "Review current status",
-            desc: "Check the live banner on robruncheat.org before purchase—especially after an Robrun update."
+            desc: "Check the live banner on caliber-cheats.org before purchase—especially after an Caliber update."
           },
           {
             num: "02",
@@ -1092,19 +998,19 @@ export const en: Translations = {
       },
       systemReqLines: [
         "Supported 64-bit edition of Windows 10 or Windows 11.",
-        "Current Robrun PC client with latest patches applied.",
+        "Current Caliber PC client with latest patches applied.",
         "Administrator access for loader installation and updates.",
         "Stable internet connection for portal access and patch delivery.",
-        "A system that meets Robrun published hardware requirements."
+        "A system that meets Caliber published hardware requirements."
       ]
     },
     sidebar: {
       aria: "Article sidebar",
-      toc: "In this article",
+      toc: "In this guide",
       tocAria: "Table of contents",
       relatedGuides: "Related guides",
       ourProducts: "Our products",
-      robrunProducts: "Robrun products",
+      caliberProducts: "Caliber products",
       eliteCheats: "Elite cheats",
       skinChanger: "Skin Changer",
       hwidSpoofer: "HWID Spoofer",
@@ -1114,7 +1020,7 @@ export const en: Translations = {
       customerSupport: "customer support",
       english: "English",
       worldwide: "Worldwide",
-      siteDescription: "Robrun cheats with ESP, aimbot, and wallhack modules."
+      siteDescription: "Caliber cheats with ESP, aimbot, and wallhack modules."
     }
   }
 } as Translations;

@@ -5,8 +5,8 @@ import { blogArticles } from './articles';
 export type { BlogArticle, BlogBlock, BlogCategory, BlogFaqItem } from './types';
 export { BLOG_LINKS, blogAnchor, blogHref } from './links';
 
-export const blogCategories: Array<'All Articles' | BlogCategory> = [
-  'All Articles',
+export const blogCategories: Array<'All Guides' | BlogCategory> = [
+  'All Guides',
   'Buying Guides',
   'Features',
   'Comparisons',

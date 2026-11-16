@@ -8,37 +8,37 @@ const root = process.cwd();
 const articlesPath = path.join(root, 'src/data/blogs/articles.ts');
 const redirectsPath = path.join(root, 'public/_redirects');
 
-const P = '/products/robrun/';
+const P = '/products/caliber/';
 const text = fs.readFileSync(articlesPath, 'utf8');
 const jsonPart = text.replace(/^[\s\S]*?=\s*/, '').replace(/\s*as BlogArticle\[\];[\s\S]*$/, '');
 /** @type {import('../src/data/blogs/types.ts').BlogArticle[]} */
 let articles = JSON.parse(jsonPart);
 
 const slugRenames = {
-  'robrun-cheats-buying-guide': 'best-robrun-cheats',
-  'robrun-fps-guide': 'robrun-fps-boost',
-  'robrun-updates-compatibility': 'robrun-updates',
-  'robrun-pc-requirements': 'robrun-gaming-software-compatibility',
+  'caliber-cheats-buying-guide': 'best-caliber-cheats',
+  'caliber-fps-guide': 'caliber-fps-boost',
+  'caliber-updates-compatibility': 'caliber-updates',
+  'caliber-pc-requirements': 'caliber-gaming-software-compatibility',
 };
 
 const removeSlugs = new Set([
-  'best-robrun-cheats-pc',
-  'robrun-free-vs-paid',
-  'robrun-pc-optimization',
-  'robrun-aim-training-tips',
-  'robrun-beginners-guide',
+  'best-caliber-cheats-pc',
+  'caliber-free-vs-paid',
+  'caliber-pc-optimization',
+  'caliber-aim-training-tips',
+  'caliber-beginners-guide',
 ]);
 
 const redirectLines = [
-  '/blogs/robrun-cheats-buying-guide/ /blogs/best-robrun-cheats/ 301',
-  '/blogs/best-robrun-cheats-pc/ /blogs/best-robrun-cheats/ 301',
-  '/blogs/robrun-free-vs-paid/ /blogs/robrun-cheats-pricing/ 301',
-  '/blogs/robrun-pc-optimization/ /blogs/robrun-fps-boost/ 301',
-  '/blogs/robrun-fps-guide/ /blogs/robrun-fps-boost/ 301',
-  '/blogs/robrun-updates-compatibility/ /blogs/robrun-updates/ 301',
-  '/blogs/robrun-pc-requirements/ /blogs/robrun-gaming-software-compatibility/ 301',
-  '/blogs/robrun-aim-training-tips/ /blogs/robrun-aimbot/ 301',
-  '/blogs/robrun-beginners-guide/ /blogs/robrun-cheats-installation/ 301',
+  '/blogs/caliber-cheats-buying-guide/ /blogs/best-caliber-cheats/ 301',
+  '/blogs/best-caliber-cheats-pc/ /blogs/best-caliber-cheats/ 301',
+  '/blogs/caliber-free-vs-paid/ /blogs/caliber-cheats-pricing/ 301',
+  '/blogs/caliber-pc-optimization/ /blogs/caliber-fps-boost/ 301',
+  '/blogs/caliber-fps-guide/ /blogs/caliber-fps-boost/ 301',
+  '/blogs/caliber-updates-compatibility/ /blogs/caliber-updates/ 301',
+  '/blogs/caliber-pc-requirements/ /blogs/caliber-gaming-software-compatibility/ 301',
+  '/blogs/caliber-aim-training-tips/ /blogs/caliber-aimbot/ 301',
+  '/blogs/caliber-beginners-guide/ /blogs/caliber-cheats-installation/ 301',
 ];
 
 function replaceSlugsInArticle(article) {
@@ -49,16 +49,16 @@ function replaceSlugsInArticle(article) {
   }
   for (const old of removeSlugs) {
     const target =
-      old === 'best-robrun-cheats-pc'
-        ? 'best-robrun-cheats'
-        : old === 'robrun-free-vs-paid'
-          ? 'robrun-cheats-pricing'
-          : old === 'robrun-pc-optimization'
-            ? 'robrun-fps-boost'
-            : old === 'robrun-aim-training-tips'
-              ? 'robrun-aimbot'
-              : old === 'robrun-beginners-guide'
-                ? 'robrun-cheats-installation'
+      old === 'best-caliber-cheats-pc'
+        ? 'best-caliber-cheats'
+        : old === 'caliber-free-vs-paid'
+          ? 'caliber-cheats-pricing'
+          : old === 'caliber-pc-optimization'
+            ? 'caliber-fps-boost'
+            : old === 'caliber-aim-training-tips'
+              ? 'caliber-aimbot'
+              : old === 'caliber-beginners-guide'
+                ? 'caliber-cheats-installation'
                 : old;
     next = next.replaceAll(`/blogs/${old}/`, `/blogs/${target}/`);
   }
@@ -79,40 +79,40 @@ articles = articles
   });
 
 const metaPatches = {
-  'best-robrun-cheats': {
-    title: "Best Robrun Cheats for PC — Complete Buyer's Guide",
-    seoTitle: 'Best Robrun Cheats for PC | Features & Buying Guide',
-    h1: "Best Robrun Cheats for PC — Complete Buyer's Guide",
+  'best-caliber-cheats': {
+    title: "Best Caliber Cheats for PC — Complete Buyer's Guide",
+    seoTitle: 'Best Caliber Cheats for PC | Features & Buying Guide',
+    h1: "Best Caliber Cheats for PC — Complete Buyer's Guide",
     description:
-      'Explore Robrun cheats for PC, compare modules, pricing and compatibility, and find the information you need before choosing.',
-    keywords: 'best robrun cheats, robrun cheats for pc, buy robrun cheats',
+      'Explore Caliber cheats for PC, compare modules, pricing and compatibility, and find the information you need before choosing.',
+    keywords: 'best caliber cheats, caliber cheats for pc, buy caliber cheats',
     tag: 'Buying Guides',
   },
-  'robrun-fps-boost': {
-    title: 'Robrun FPS Guide — Improve PC Gaming Performance',
-    seoTitle: 'Robrun FPS Guide | Improve PC Gaming Performance',
-    h1: 'Robrun FPS Guide — Improve PC Gaming Performance',
+  'caliber-fps-boost': {
+    title: 'Caliber FPS Guide — Improve PC Gaming Performance',
+    seoTitle: 'Caliber FPS Guide | Improve PC Gaming Performance',
+    h1: 'Caliber FPS Guide — Improve PC Gaming Performance',
     description:
-      'Practical Robrun FPS tips: drivers, in-game settings, Windows tweaks, and overlay overhead so PC play stays smooth.',
-    keywords: 'robrun fps boost, robrun pc optimization, robrun gaming performance',
+      'Practical Caliber FPS tips: drivers, in-game settings, Windows tweaks, and overlay overhead so PC play stays smooth.',
+    keywords: 'caliber fps boost, caliber pc optimization, caliber gaming performance',
     tag: 'Gaming Performance',
   },
-  'robrun-updates': {
-    title: 'Robrun Updates — Software Compatibility and Changes',
-    seoTitle: 'Robrun Updates | Software Compatibility & Changes',
-    h1: 'Robrun Updates — Software Compatibility and Changes',
+  'caliber-updates': {
+    title: 'Caliber Updates — Software Compatibility and Changes',
+    seoTitle: 'Caliber Updates | Software Compatibility & Changes',
+    h1: 'Caliber Updates — Software Compatibility and Changes',
     description:
-      'How Robrun game patches affect module compatibility, what to verify after updates, and where to check live status.',
-    keywords: 'robrun updates, robrun software compatibility',
+      'How Caliber game patches affect module compatibility, what to verify after updates, and where to check live status.',
+    keywords: 'caliber updates, caliber software compatibility',
     tag: 'Updates',
   },
-  'robrun-gaming-software-compatibility': {
-    title: 'Robrun Gaming Software Compatibility Guide',
-    seoTitle: 'Robrun Software Compatibility | PC Requirements Guide',
-    h1: 'Robrun Gaming Software Compatibility Guide',
+  'caliber-gaming-software-compatibility': {
+    title: 'Caliber Gaming Software Compatibility Guide',
+    seoTitle: 'Caliber Software Compatibility | PC Requirements Guide',
+    h1: 'Caliber Gaming Software Compatibility Guide',
     description:
-      'PC requirements, Windows builds, GPU headroom, and how Robrun modules fit your hardware before checkout.',
-    keywords: 'robrun gaming software compatibility, robrun pc requirements',
+      'PC requirements, Windows builds, GPU headroom, and how Caliber modules fit your hardware before checkout.',
+    keywords: 'caliber gaming software compatibility, caliber pc requirements',
     tag: 'Guides',
   },
 };
@@ -124,25 +124,25 @@ for (const a of articles) {
 
 const newArticles = [
   {
-    slug: 'robrun-esp-guide',
+    slug: 'caliber-esp-guide',
     tag: 'Features',
-    title: 'Robrun ESP Guide — Features and Uses Explained',
-    seoTitle: 'Robrun ESP Guide | Features & Compatibility',
+    title: 'Caliber ESP Guide — Features and Uses Explained',
+    seoTitle: 'Caliber ESP Guide | Features & Compatibility',
     description:
-      'Learn about Robrun ESP features, compatibility, limitations, and important buying considerations for PC players.',
-    excerpt: 'Player ESP, wallhack reads, filters, and how ESP modules map to Robrun product pages.',
-    keywords: 'robrun esp, robrun wallhack, robrun player esp',
+      'Learn about Caliber ESP features, compatibility, limitations, and important buying considerations for PC players.',
+    excerpt: 'Player ESP, wallhack reads, filters, and how ESP modules map to Caliber product pages.',
+    keywords: 'caliber esp, caliber wallhack, caliber player esp',
     intent: 'Informational + Commercial',
     date: '2026-10-08',
     updated: '2026-11-01',
     readTime: '9 min read',
     image: '/images/gameplay/a02.webp',
-    imageAlt: 'Robrun ESP overlay example on PC',
-    h1: 'Robrun ESP Guide — Features and Uses Explained',
-    relatedSlugs: ['robrun-cheats-features', 'best-robrun-cheats', 'robrun-cheats-comparison'],
+    imageAlt: 'Caliber ESP overlay example on PC',
+    h1: 'Caliber ESP Guide — Features and Uses Explained',
+    relatedSlugs: ['caliber-cheats-features', 'best-caliber-cheats', 'caliber-cheats-comparison'],
     faq: [
       {
-        q: 'What does Robrun ESP typically show?',
+        q: 'What does Caliber ESP typically show?',
         a: 'Product pages list box ESP, health, distance, skeleton, and filter options—verify the exact module before buying.',
       },
       {
@@ -157,7 +157,7 @@ const newArticles = [
     body: [
       {
         type: 'p',
-        html: `<strong>Robrun ESP</strong> modules focus on awareness—seeing operators, distances, and health states faster than the default HUD. This guide explains what buyers should verify on product pages, not every possible toggle name.`,
+        html: `<strong>Caliber ESP</strong> modules focus on awareness—seeing operators, distances, and health states faster than the default HUD. This guide explains what buyers should verify on product pages, not every possible toggle name.`,
       },
       { type: 'h2', text: 'Core ESP features to compare' },
       {
@@ -176,39 +176,39 @@ const newArticles = [
       { type: 'h2', text: 'Wallhack vs. loot ESP' },
       {
         type: 'p',
-        html: `Wallhack emphasizes tracking through cover; loot ESP highlights items in the world. If you only need callouts, wallhack may be enough—see <a href="/blogs/robrun-cheats-comparison/">module comparison</a> and <a href="/blogs/robrun-cheats-features/">features overview</a>.`,
+        html: `Wallhack emphasizes tracking through cover; loot ESP highlights items in the world. If you only need callouts, wallhack may be enough—see <a href="/blogs/caliber-cheats-comparison/">module comparison</a> and <a href="/blogs/caliber-cheats-features/">features overview</a>.`,
       },
       { type: 'h2', text: 'Performance and readability' },
       {
         type: 'p',
-        html: `Dense ESP can clutter 1080p screens. Pair module tuning with <a href="/blogs/robrun-fps-boost/">FPS optimization</a> so overlays stay smooth in firefights.`,
+        html: `Dense ESP can clutter 1080p screens. Pair module tuning with <a href="/blogs/caliber-fps-boost/">FPS optimization</a> so overlays stay smooth in firefights.`,
       },
       {
         type: 'cta',
         buttons: [
           { label: 'Explore Player ESP', href: `${P}player-esp/`, variant: 'primary' },
-          { label: 'Compare features', href: '/blogs/robrun-cheats-features/', variant: 'outline' },
+          { label: 'Compare features', href: '/blogs/caliber-cheats-features/', variant: 'outline' },
         ],
       },
     ],
   },
   {
-    slug: 'robrun-aimbot',
+    slug: 'caliber-aimbot',
     tag: 'Features',
-    title: 'Robrun Aimbot Guide — Features and Compatibility',
-    seoTitle: 'Robrun Aimbot Guide | What PC Players Should Know',
+    title: 'Caliber Aimbot Guide — Features and Compatibility',
+    seoTitle: 'Caliber Aimbot Guide | What PC Players Should Know',
     description:
-      'Robrun aimbot settings explained: FOV, smoothing, visibility checks, and how to match modules to your PC setup.',
-    excerpt: 'FOV, smoothness, bone selection, and compatibility notes for Robrun aim modules.',
-    keywords: 'robrun aimbot, robrun aim assist',
+      'Caliber aimbot settings explained: FOV, smoothing, visibility checks, and how to match modules to your PC setup.',
+    excerpt: 'FOV, smoothness, bone selection, and compatibility notes for Caliber aim modules.',
+    keywords: 'caliber aimbot, caliber aim assist',
     intent: 'Informational + Commercial',
     date: '2026-10-12',
     updated: '2026-11-02',
     readTime: '8 min read',
     image: '/images/gameplay/a03.webp',
-    imageAlt: 'Robrun aim module settings concept',
-    h1: 'Robrun Aimbot Guide — Features and Compatibility',
-    relatedSlugs: ['robrun-cheats-features', 'robrun-cheats-safety', 'robrun-cheats-installation'],
+    imageAlt: 'Caliber aim module settings concept',
+    h1: 'Caliber Aimbot Guide — Features and Compatibility',
+    relatedSlugs: ['caliber-cheats-features', 'caliber-cheats-safety', 'caliber-cheats-installation'],
     faq: [
       {
         q: 'What settings matter most?',
@@ -222,7 +222,7 @@ const newArticles = [
     body: [
       {
         type: 'p',
-        html: `A <strong>Robrun aimbot</strong> module should document FOV limits, smoothness, bone priorities, and hotkeys. Use this guide to compare marketing claims against what the <a href="${P}aimbot/">aimbot product page</a> actually lists.`,
+        html: `A <strong>Caliber aimbot</strong> module should document FOV limits, smoothness, bone priorities, and hotkeys. Use this guide to compare marketing claims against what the <a href="${P}aimbot/">aimbot product page</a> actually lists.`,
       },
       { type: 'h2', text: 'FOV and smoothing' },
       {
@@ -232,34 +232,34 @@ const newArticles = [
       { type: 'h2', text: 'Visibility and safety expectations' },
       {
         type: 'p',
-        html: `Read <a href="/blogs/robrun-cheats-safety/">safety considerations</a> and official Terms of Service. No module can guarantee zero account risk.`,
+        html: `Read <a href="/blogs/caliber-cheats-safety/">safety considerations</a> and official Terms of Service. No module can guarantee zero account risk.`,
       },
       {
         type: 'cta',
         buttons: [
           { label: 'View aimbot module', href: `${P}aimbot/`, variant: 'primary' },
-          { label: 'Installation help', href: '/blogs/robrun-cheats-installation/', variant: 'outline' },
+          { label: 'Installation help', href: '/blogs/caliber-cheats-installation/', variant: 'outline' },
         ],
       },
     ],
   },
   {
-    slug: 'robrun-cheats-features',
+    slug: 'caliber-cheats-features',
     tag: 'Features',
-    title: 'Robrun Cheats Features — What Buyers Should Know',
-    seoTitle: 'Robrun Cheats Features | What Buyers Should Know',
+    title: 'Caliber Cheats Features — What Buyers Should Know',
+    seoTitle: 'Caliber Cheats Features | What Buyers Should Know',
     description:
-      'Overview of Robrun cheat modules—ESP, aimbot, wallhack, loot ESP, no recoil, and utilities—and how to pick the right mix.',
-    excerpt: 'Module families on robruncheat.org and how features map to product URLs.',
-    keywords: 'robrun cheats features, robrun esp, robrun aimbot',
+      'Overview of Caliber cheat modules—ESP, aimbot, wallhack, loot ESP, no recoil, and utilities—and how to pick the right mix.',
+    excerpt: 'Module families on caliber-cheats.org and how features map to product URLs.',
+    keywords: 'caliber cheats features, caliber esp, caliber aimbot',
     intent: 'Commercial',
     date: '2026-10-15',
     updated: '2026-11-03',
     readTime: '10 min read',
     image: '/images/gameplay/a04.webp',
-    imageAlt: 'Robrun module feature overview',
-    h1: 'Robrun Cheats Features — What Buyers Should Know',
-    relatedSlugs: ['best-robrun-cheats', 'robrun-esp-guide', 'robrun-cheats-comparison'],
+    imageAlt: 'Caliber module feature overview',
+    h1: 'Caliber Cheats Features — What Buyers Should Know',
+    relatedSlugs: ['best-caliber-cheats', 'caliber-esp-guide', 'caliber-cheats-comparison'],
     faq: [
       {
         q: 'Do I need every module?',
@@ -269,7 +269,7 @@ const newArticles = [
     body: [
       {
         type: 'p',
-        html: `Before checkout, map <strong>Robrun cheats features</strong> to roles: awareness (ESP, wallhack), gunplay (aimbot, no recoil), and extras (loot ESP, stream-proof, utilities).`,
+        html: `Before checkout, map <strong>Caliber cheats features</strong> to roles: awareness (ESP, wallhack), gunplay (aimbot, no recoil), and extras (loot ESP, stream-proof, utilities).`,
       },
       { type: 'h2', text: 'Feature families' },
       {
@@ -285,34 +285,34 @@ const newArticles = [
       },
       {
         type: 'p',
-        html: `Deep dives: <a href="/blogs/robrun-esp-guide/">ESP guide</a>, <a href="/blogs/robrun-aimbot/">aimbot guide</a>, and <a href="/blogs/robrun-cheats-pricing/">pricing</a>.`,
+        html: `Deep dives: <a href="/blogs/caliber-esp-guide/">ESP guide</a>, <a href="/blogs/caliber-aimbot/">aimbot guide</a>, and <a href="/blogs/caliber-cheats-pricing/">pricing</a>.`,
       },
       {
         type: 'cta',
         buttons: [
-          { label: 'Explore Robrun products', href: P, variant: 'primary' },
-          { label: 'Buyer guide', href: '/blogs/best-robrun-cheats/', variant: 'outline' },
+          { label: 'Explore Caliber products', href: P, variant: 'primary' },
+          { label: 'Buyer guide', href: '/blogs/best-caliber-cheats/', variant: 'outline' },
         ],
       },
     ],
   },
   {
-    slug: 'robrun-cheats-installation',
+    slug: 'caliber-cheats-installation',
     tag: 'Tutorials',
-    title: 'Robrun Cheats Installation — Requirements and Troubleshooting',
-    seoTitle: 'Robrun Cheats Installation | Setup & Troubleshooting',
+    title: 'Caliber Cheats Installation — Requirements and Troubleshooting',
+    seoTitle: 'Caliber Cheats Installation | Setup & Troubleshooting',
     description:
-      'Installation requirements, loader basics, common errors, and support paths for Robrun software on Windows PC.',
+      'Installation requirements, loader basics, common errors, and support paths for Caliber software on Windows PC.',
     excerpt: 'Windows requirements, download hygiene, and first-run checks before you queue.',
-    keywords: 'robrun cheats installation, robrun loader setup',
+    keywords: 'caliber cheats installation, caliber loader setup',
     intent: 'Informational',
     date: '2026-10-18',
     updated: '2026-11-04',
     readTime: '7 min read',
     image: '/images/gameplay/a05.webp',
-    imageAlt: 'Robrun software installation checklist',
-    h1: 'Robrun Cheats Installation — Requirements and Troubleshooting',
-    relatedSlugs: ['robrun-gaming-software-compatibility', 'robrun-cheats-safety', 'robrun-updates'],
+    imageAlt: 'Caliber software installation checklist',
+    h1: 'Caliber Cheats Installation — Requirements and Troubleshooting',
+    relatedSlugs: ['caliber-gaming-software-compatibility', 'caliber-cheats-safety', 'caliber-updates'],
     faq: [
       {
         q: 'What OS is required?',
@@ -326,13 +326,13 @@ const newArticles = [
     body: [
       {
         type: 'p',
-        html: `Install <strong>Robrun cheats</strong> only from the checkout path tied to your purchase. Follow portal instructions and keep antivirus exclusions minimal—see <a href="/blogs/robrun-cheats-safety/">safety guide</a>.`,
+        html: `Install <strong>Caliber cheats</strong> only from the checkout path tied to your purchase. Follow portal instructions and keep antivirus exclusions minimal—see <a href="/blogs/caliber-cheats-safety/">safety guide</a>.`,
       },
       { type: 'h2', text: 'Pre-install checklist' },
       {
         type: 'ol',
         items: [
-          'Match <a href="/blogs/robrun-gaming-software-compatibility/">compatibility guide</a> specs.',
+          'Match <a href="/blogs/caliber-gaming-software-compatibility/">compatibility guide</a> specs.',
           'Update GPU drivers and Windows.',
           'Close conflicting overlays (other tuners, legacy capture tools).',
           'Read <a href="/faq/">FAQ</a> for loader-specific steps.',
@@ -341,7 +341,7 @@ const newArticles = [
       { type: 'h2', text: 'After patches' },
       {
         type: 'p',
-        html: `When Robrun updates, modules may pause—check <a href="/blogs/robrun-updates/">updates guide</a> and live status on product pages before enabling features.`,
+        html: `When Caliber updates, modules may pause—check <a href="/blogs/caliber-updates/">updates guide</a> and live status on product pages before enabling features.`,
       },
       {
         type: 'cta',
@@ -353,22 +353,22 @@ const newArticles = [
     ],
   },
   {
-    slug: 'robrun-cheats-faq',
+    slug: 'caliber-cheats-faq',
     tag: 'Guides',
-    title: 'Robrun Cheats FAQ — Common Questions Answered',
-    seoTitle: 'Robrun Cheats FAQ | Common Questions Answered',
+    title: 'Caliber Cheats FAQ — Common Questions Answered',
+    seoTitle: 'Caliber Cheats FAQ | Common Questions Answered',
     description:
-      'Answers about Robrun modules, pricing, compatibility, safety, and support—quick reference before you buy or install.',
+      'Answers about Caliber modules, pricing, compatibility, safety, and support—quick reference before you buy or install.',
     excerpt: 'Short answers linking to deeper guides and product pages.',
-    keywords: 'robrun cheats faq, robrun cheats questions',
+    keywords: 'caliber cheats faq, caliber cheats questions',
     intent: 'Informational',
     date: '2026-10-22',
     updated: '2026-11-05',
     readTime: '6 min read',
     image: '/images/gameplay/a07.webp',
-    imageAlt: 'Robrun cheats frequently asked questions',
-    h1: 'Robrun Cheats FAQ — Common Questions Answered',
-    relatedSlugs: ['best-robrun-cheats', 'robrun-cheats-pricing', 'robrun-cheats-safety'],
+    imageAlt: 'Caliber cheats frequently asked questions',
+    h1: 'Caliber Cheats FAQ — Common Questions Answered',
+    relatedSlugs: ['best-caliber-cheats', 'caliber-cheats-pricing', 'caliber-cheats-safety'],
     faq: [
       {
         q: 'Where is official pricing?',
@@ -390,17 +390,17 @@ const newArticles = [
     body: [
       {
         type: 'p',
-        html: `This <strong>Robrun cheats FAQ</strong> points to longer guides. For account risk, read <a href="/blogs/robrun-cheats-safety/">safety</a>; for modules, see <a href="/blogs/robrun-cheats-features/">features</a>.`,
+        html: `This <strong>Caliber cheats FAQ</strong> points to longer guides. For account risk, read <a href="/blogs/caliber-cheats-safety/">safety</a>; for modules, see <a href="/blogs/caliber-cheats-features/">features</a>.`,
       },
       { type: 'h2', text: 'Buying' },
       {
         type: 'p',
-        html: `Start with <a href="/blogs/best-robrun-cheats/">buyer guide</a> and <a href="/blogs/robrun-cheats-pricing/">pricing</a>, then open the module that matches your role on <a href="${P}">products</a>.`,
+        html: `Start with <a href="/blogs/best-caliber-cheats/">buyer guide</a> and <a href="/blogs/caliber-cheats-pricing/">pricing</a>, then open the module that matches your role on <a href="${P}">products</a>.`,
       },
       { type: 'h2', text: 'Setup' },
       {
         type: 'p',
-        html: `Follow <a href="/blogs/robrun-cheats-installation/">installation guide</a> and <a href="/blogs/robrun-gaming-software-compatibility/">compatibility</a> before enabling overlays in matchmaking.`,
+        html: `Follow <a href="/blogs/caliber-cheats-installation/">installation guide</a> and <a href="/blogs/caliber-gaming-software-compatibility/">compatibility</a> before enabling overlays in matchmaking.`,
       },
       {
         type: 'cta',

@@ -14,7 +14,10 @@
 .forum-online { display:flex; gap:.45rem; align-items:center; color:var(--muted-foreground); font-size:.75rem; padding-right:.45rem; }
 .forum-online i,.forum-stats i { width:.45rem; height:.45rem; background:#43c77a; border-radius:50%; }
 .forum-post-list { display:grid; gap:.65rem; }
-.forum-post-card,.forum-detail-card { display:grid; grid-template-columns:3.5rem minmax(0,1fr); overflow:visible; border:1px solid var(--border); border-radius:var(--radius-xl); background:color-mix(in oklch,var(--card) 96%,transparent); transition:border-color .18s,transform .18s; }
+.forum-post-card,.forum-detail-card { display:grid; grid-template-columns:3.5rem minmax(0,1fr); overflow:visible; border:1px solid var(--border); border-radius:var(--radius-xl); background:color-mix(in oklch,var(--card) 96%,transparent); transition:border-color .18s,transform .18s; align-items:stretch; }
+.forum-post-card { min-height:11.5rem; }
+.forum-post-card__body { display:flex; flex-direction:column; }
+.forum-post-actions { margin-top:auto; padding-top:.35rem; }
 .forum-post-card:hover { border-color:color-mix(in oklch,var(--primary) 48%,var(--border)); transform:translateY(-1px); }
 .forum-vote { display:flex; flex-direction:column; align-items:center; gap:.22rem; padding:.8rem .45rem; background:color-mix(in oklch,var(--muted) 50%,transparent); }
 .forum-vote strong { font-size:.78rem; color:var(--foreground); }

@@ -28,16 +28,16 @@ const webPageLd = {
   url: canonicalUrl('/reviews/'),
   isPartOf: {
     '@type': 'WebSite',
-    name: 'robruncheat.org',
+    name: 'caliber-cheats.org',
     url: SITE_ORIGIN,
   },
   ...(displayStats.total > 0 && displayStats.average != null
     ? {
         mainEntity: {
           '@type': 'Product',
-          name: 'Robrun Cheats',
-          description: 'Robrun PC modules: aimbot, ESP, wallhack, and related utilities.',
-          url: canonicalUrl('/products/robrun/'),
+          name: 'Caliber Cheats',
+          description: 'Caliber PC modules: aimbot, ESP, wallhack, and related utilities.',
+          url: canonicalUrl('/products/caliber/'),
           aggregateRating: {
             '@type': 'AggregateRating',
             ratingValue: Number(displayStats.average.toFixed(1)),
@@ -55,7 +55,7 @@ const reviewListLd =
     ? {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'Robrun Cheats customer reviews',
+        name: 'Caliber Cheats customer reviews',
         numberOfItems: genuine.length,
         itemListElement: genuine.slice(0, 20).map((review, index) => ({
           '@type': 'ListItem',

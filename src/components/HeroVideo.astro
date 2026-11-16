@@ -5,7 +5,7 @@ interface Props {
   title?: string;
 }
 
-const { src, poster, title = 'Robrun gameplay preview video' } = Astro.props;
+const { src, poster, title = 'Caliber gameplay preview video' } = Astro.props;
 ---
 
 <div
@@ -99,6 +99,13 @@ const { src, poster, title = 'Robrun gameplay preview video' } = Astro.props;
   const labelPlay = wrap?.querySelector('[data-hero-video-label-play]');
   const labelPause = wrap?.querySelector('[data-hero-video-label-pause]');
 
+  if (video instanceof HTMLVideoElement) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.volume = 0;
+    video.setAttribute('muted', '');
+  }
+
   function setPausedUi(paused: boolean) {
     if (!toggle || !labelPlay || !labelPause) return;
     toggle.dataset.state = paused ? 'paused' : 'playing';
@@ -114,7 +121,9 @@ const { src, poster, title = 'Robrun gameplay preview video' } = Astro.props;
   }
 
   toggle?.addEventListener('click', async () => {
-    if (!video) return;
+    if (!(video instanceof HTMLVideoElement)) return;
+    video.muted = true;
+    video.volume = 0;
     if (video.paused) {
       try {
         await video.play();

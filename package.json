@@ -1,12 +1,12 @@
 {
-  "name": "robruncheat-org",
+  "name": "caliber-cheats-org",
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "homepage": "https://robruncheat.org",
+  "homepage": "https://caliber-cheats.org",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haniarooziroti/caliberche-t.net.git"
+    "url": "git+https://github.com/haniarooziroti/caliber-che-ts.org.git"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -19,7 +19,7 @@
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
     "media:fetch": "npm run media:fetch-yt",
-    "media:fetch-yt": "node scripts/fetch-robrun-youtube-media.mjs && node scripts/optimize-images.mjs",
+    "media:fetch-yt": "node scripts/fetch-caliber-youtube-media.mjs && node scripts/optimize-images.mjs",
     "seo:check": "node scripts/seo-check.mjs",
     "seo:live": "node scripts/validate-live-seo.mjs",
     "deploy": "npm run build && wrangler deploy"

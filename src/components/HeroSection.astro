@@ -4,7 +4,7 @@ import { ROUTES } from '../utils/path';
 import { PRIMARY_CHECKOUT_PATH } from '../config/checkout';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import HeroVideo from './HeroVideo.astro';
-import { ROBRUN_HERO_POSTER } from '../config/media';
+import { CALIBER_HERO_POSTER } from '../config/media';
 import Icon from './icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
@@ -66,9 +66,9 @@ const heroMarqueePills = [
 
       <div class="mx-auto flex w-full max-w-xl flex-col items-center gap-5 lg:mx-0 lg:max-w-none lg:items-end">
         <HeroVideo
-          src="/videos/robrun-hero-snapyt.mp4"
-          poster={ROBRUN_HERO_POSTER}
-          title="Robrun squad gameplay preview — press Play to start"
+          src="/videos/caliber-hero-snapyt.mp4"
+          poster={CALIBER_HERO_POSTER}
+          title="Caliber squad gameplay preview — press Play to start"
         />
         <div class="grid w-full grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-4 lg:grid-cols-2">
           {h.metrics.map((m, i) => (

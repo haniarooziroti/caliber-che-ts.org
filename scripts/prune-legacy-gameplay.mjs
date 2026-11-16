@@ -1,6 +1,6 @@
 /**
  * Remove Caliber-era derivative gameplay masters still shipped from public/.
- * Site pages use a01–a11 from YouTube (scripts/fetch-robrun-youtube-media.mjs).
+ * Site pages use a01–a11 from YouTube (scripts/fetch-caliber-youtube-media.mjs).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,7 +11,7 @@ if (!fs.existsSync(dir)) {
   process.exit(0);
 }
 
-const legacyPrefix = /^(robrun-(aimbot|esp|wallhack|recoil)-|caliber-|apex-)/i;
+const legacyPrefix = /^(caliber-(aimbot|esp|wallhack|recoil)-|caliber-|apex-)/i;
 let removed = 0;
 
 for (const name of fs.readdirSync(dir)) {

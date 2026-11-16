@@ -6,7 +6,7 @@ export const featureIcons: Record<string, IconName> = {
   'Radar & sound': 'featureRadar',
   'Trigger & auto-fire': 'triggerBot',
   'Misc movement': 'toolkitMovement',
-  'Stream-safe layer': 'streamProof',
+  'Stream-proof layer': 'streamProof',
   'Cloud profiles': 'compareCloudBackup',
 };
 

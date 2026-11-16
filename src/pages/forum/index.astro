@@ -7,30 +7,26 @@ import { forumCategories, forumPosts } from '../../data/forum';
 import { t } from '../../i18n';
 import { resolvePageSeo } from '../../config/seo';
 import BlogShareBar from '../../components/BlogShareBar.astro';
-import ForumCommentTree from '../../components/forum/ForumCommentTree.astro';
 
 const seo = resolvePageSeo('/forum/');
 const breadcrumbs = [{ name: 'Homepage', path: '/' }, { name: 'Forum home', path: '/forum/' }];
 const categoryKey = (name: string) => name.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-const featuredDiscussions = [...forumPosts]
-  .sort((a, b) => b.commentsCount - a.commentsCount)
-  .slice(0, 3);
 ---
 
-<BaseLayout title={seo.title} description={seo.description} logoAlt="Forum – Robrun cheats community logo">
+<BaseLayout title={seo.title} description={seo.description} logoAlt="Forum – Caliber cheats community logo">
   <section class="forum-page py-8 md:py-12">
     <div class="mx-auto max-w-6xl px-5">
       <Breadcrumbs items={breadcrumbs} />
       <header class="forum-hero">
         <div>
-          <p class="section-header__eyebrow">Robrun community</p>
-          <h1>Robrun Cheats forums for aimbot, ESP, and loader talk</h1>
+          <p class="section-header__eyebrow">Caliber community</p>
+          <h1>Caliber Cheats forums for aimbot, ESP, and loader talk</h1>
           <p class="forum-hero__copy">
-            Loader setup, aimbot FOV debates, ESP layouts, no recoil tuning, stream-proof tests, and patch-day notes from Robrun players.
+            Loader setup, aimbot FOV debates, ESP layouts, no recoil tuning, stream-proof tests, and patch-day notes from Caliber players.
           </p>
         </div>
-        <a class="forum-create" href="/products/robrun/"><Icon name="navProducts" size={17} /> Compare hack plans</a>
+        <a class="forum-create" href="/products/caliber/"><Icon name="navProducts" size={17} /> Compare hack plans</a>
       </header>
 
       <div class="mt-4 flex justify-end">
@@ -60,32 +56,6 @@ const featuredDiscussions = [...forumPosts]
             ))}
           </div>
           <p class="forum-results-count" data-forum-visible-count>{forumPosts.length} discussions</p>
-
-          <section class="forum-embedded-discussions" aria-labelledby="forum-embedded-discussions-title">
-            <h2 id="forum-embedded-discussions-title" class="forum-embedded-discussions__title">
-              Inside the discussions
-            </h2>
-            <p class="forum-embedded-discussions__lead">
-              Full reply threads from the most active topics — open any title above for the complete post and paired guides.
-            </p>
-            <div class="forum-embedded-discussions__grid">
-              {featuredDiscussions.map((post) => (
-                <article class="forum-embedded-discussions__card">
-                  <header class="forum-embedded-discussions__card-head">
-                    <span class={`forum-flair tone-${post.categoryTone}`}>{post.category}</span>
-                    <h3>
-                      <a href={`/forum/${post.slug}/`}>{post.title}</a>
-                    </h3>
-                    <p>{post.excerpt}</p>
-                  </header>
-                  <ForumCommentTree comments={post.comments} />
-                  <a class="forum-embedded-discussions__more" href={`/forum/${post.slug}/`}>
-                    Read full thread · {post.commentsCount} replies
-                  </a>
-                </article>
-              ))}
-            </div>
-          </section>
 
           <div class="forum-post-list" aria-live="polite">
             {forumPosts.map((post, index) => (
@@ -120,8 +90,8 @@ const featuredDiscussions = [...forumPosts]
                   }
                   <div class="forum-post-actions">
                     {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
-                    <a href={`/forum/${post.slug}/`}><Icon name="messageCircle" size={15} /> {post.commentsCount} replies · {post.title}</a>
-                    <a href={`/forum/${post.slug}/`}><Icon name="arrowRight" size={15} /> Open thread: {post.title}</a>
+                    <a href={`/forum/${post.slug}/`}><Icon name="messageCircle" size={15} /> {post.commentsCount} replies</a>
+                    <a href={`/forum/${post.slug}/`}><Icon name="arrowRight" size={15} /> Open thread</a>
                   </div>
                 </div>
               </article>
@@ -140,7 +110,7 @@ const featuredDiscussions = [...forumPosts]
           <section class="forum-side-card forum-about" id="community-guidelines">
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
-              <div class="forum-about__title"><span class="forum-community-avatar forum-community-avatar--brand"><img src="/favicon-v2-32.png" alt="Forum – Robrun cheats community logo" width="34" height="34" /></span><h2>Forum: Robrun PC players</h2></div>
+              <div class="forum-about__title"><span class="forum-community-avatar forum-community-avatar--brand"><img src="/favicon-v2-32.png" alt="Forum – Caliber cheats community logo" width="34" height="34" /></span><h2>Forum: Caliber PC players</h2></div>
               <p>Swap aimbot presets, ESP color ideas, and loader tips in this forum before you jump into session week or monument.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> threads</span><span><b>{forumCategories.length}</b> topics</span></div>
               <a class="forum-join" href="/faq/">Read the FAQ</a>

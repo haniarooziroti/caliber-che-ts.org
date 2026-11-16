@@ -8,7 +8,7 @@ function normalizeOrigin(url: string): string {
 }
 
 /**
- * Canonical / OG / hreflang base URL — always production (robruncheat.org).
+ * Canonical / OG / hreflang base URL — always production (caliber-cheats.org).
  * Preview hosts must not leak into canonicals or sitemap-facing meta.
  */
 export const SITE_ORIGIN = normalizeOrigin(SITE_URL);
@@ -84,8 +84,8 @@ export function pageTitle(keyword: string, suffixSite = t.site.domain): string {
 export function productPageTitle(product: Pick<ProductPage, 'title' | 'kind' | 'slug'>): string {
   const phrase =
     product.kind === 'tier'
-      ? `${product.title}: Robrun cheat modules`
-      : `${product.title}: Robrun PC module`;
+      ? `${product.title}: Caliber cheat modules`
+      : `${product.title}: Caliber PC module`;
   return pageTitle(phrase);
 }
 

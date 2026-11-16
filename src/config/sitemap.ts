@@ -19,10 +19,10 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     path === '/contact/' ||
     path.startsWith('/products/dota-2-cheats/') ||
     path.startsWith('/products/cs2-cheats/') ||
-    path === '/products/robrun/lite/' ||
-    path === '/products/robrun/pro/' ||
-    path === '/products/robrun/elite/' ||
-    path === '/products/robrun/unlock-all/' ||
+    path === '/products/caliber/lite/' ||
+    path === '/products/caliber/pro/' ||
+    path === '/products/caliber/elite/' ||
+    path === '/products/caliber/unlock-all/' ||
     path === '/forum/' ||
     path.startsWith('/forum/')
   ) {

@@ -27,10 +27,10 @@ export default defineConfig({
         !page.includes('/cheats/') &&
         !page.includes('/contact/') &&
         !page.includes('/dota-2-cheats/') &&
-        !page.includes('/products/robrun/lite/') &&
-        !page.includes('/products/robrun/pro/') &&
-        !page.includes('/products/robrun/elite/') &&
-        !page.includes('/products/robrun/unlock-all/') &&
+        !page.includes('/products/caliber/lite/') &&
+        !page.includes('/products/caliber/pro/') &&
+        !page.includes('/products/caliber/elite/') &&
+        !page.includes('/products/caliber/unlock-all/') &&
         !page.includes('/forum/'),
       serialize: sitemapSerialize,
     }),

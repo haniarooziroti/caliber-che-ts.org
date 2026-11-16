@@ -5,7 +5,7 @@ export const CHECKOUT = CHECKOUT_URLS;
 export type CheckoutProduct = keyof typeof CHECKOUT;
 
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  robrun: 'robrun',
+  caliber: 'caliber',
   'cloud-dma': 'cloud-dma',
   'hwid-spoofer': 'hwid-spoofer',
 };
@@ -14,12 +14,12 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Direct affiliate URL for this product. Legacy `/go/` paths still 302 here. */
-export function checkoutPath(product: CheckoutProduct = 'robrun'): string {
-  return CHECKOUT[product];
+/** Same-tab /go/ hops — middleware 302s to affiliate store URLs. */
+export function checkoutPath(product: CheckoutProduct = 'caliber'): string {
+  return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('robrun');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('caliber');
 
 const SLUG_CHECKOUT_PRODUCT: Record<string, CheckoutProduct> = {
   'cloud-dma': 'cloud-dma',
@@ -28,7 +28,7 @@ const SLUG_CHECKOUT_PRODUCT: Record<string, CheckoutProduct> = {
 
 export function checkoutForSlug(slug: string): string {
   const product = SLUG_CHECKOUT_PRODUCT[slug];
-  return product ? checkoutPath(product) : checkoutPath('robrun');
+  return product ? checkoutPath(product) : checkoutPath('caliber');
 }
 
 export function resolveCheckoutHref(href: string): string {
